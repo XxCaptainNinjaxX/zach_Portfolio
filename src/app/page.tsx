@@ -19,7 +19,7 @@ export default function LandingPage() {
         <Hero />
 
         <div className="flex justify-center lg:h-104">
-          <Flourish className="h-40 text-gold lg:h-full" />
+          <Flourish className="h-40 lg:h-full" />
         </div>
 
         <div className="min-w-0">

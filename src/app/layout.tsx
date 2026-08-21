@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import type { ReactNode } from "react";
 import { PageFrame } from "@/components/shell/PageFrame";
-import { RailNav } from "@/components/shell/RailNav";
 import { SiteFooter } from "@/components/shell/SiteFooter";
 import { SiteHeader } from "@/components/shell/SiteHeader";
 import { ThemeScript } from "@/components/shell/ThemeScript";
@@ -87,19 +86,16 @@ export default function RootLayout({
         </a>
 
         {/*
-          No top padding: SiteHeader and RailNav each supply their own, so the
-          header can stick at the true viewport top without leaving a strip for
-          scrolled content to show through above it.
+          No top padding: SiteHeader supplies its own, so it can stick at the
+          true viewport top without leaving a strip for scrolled content to show
+          through above it.
         */}
-        <div className="flex min-h-full flex-1 px-3 pb-3 sm:px-5 sm:pb-5">
-          <div className="flex min-w-0 flex-1 flex-col">
-            <SiteHeader />
-            <main id="main" className="flex-1">
-              {children}
-            </main>
-            <SiteFooter />
-          </div>
-          <RailNav />
+        <div className="flex min-h-full min-w-0 flex-1 flex-col px-3 pb-3 sm:px-5 sm:pb-5">
+          <SiteHeader />
+          <main id="main" className="flex-1">
+            {children}
+          </main>
+          <SiteFooter />
         </div>
       </body>
     </html>

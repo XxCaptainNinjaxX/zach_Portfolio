@@ -93,6 +93,15 @@
     color: var(--ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+
+    /*
+      Guard against an off-canvas element — the closed menu drawer sits a panel
+      width past the right edge — widening the page. `clip` rather than `hidden`:
+      hidden would make body a scroll container and break the header's
+      position: sticky. Neither value clips viewport-fixed boxes, so PageFrame
+      and the theme wipe are untouched.
+    */
+    overflow-x: clip;
   }
 
   /*

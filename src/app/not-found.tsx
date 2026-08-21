@@ -4,7 +4,7 @@ import { Flourish } from "@/components/ui/Flourish";
 export default function NotFound() {
   return (
     <div className="flex min-h-[50vh] flex-col items-center justify-center px-5 py-20 text-center">
-      <Flourish className="h-32 text-gold opacity-50" />
+      <Flourish className="h-32 opacity-50" />
 
       <h1 className="tracked-caps mt-10 font-display text-2xl font-light text-ink">
         Page not found

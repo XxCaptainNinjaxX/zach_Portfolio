@@ -5,12 +5,15 @@
  * Fixed rather than absolute so it behaves as viewport chrome — it stays put
  * while content scrolls, instead of scrolling away with the first screenful.
  * pointer-events-none keeps it from intercepting clicks near the edges.
+ *
+ * z-20 puts it over page content (z-auto) but under the header (z-30) and the
+ * menu drawer inside it, so the rule does not draw across the open panel.
  */
 export function PageFrame() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-3 z-40 border border-gold-hairline/70 sm:inset-5"
+      className="pointer-events-none fixed inset-3 z-20 border border-gold-hairline/70 sm:inset-5"
     />
   );
 }

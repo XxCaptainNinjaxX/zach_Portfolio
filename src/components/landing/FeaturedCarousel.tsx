@@ -216,7 +216,7 @@ export function FeaturedCarousel({
               }}
               aria-label={`Show ${composition.title}`}
               aria-current={index === activeIndex ? "true" : undefined}
-              className={`block size-2 rotate-45 border border-gold transition-colors ${
+              className={`block size-2 rotate-45 cursor-pointer border border-gold transition-colors ${
                 index === activeIndex ? "bg-gold" : "bg-transparent"
               }`}
             />
@@ -244,7 +244,7 @@ function CarouselButton({
       onClick={onActivate}
       disabled={disabled}
       aria-label={`${direction === "previous" ? "Previous" : "Next"} composition`}
-      className="inline-flex size-9 shrink-0 items-center justify-center text-gold transition-opacity disabled:opacity-25"
+      className="inline-flex size-9 shrink-0 cursor-pointer items-center justify-center text-gold transition-opacity disabled:cursor-default disabled:opacity-25"
     >
       {direction === "previous" ? <ChevronLeftIcon /> : <ChevronRightIcon />}
     </button>

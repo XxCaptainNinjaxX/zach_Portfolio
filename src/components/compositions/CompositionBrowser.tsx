@@ -91,7 +91,7 @@ function FilterButton({ label, isActive, onSelect }: FilterButtonProps) {
       type="button"
       onClick={onSelect}
       aria-pressed={isActive}
-      className={`tracked-caps-tight border-b-2 pb-1 text-[0.65rem] transition-colors ${
+      className={`tracked-caps-tight cursor-pointer border-b-2 pb-1 text-[0.65rem] transition-colors ${
         isActive
           ? "border-gold text-gold"
           : "border-transparent text-ink-muted hover:text-gold"

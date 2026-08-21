@@ -48,7 +48,8 @@ export function CompositionCover({
         {composition.title}
       </span>
       <span className="tracked-caps relative mt-3 text-[0.6rem] text-gold">
-        {composition.year} · {instrumentationLabels[composition.instrumentation]}
+        {composition.year} ·{" "}
+        {instrumentationLabels[composition.instrumentation]}
       </span>
     </span>
   );

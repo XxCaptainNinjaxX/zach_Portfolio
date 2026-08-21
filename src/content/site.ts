@@ -16,11 +16,11 @@ export type NavItem = {
 };
 
 /**
- * Nav order is top-to-bottom on the desktop rail and in the mobile overlay.
+ * Nav order is top-to-bottom in the menu drawer.
  *
  * The mockup's fourth item, Contact, is not a route: contact is the mailto link
- * in the header. Adding it back here would produce a dead link in the rail, the
- * mobile overlay, the footer, and the sitemap, all of which read this array.
+ * in the header. Adding it back here would produce a dead link in the drawer,
+ * the footer, and the sitemap, all of which read this array.
  */
 export const navItems: NavItem[] = [
   { label: "About Me", href: "/about" },

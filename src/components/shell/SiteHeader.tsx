@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MobileNav } from "@/components/shell/MobileNav";
+import { MenuDrawer } from "@/components/shell/MenuDrawer";
 import { ThemeToggle } from "@/components/shell/ThemeToggle";
 import { Logo } from "@/components/ui/Logo";
 import { MailIcon, PhoneIcon } from "@/components/ui/icons";
@@ -15,13 +15,27 @@ import { site } from "@/content/site";
  *
  * Sticky, and it owns the top inset that used to live on the layout wrapper —
  * that is what lets it pin flush to the viewport edge with no gap for scrolled
- * content to appear in above it. z-30 keeps it under PageFrame's gold rule (z-40)
- * and under the MobileNav overlay (z-50). The translucent background plus blur is
- * so the body's radial glow reads through rather than being cut by a flat band.
+ * content to appear in above it. z-30 puts it over PageFrame's gold rule (z-20)
+ * and, because a z-index makes it a stacking context, confines MenuDrawer's own
+ * layering to this subtree.
  */
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-30 bg-surface/90 pt-3 backdrop-blur-md sm:pt-5">
+    <header className="sticky top-0 z-30 pt-3 sm:pt-5">
+      {/*
+        The translucent band is its own layer rather than a background on
+        <header>, because backdrop-filter makes an element the containing block
+        for its fixed-position descendants — which would re-anchor MenuDrawer's
+        viewport-filling scrim and full-height panel to this ~160px box. inset-0
+        covers the padding box, so the band still includes the top inset above.
+        The blur is so the body's radial glow reads through rather than being cut
+        by a flat band.
+      */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-surface/90 backdrop-blur-md"
+      />
+
       <div className="flex items-center gap-4 px-5 py-4 sm:px-8">
         <Link
           href="/"
@@ -72,7 +86,7 @@ export function SiteHeader() {
           </a>
 
           <ThemeToggle />
-          <MobileNav />
+          <MenuDrawer />
         </div>
       </div>
 
