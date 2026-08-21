@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import type { ReactNode } from "react";
-import { PageFrame } from "@/components/shell/PageFrame";
-import { SiteFooter } from "@/components/shell/SiteFooter";
-import { SiteHeader } from "@/components/shell/SiteHeader";
-import { ThemeScript } from "@/components/shell/ThemeScript";
+import { PageFrame } from "@/components/PageFrame/PageFrame";
+import { SiteFooter } from "@/components/SiteFooter/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader/SiteHeader";
+import { ThemeScript } from "@/components/ThemeScript/ThemeScript";
 import { site } from "@/components/data/site";
 import "./globals.css";
 

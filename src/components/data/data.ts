@@ -1,5 +1,3 @@
-//------- Shared Types -------
-
 //------- Compositions -------
 
 /**

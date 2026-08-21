@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { CompositionCard } from "@/components/compositions/CompositionCard";
+import { CompositionCard } from "@/components/CompositionCard/CompositionCard";
 import {
   instrumentationLabels,
   type Composition,

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CompositionCover } from "@/components/compositions/CompositionCover";
+import { CompositionCover } from "@/components/CompositionCover/CompositionCover";
 import {
   instrumentationLabels,
   type Composition,

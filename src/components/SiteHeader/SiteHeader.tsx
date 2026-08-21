@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { MenuDrawer } from "@/components/shell/MenuDrawer";
-import { ThemeToggle } from "@/components/shell/ThemeToggle";
+import { MenuDrawer } from "@/components/MenuDrawer/MenuDrawer";
+import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
 import { Logo } from "@/components/ui/Logo";
 import { MailIcon, PhoneIcon } from "@/components/ui/icons";
 import { site } from "@/components/data/site";

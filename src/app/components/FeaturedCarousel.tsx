@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { CompositionCover } from "@/components/compositions/CompositionCover";
+import { CompositionCover } from "@/components/CompositionCover/CompositionCover";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/ui/icons";
 import {
   instrumentationLabels,
