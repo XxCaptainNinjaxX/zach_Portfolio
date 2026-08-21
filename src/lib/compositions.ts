@@ -2,7 +2,7 @@ import {
   compositions,
   type Composition,
   type Instrumentation,
-} from "@/content/compositions";
+} from "@/components/data/data";
 
 /**
  * Derived views over the catalogue. Nothing else should sort, filter, or search
@@ -89,3 +89,10 @@ export function getRelated(slug: string, limit = 3): Composition[] {
 export const allSlugs: string[] = compositions.map(
   (composition) => composition.slug,
 );
+
+/** Catalogue filtered to a single instrumentation, newest-first. */
+export function byInstrumentation(family: Instrumentation): Composition[] {
+  return byYearDesc().filter(
+    (composition) => composition.instrumentation === family,
+  );
+}

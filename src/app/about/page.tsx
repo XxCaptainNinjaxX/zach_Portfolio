@@ -3,7 +3,7 @@ import { Divider } from "@/components/ui/Divider";
 import { Portrait } from "@/components/ui/Portrait";
 import { Prose } from "@/components/ui/Prose";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { site } from "@/content/site";
+import { site } from "@/components/data/site";
 
 export const metadata: Metadata = {
   title: "About",

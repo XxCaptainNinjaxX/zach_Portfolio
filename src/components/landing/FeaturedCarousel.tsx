@@ -7,7 +7,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@/components/ui/icons";
 import {
   instrumentationLabels,
   type Composition,
-} from "@/content/compositions";
+} from "@/components/data/data";
 
 type FeaturedCarouselProps = {
   compositions: Composition[];

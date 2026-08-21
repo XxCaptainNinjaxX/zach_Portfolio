@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { navItems, site } from "@/content/site";
+import { navItems, site } from "@/components/data/site";
 import { allSlugs } from "@/lib/compositions";
 
 /**

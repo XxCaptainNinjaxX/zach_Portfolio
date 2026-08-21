@@ -2,7 +2,7 @@ import {
   achievements,
   type Achievement,
   type AchievementKind,
-} from "@/content/achievements";
+} from "@/components/data/data";
 
 /** Derived views over the achievements list. See lib/compositions.ts for the same pattern. */
 

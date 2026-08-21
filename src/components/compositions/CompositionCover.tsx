@@ -3,7 +3,7 @@ import { Flourish } from "@/components/ui/Flourish";
 import {
   instrumentationLabels,
   type Composition,
-} from "@/content/compositions";
+} from "@/components/data/data";
 
 type CompositionCoverProps = {
   composition: Composition;

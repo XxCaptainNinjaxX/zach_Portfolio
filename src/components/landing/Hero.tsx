@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Portrait } from "@/components/ui/Portrait";
-import { site } from "@/content/site";
+import { site } from "@/components/data/site";
 
 /**
  * Portrait plus a short introduction.

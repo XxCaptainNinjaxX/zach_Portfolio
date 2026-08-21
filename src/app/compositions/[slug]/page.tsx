@@ -6,7 +6,7 @@ import { CompositionCover } from "@/components/compositions/CompositionCover";
 import { Divider } from "@/components/ui/Divider";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { MetaRow, type MetaEntry } from "@/components/ui/MetaRow";
-import { instrumentationLabels } from "@/content/compositions";
+import { instrumentationLabels } from "@/components/data/data";
 import { getByCompositionSlug } from "@/lib/achievements";
 import { allSlugs, getBySlug, getRelated } from "@/lib/compositions";
 

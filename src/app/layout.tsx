@@ -5,7 +5,7 @@ import { PageFrame } from "@/components/shell/PageFrame";
 import { SiteFooter } from "@/components/shell/SiteFooter";
 import { SiteHeader } from "@/components/shell/SiteHeader";
 import { ThemeScript } from "@/components/shell/ThemeScript";
-import { site } from "@/content/site";
+import { site } from "@/components/data/site";
 import "./globals.css";
 
 /**

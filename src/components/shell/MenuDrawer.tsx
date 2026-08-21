@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { MenuIcon } from "@/components/ui/icons";
 import { Divider } from "@/components/ui/Divider";
-import { navItems, site } from "@/content/site";
+import { navItems, site } from "@/components/data/site";
 
 /**
  * The site's only navigation, at every breakpoint.

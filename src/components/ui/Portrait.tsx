@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Flourish } from "@/components/ui/Flourish";
-import { site } from "@/content/site";
+import { site } from "@/components/data/site";
 
 type PortraitProps = {
   /** Responsive sizes hint for next/image. */

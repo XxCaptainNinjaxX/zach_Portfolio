@@ -3,7 +3,7 @@ import { CompositionCover } from "@/components/compositions/CompositionCover";
 import {
   instrumentationLabels,
   type Composition,
-} from "@/content/compositions";
+} from "@/components/data/data";
 
 type CompositionCardProps = {
   composition: Composition;

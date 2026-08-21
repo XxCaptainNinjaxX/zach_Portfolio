@@ -3,7 +3,7 @@ import { MenuDrawer } from "@/components/shell/MenuDrawer";
 import { ThemeToggle } from "@/components/shell/ThemeToggle";
 import { Logo } from "@/components/ui/Logo";
 import { MailIcon, PhoneIcon } from "@/components/ui/icons";
-import { site } from "@/content/site";
+import { site } from "@/components/data/site";
 
 /**
  * Logo badge, wordmark, role, contact shortcuts, theme toggle.

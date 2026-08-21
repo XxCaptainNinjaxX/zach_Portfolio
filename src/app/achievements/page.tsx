@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { achievementKindLabels } from "@/content/achievements";
+import { achievementKindLabels } from "@/components/data/data";
 import { groupedByYear } from "@/lib/achievements";
 import { getBySlug } from "@/lib/compositions";
 

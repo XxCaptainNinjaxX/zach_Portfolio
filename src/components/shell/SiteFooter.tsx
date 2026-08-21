@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ExternalLink } from "@/components/ui/ExternalLink";
-import { navItems, site } from "@/content/site";
+import { navItems, site } from "@/components/data/site";
 
 /**
  * ⚠️ VERIFY: the mockup has no footer on any viewport. This is an addition — the

@@ -6,7 +6,7 @@ import {
   instrumentationLabels,
   type Composition,
   type Instrumentation,
-} from "@/content/compositions";
+} from "@/components/data/data";
 
 type CompositionBrowserProps = {
   compositions: Composition[];
