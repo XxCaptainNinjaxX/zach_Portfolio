@@ -1,26 +1,220 @@
 @import "tailwindcss";
 
+/*
+  Theme tokens.
+
+  Dark is the default and lives on bare :root, so the statically prerendered HTML
+  is correct for a first-time visitor with no JavaScript at all. Light is applied
+  by ThemeScript setting [data-theme="light"] on <html> during HTML parsing —
+  before first paint. See src/lib/theme.ts.
+
+  Contrast, measured against the surface each token sits on (WCAG 2.1):
+    dark   gold #C9A227 on #0B1A3A ..... 7.1:1   AA + AAA
+    dark   ink  #F2F4F8 on #0B1A3A ..... 15.5:1  AAA
+    dark   muted #A8B2C6 on #0B1A3A .... 8.0:1   AAA
+    light  gold #7D5F10 on #F4F6FA ..... 5.5:1   AA
+    light  ink  #0B1A3A on #F4F6FA ..... 15.9:1  AAA
+    light  muted #4A5568 on #F4F6FA .... 7.0:1   AA + AAA
+
+  The mockup's gold (#C9A227) scores 2.4:1 on the light background — a clear AA
+  failure — which is why light mode uses a darkened gold for anything that
+  carries meaning. --gold-hairline stays bright in both themes: it only ever
+  draws decorative rules and frames, which are exempt from text contrast rules.
+*/
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+
+  --surface: #0b1a3a;
+  --surface-raised: #10224a;
+  --surface-sunken: #071229;
+
+  --ink: #f2f4f8;
+  --ink-muted: #a8b2c6;
+
+  --gold: #c9a227;
+  --gold-hairline: #8a6f1e;
+  --gold-strong: #e0bd44;
+
+  /* Radial lift behind the hero, matching the mockup's centre-bottom glow. */
+  --surface-glow: rgb(28 58 118 / 0.55);
+
+  --overlay-scrim: rgb(5 12 28 / 0.88);
+  --focus-ring: #e0bd44;
 }
 
+[data-theme="light"] {
+  color-scheme: light;
+
+  --surface: #f4f6fa;
+  --surface-raised: #ffffff;
+  --surface-sunken: #e7ecf5;
+
+  --ink: #0b1a3a;
+  --ink-muted: #4a5568;
+
+  --gold: #7d5f10;
+  --gold-hairline: #b8952f;
+  --gold-strong: #5f4808;
+
+  --surface-glow: rgb(180 198 230 / 0.45);
+
+  --overlay-scrim: rgb(244 246 250 / 0.94);
+  --focus-ring: #5f4808;
+}
+
+/*
+  `inline` is load-bearing: it makes the generated utilities resolve *through*
+  the custom property at runtime rather than baking its value in at build time.
+  That is what lets `bg-surface` mean navy or near-white depending on the
+  [data-theme] attribute, with no `dark:` variant anywhere in component code.
+*/
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-gold: var(--gold);
+  --color-gold-hairline: var(--gold-hairline);
+  --color-gold-strong: var(--gold-strong);
+
+  --font-display: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    background-color: var(--surface);
+  }
+
+  body {
+    background-color: var(--surface);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /*
+    One focus style for the whole site. The default UA ring is invisible on navy,
+    and Tailwind's preflight removes the outline on some elements, so this is set
+    explicitly rather than relied upon.
+  */
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  ::selection {
+    background-color: var(--gold);
+    color: var(--surface);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  /* The wide-tracked caps used for the wordmark, nav, and section headings. */
+  .tracked-caps {
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+  }
+
+  .tracked-caps-tight {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  /*
+    The mockup's double-hairline frame: a bright inner rule with a dimmer outer
+    rule a few pixels out. Drawn with box-shadow rather than nested elements so
+    any element can take the treatment with one class.
+  */
+  .gold-frame {
+    border: 1px solid var(--gold-hairline);
+    box-shadow: 0 0 0 1px var(--surface) inset,
+      0 0 0 4px color-mix(in srgb, var(--gold-hairline) 35%, transparent);
+  }
+
+  /* Heavier version, used only on the carousel's active card. */
+  .gold-frame-strong {
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 0 1px var(--surface) inset,
+      0 0 0 6px color-mix(in srgb, var(--gold) 22%, transparent),
+      0 18px 50px -12px rgb(0 0 0 / 0.55);
+  }
+
+  .surface-glow {
+    background-image: radial-gradient(
+      ellipse 90% 70% at 50% 78%,
+      var(--surface-glow) 0%,
+      transparent 70%
+    );
+  }
+
+  /*
+    Coverflow depth for the featured carousel.
+
+    Driven by scroll position rather than React state: `animation-timeline: view(x)`
+    maps each card's progress across the scrollport onto the keyframes below, so
+    the card at the centre is full size and its neighbours fall away. No JS is
+    involved in the visual, which means it stays in sync during a touch drag,
+    momentum scroll, and trackpad fling — all of which a state-driven transform
+    implementation has to chase and gets wrong.
+
+    Browsers without scroll-driven animation support fall through to a flat,
+    evenly-sized scrolling row. Degraded, still correct, still usable.
+  */
+  .coverflow-track {
+    perspective: 1200px;
+  }
+
+  @supports (animation-timeline: view(x)) {
+    @media (prefers-reduced-motion: no-preference) {
+      .coverflow-card {
+        animation: coverflow-depth linear both;
+        animation-timeline: view(x);
+      }
+    }
+  }
+
+  /* Horizontal scroll track that hides its scrollbar without disabling scrolling. */
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes coverflow-depth {
+  0% {
+    transform: scale(0.74) rotateY(24deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1) rotateY(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.74) rotateY(-24deg);
+    opacity: 0.4;
+  }
+}
+
+/*
+  Global motion opt-out. Individual components also branch on reduced motion for
+  scroll behaviour (which CSS cannot reach), but this covers every transition and
+  animation in one place so a new component cannot forget.
+*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
