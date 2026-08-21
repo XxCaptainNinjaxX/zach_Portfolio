@@ -12,10 +12,16 @@ import { site } from "@/content/site";
  * beneath — matching the mockup. Note the mockup's mobile header drops the theme
  * toggle entirely, which would make light mode unreachable on a phone; it is
  * kept here deliberately.
+ *
+ * Sticky, and it owns the top inset that used to live on the layout wrapper —
+ * that is what lets it pin flush to the viewport edge with no gap for scrolled
+ * content to appear in above it. z-30 keeps it under PageFrame's gold rule (z-40)
+ * and under the MobileNav overlay (z-50). The translucent background plus blur is
+ * so the body's radial glow reads through rather than being cut by a flat band.
  */
 export function SiteHeader() {
   return (
-    <header className="border-b border-gold-hairline/40">
+    <header className="sticky top-0 z-30 bg-surface/90 pt-3 backdrop-blur-md sm:pt-5">
       <div className="flex items-center gap-4 px-5 py-4 sm:px-8">
         <Link
           href="/"
@@ -49,12 +55,20 @@ export function SiteHeader() {
             </a>
           ) : null}
 
+          {/*
+            The site's only contact surface — there is no /contact route. The
+            address shows from `sm` up; below that it is too long for the header
+            row, and the mobile overlay ends with the same address anyway.
+          */}
           <a
             href={`mailto:${site.email}`}
             aria-label={`Email ${site.name}`}
-            className="inline-flex size-9 items-center justify-center text-ink-muted transition-colors hover:text-gold"
+            className="inline-flex items-center gap-2 px-1 text-ink-muted transition-colors hover:text-gold sm:px-2"
           >
             <MailIcon />
+            <span className="tracked-caps-tight hidden text-[0.65rem] sm:inline">
+              {site.email}
+            </span>
           </a>
 
           <ThemeToggle />

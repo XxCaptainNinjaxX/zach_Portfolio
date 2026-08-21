@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useSyncExternalStore } from "react";
+import { type MouseEvent, useEffect, useSyncExternalStore } from "react";
 import { MoonIcon, SunIcon } from "@/components/ui/icons";
 import {
   applyTheme,
@@ -8,14 +8,9 @@ import {
   readStoredTheme,
   THEME_CHANGE_EVENT,
   type Theme,
+  transitionTheme,
 } from "@/lib/theme";
 
-/**
- * Notifies subscribers when the theme changes.
- *
- * `storage` covers other tabs (the browser only fires it cross-document); the
- * custom event covers this one. Together they keep every open tab in sync.
- */
 function subscribe(onStoreChange: () => void): () => void {
   window.addEventListener(THEME_CHANGE_EVENT, onStoreChange);
   window.addEventListener("storage", onStoreChange);
@@ -29,21 +24,6 @@ function getServerSnapshot(): Theme {
   return DEFAULT_THEME;
 }
 
-/**
- * Two-state dark/light switch, matching the mockup's pill toggle.
- *
- * useSyncExternalStore rather than useState + useEffect, because the theme is
- * genuinely external state: it lives in localStorage and on the <html> element,
- * both unreachable during server render. This hook is the one API that handles
- * exactly that shape — React renders getServerSnapshot() during hydration so the
- * markup matches the server, then swaps to the client snapshot immediately
- * afterwards *without* reporting a hydration mismatch.
- *
- * The alternatives both misbehave: a lazy useState initialiser reading
- * localStorage renders different markup than the server sent (hydration error,
- * which makes React re-render the subtree and reintroduces the flash), and
- * setState-in-an-effect causes a cascading render.
- */
 export function ThemeToggle() {
   const theme = useSyncExternalStore(
     subscribe,
@@ -52,16 +32,20 @@ export function ThemeToggle() {
   );
 
   useEffect(() => {
-    // Re-apply the attribute after React's Strict Mode remount. In development
-    // React remounts once and, on that remount, resets <html> to only the
-    // attributes it manages from JSX — wiping the one ThemeScript set during
-    // parsing. A no-op in production, but without it dev looks broken in a
-    // misleading way. Writing to the DOM, not to React state.
     applyTheme(readStoredTheme(), { notify: false });
   }, []);
 
-  function handleToggle() {
-    applyTheme(theme === "dark" ? "light" : "dark");
+  function handleToggle(event: MouseEvent<HTMLButtonElement>) {
+    // The wipe grows from the control's centre, so the animation reads as coming
+    // out of the thing that was pressed. Keyboard activation fires a click with
+    // no useful pointer coordinates, which is why this measures the element
+    // rather than reading event.clientX/Y.
+    const bounds = event.currentTarget.getBoundingClientRect();
+
+    transitionTheme(theme === "dark" ? "light" : "dark", {
+      x: bounds.left + bounds.width / 2,
+      y: bounds.top + bounds.height / 2,
+    });
   }
 
   const isDark = theme === "dark";
@@ -74,16 +58,28 @@ export function ThemeToggle() {
       aria-checked={isDark}
       aria-label="Dark mode"
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="relative inline-flex h-7 w-14 shrink-0 items-center rounded-full border border-gold-hairline bg-surface-sunken px-1 transition-colors"
+      className="relative inline-flex h-8 w-18 shrink-0 cursor-pointer items-center rounded-full border border-gold-hairline/60 bg-surface-sunken px-1"
     >
+      {/* Both icons sit in the track; the opaque knob covers whichever side it rests on. */}
       <span
         aria-hidden="true"
-        className={`inline-flex size-5 items-center justify-center rounded-full bg-gold text-surface transition-transform duration-200 ${
-          isDark ? "translate-x-7" : "translate-x-0"
-        }`}
+        className="pointer-events-none absolute inset-y-0 left-0 flex w-1/2 items-center justify-center text-gold-hairline"
       >
-        {isDark ? <MoonIcon /> : <SunIcon />}
+        <SunIcon />
       </span>
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 right-0 flex w-1/2 items-center justify-center text-gold-hairline"
+      >
+        <MoonIcon />
+      </span>
+
+      <span
+        aria-hidden="true"
+        className={`relative size-6 rounded-full bg-gold shadow-[0_1px_4px_rgb(0_0_0/0.45)] transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
+          isDark ? "translate-x-0" : "translate-x-10"
+        }`}
+      />
     </button>
   );
 }

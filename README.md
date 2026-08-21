@@ -59,7 +59,6 @@ src/
     ui/         Flourish, Logo, Portrait, headings, icons, primitives
     landing/    hero, featured carousel
     compositions/  card, cover, catalogue browser
-    contact/    copy-email button
   content/      site.ts, compositions.ts, achievements.ts  ← edit these
   lib/          derived views over content, theme storage
 ```
@@ -69,7 +68,11 @@ src/
 **No server features.** No Server Actions, Route Handlers, `cookies()`, or
 `headers()`. This keeps `output: 'export'` available as a one-line hosting escape
 hatch, which is what makes the Vercel licensing question in `PLAN.md` §9
-deferrable rather than urgent. Contact is a `mailto:` link for the same reason.
+deferrable rather than urgent.
+
+**No contact route.** Contact is the `mailto:` link in `SiteHeader`, and nothing
+else. `PLAN.md` §3, §6, and §11 still describe a `/contact` page and a
+copy-to-clipboard button; both were removed.
 
 **Theme.** Dark is the default and is baked into the prerendered HTML. A blocking
 inline script in `<head>` applies a stored light preference during HTML parsing,

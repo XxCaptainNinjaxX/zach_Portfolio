@@ -18,7 +18,9 @@ export function RailNav() {
   return (
     <nav
       aria-label="Main"
-      className="hidden w-14 shrink-0 border-l border-gold-hairline/50 lg:flex lg:flex-col"
+      // The top inset the layout wrapper used to supply, so the first item still
+      // lines up with the header now that the wrapper has no top padding.
+      className="hidden w-14 shrink-0 border-l border-gold-hairline/50 pt-3 sm:pt-5 lg:flex lg:flex-col"
     >
       {navItems.map((item) => {
         const isActive =

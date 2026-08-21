@@ -1,40 +1,13 @@
-/**
- * Theme storage and the blocking script that applies it before first paint.
- *
- * Shared by ThemeScript (server, renders the string into <head>) and ThemeToggle
- * (client, reads and writes the same key). Both must agree on the key and the
- * attribute or the toggle desynchronises from what the script applied.
- */
-
 export type Theme = "dark" | "light";
 
 export const THEME_STORAGE_KEY = "zc-theme";
 export const THEME_ATTRIBUTE = "data-theme";
-
-/**
- * Dispatched on the window after a same-tab theme change.
- *
- * The browser's own `storage` event only fires in *other* documents, so a tab
- * that changes the theme never hears about it. This event fills that gap and is
- * what ThemeToggle's useSyncExternalStore subscribes to.
- */
 export const THEME_CHANGE_EVENT = "zc-theme-change";
-
-/** First visit is always dark. The design is authored dark; light is a courtesy mode. */
 export const DEFAULT_THEME: Theme = "dark";
 
 export function isTheme(value: unknown): value is Theme {
   return value === "dark" || value === "light";
 }
-
-/**
- * Minified on purpose — this string is inlined into <head> and blocks parsing,
- * so every byte is paid for on every page load.
- *
- * The try/catch is not optional: localStorage throws in Safari private mode and
- * under some cookie blockers, and an uncaught throw in a blocking head script
- * aborts the rest of the parse.
- */
 export const themeScriptSource = `(function(){try{var stored=localStorage.getItem("${THEME_STORAGE_KEY}");if(stored==="dark"||stored==="light"){document.documentElement.setAttribute("${THEME_ATTRIBUTE}",stored)}}catch(error){}})()`;
 
 /** Reads the stored preference. Returns the default when unset or unreadable. */
@@ -47,20 +20,50 @@ export function readStoredTheme(): Theme {
   }
 }
 
+export const THEME_TRANSITION_ATTRIBUTE = "data-theme-transition";
+
+const THEME_TRANSITION_TIMEOUT_MS = 700;
+
+let transitionTimer: number | undefined;
+
 type ApplyThemeOptions = {
   /**
    * Whether to tell subscribers. Set false when only re-asserting a value that
    * has not changed — notifying then would be a redundant render.
    */
   notify?: boolean;
+  /**
+   * Cross-fade the colour change. Off by default: applyTheme also runs on mount
+   * to re-assert the attribute after a Strict Mode remount, and animating that
+   * would fire a fade on every page load in development.
+   */
+  animate?: boolean;
 };
 
 /** Applies to the DOM and persists. Persistence failing must not block the visual change. */
 export function applyTheme(
   theme: Theme,
-  { notify = true }: ApplyThemeOptions = {},
+  { notify = true, animate = false }: ApplyThemeOptions = {},
 ): void {
-  document.documentElement.setAttribute(THEME_ATTRIBUTE, theme);
+  const root = document.documentElement;
+
+  if (animate) {
+    root.setAttribute(THEME_TRANSITION_ATTRIBUTE, "");
+
+    // Force a style flush so the transition declaration is in the computed style
+    // *before* the colours change. Landing both in one recalculation leaves
+    // whether the transition fires up to the engine, and they disagree.
+    void getComputedStyle(root).backgroundColor;
+
+    // Cleared first: without this, double-clicking the toggle lets the earlier
+    // timer strip the attribute part-way through the second fade.
+    window.clearTimeout(transitionTimer);
+    transitionTimer = window.setTimeout(() => {
+      root.removeAttribute(THEME_TRANSITION_ATTRIBUTE);
+    }, THEME_TRANSITION_TIMEOUT_MS);
+  }
+
+  root.setAttribute(THEME_ATTRIBUTE, theme);
 
   try {
     window.localStorage.setItem(THEME_STORAGE_KEY, theme);
@@ -72,4 +75,80 @@ export function applyTheme(
   if (notify) {
     window.dispatchEvent(new Event(THEME_CHANGE_EVENT));
   }
+}
+
+/** Viewport coordinates the wipe grows from — the centre of the control that was pressed. */
+export type TransitionOrigin = {
+  x: number;
+  y: number;
+};
+
+/** Kept in sync with the colour-fade duration in globals.css by intent, not by machinery. */
+const THEME_WIPE_DURATION_MS = 670;
+
+/** Distance from the origin to the farthest viewport corner — how far the circle must grow to cover the screen. */
+function radiusToFarthestCorner({ x, y }: TransitionOrigin): number {
+  return Math.hypot(
+    Math.max(x, window.innerWidth - x),
+    Math.max(y, window.innerHeight - y),
+  );
+}
+
+/**
+ * Changes the theme behind a circular wipe growing from `origin`.
+ *
+ * The View Transitions API snapshots the page before and after, so the new theme
+ * is revealed through an expanding clip-path over the old one. That is the whole
+ * trick: nothing is re-rendered twice, and the two states are real screenshots,
+ * so every element crosses over together instead of each tweening its own colour.
+ *
+ * Where the API is missing, or the visitor asked for reduced motion, this falls
+ * through to applyTheme — which cross-fades the colour tokens instead, or snaps
+ * them instantly under reduced motion. Both are correct end states; only the
+ * theatre differs.
+ */
+export function transitionTheme(theme: Theme, origin: TransitionOrigin): void {
+  const root = document.documentElement;
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  if (
+    prefersReducedMotion ||
+    typeof document.startViewTransition !== "function"
+  ) {
+    applyTheme(theme, { animate: !prefersReducedMotion });
+    return;
+  }
+
+  const radius = radiusToFarthestCorner(origin);
+
+  const viewTransition = document.startViewTransition(() => {
+    // Instant inside the callback: the wipe is doing the animating, and a
+    // simultaneous colour tween would animate the new snapshot as well.
+    applyTheme(theme, { animate: false });
+  });
+
+  viewTransition.ready
+    .then(() => {
+      root.animate(
+        {
+          clipPath: [
+            `circle(0px at ${origin.x}px ${origin.y}px)`,
+            `circle(${radius}px at ${origin.x}px ${origin.y}px)`,
+          ],
+        },
+        {
+          duration: THEME_WIPE_DURATION_MS,
+          easing: "ease-in-out",
+          // Clip the incoming snapshot only; the outgoing one stays put beneath it.
+          pseudoElement: "::view-transition-new(root)",
+        },
+      );
+    })
+    .catch(() => {
+      // `ready` rejects when the transition is skipped — a second toggle
+      // mid-wipe, or the tab being hidden. The theme is already applied by then,
+      // so there is nothing to recover.
+    });
 }

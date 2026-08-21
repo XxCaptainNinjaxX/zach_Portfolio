@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Divider } from "@/components/ui/Divider";
 import { Portrait } from "@/components/ui/Portrait";
 import { Prose } from "@/components/ui/Prose";
@@ -38,12 +37,12 @@ export default function AboutPage() {
               fastest route is email.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3">
-              <Link
-                href="/contact"
+              <a
+                href={`mailto:${site.email}`}
                 className="tracked-caps-tight border-b border-gold pb-1 text-[0.65rem] text-gold transition-opacity hover:opacity-70"
               >
                 Get in touch
-              </Link>
+              </a>
               {site.cvPath ? (
                 <a
                   href={site.cvPath}

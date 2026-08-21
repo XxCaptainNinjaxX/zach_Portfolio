@@ -86,7 +86,12 @@ export default function RootLayout({
           Skip to content
         </a>
 
-        <div className="flex min-h-full flex-1 p-3 sm:p-5">
+        {/*
+          No top padding: SiteHeader and RailNav each supply their own, so the
+          header can stick at the true viewport top without leaving a strip for
+          scrolled content to show through above it.
+        */}
+        <div className="flex min-h-full flex-1 px-3 pb-3 sm:px-5 sm:pb-5">
           <div className="flex min-w-0 flex-1 flex-col">
             <SiteHeader />
             <main id="main" className="flex-1">

@@ -204,6 +204,70 @@
 }
 
 /*
+  Theme wipe.
+
+  The browser's default root view transition is a cross-fade between the two
+  snapshots. That fights the circular clip-path in transitionTheme, so both
+  default animations are switched off here: the old snapshot sits still while the
+  new one is revealed through the growing circle.
+
+  The z-index pair is load-bearing — without it the outgoing snapshot paints on
+  top and the wipe is invisible. mix-blend-mode is reset because the default
+  (`normal` on top of a plate that itself blends) leaves the two snapshots
+  translucent against each other mid-transition.
+*/
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+}
+
+/*
+  Theme cross-fade — the fallback path.
+
+  Used where View Transitions are unavailable, so the theme still changes over
+  time rather than in one frame.
+
+  Gated behind an attribute that exists only for the duration of a toggle (set and
+  cleared by applyTheme in src/lib/theme.ts). If this transition lived permanently on
+  `*`, every hover and focus colour change on the site would inherit 670ms and the UI
+  would feel waterlogged, and any element entering the DOM — a route change, a carousel
+  card — would fade its colours in from nothing.
+
+  The reduced-motion guard is written here rather than left to the global clamp below:
+  `[data-theme-transition] *` outranks the bare `*` that clamp uses, so with both marked
+  !important this rule would win and override the user's stated preference. Scoping it
+  inside no-preference makes that impossible.
+
+  !important is needed because components carry their own `transition-colors` (150ms),
+  which has equal specificity and lands in a later cascade layer. `transform` is left out
+  on purpose so the toggle knob keeps its own 300ms overshoot.
+*/
+@media (prefers-reduced-motion: no-preference) {
+  [data-theme-transition],
+  [data-theme-transition] *,
+  [data-theme-transition] *::before,
+  [data-theme-transition] *::after {
+    transition:
+      background-color 670ms ease,
+      border-color 670ms ease,
+      color 670ms ease,
+      fill 670ms ease,
+      stroke 670ms ease,
+      box-shadow 670ms ease !important;
+    transition-delay: 0s !important;
+  }
+}
+
+/*
   Global motion opt-out. Individual components also branch on reduced motion for
   scroll behaviour (which CSS cannot reach), but this covers every transition and
   animation in one place so a new component cannot forget.
