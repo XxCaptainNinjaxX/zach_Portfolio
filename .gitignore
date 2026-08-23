@@ -40,6 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# phase-3 Tailwind ground-truth snapshot (regenerable from a pre-batch-8 build)
+tailwind-reference.css
+
 
 
 Claude_local
