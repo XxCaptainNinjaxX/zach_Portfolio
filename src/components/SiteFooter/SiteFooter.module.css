@@ -1,0 +1,65 @@
+.footer {
+  border-top-width: 1px;
+  border-top-style: solid;
+  /* Full-opacity fallback for browsers without color-mix; see tailwind-reference.md §3. */
+  border-top-color: var(--gold-hairline);
+  border-top-color: color-mix(in oklab, var(--gold-hairline) 40%, transparent);
+  padding-inline: var(--space-5);
+  padding-block: var(--space-8);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+@media (min-width: 40rem) {
+  .footer {
+    padding-inline: var(--space-8);
+  }
+
+  .inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Shared by the nav and the socials list — identical rows in the mockup. */
+.linkRow {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--space-6);
+  row-gap: var(--space-2);
+}
+
+.navLink {
+  font-size: var(--text-2xs);
+  color: var(--ink-muted);
+  transition-property: color, background-color, border-color, outline-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+@media (hover: hover) {
+  .navLink:hover {
+    color: var(--gold);
+  }
+}
+
+/*
+  No text-decoration here on purpose: the Tailwind version passed `no-underline`,
+  but ExternalLink's own `underline` won the cascade, so these have always
+  rendered underlined. Preserving the rendered output, not the dead intent.
+*/
+.socialLink {
+  font-size: var(--text-2xs);
+  color: var(--ink-muted);
+}
+
+.copyright {
+  font-size: var(--text-2xs);
+  color: var(--ink-muted);
+}

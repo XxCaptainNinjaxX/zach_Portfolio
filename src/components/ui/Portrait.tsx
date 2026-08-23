@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Flourish } from "@/components/ui/Flourish";
 import { site } from "@/components/data/site";
+import styles from "@/components/ui/Portrait.module.css";
 
 type PortraitProps = {
   /** Responsive sizes hint for next/image. */
@@ -25,7 +26,7 @@ export function Portrait({
 }: PortraitProps) {
   return (
     <figure className={className}>
-      <div className="gold-frame relative aspect-square w-full overflow-hidden">
+      <div className={`gold-frame ${styles.frame}`}>
         {site.portrait.src ? (
           <Image
             src={site.portrait.src}
@@ -33,12 +34,12 @@ export function Portrait({
             fill
             sizes={sizes}
             priority={priority}
-            className="object-cover"
+            className={styles.image}
           />
         ) : (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-surface-sunken">
-            <Flourish className="absolute inset-y-0 left-1/2 h-full -translate-x-1/2 text-gold opacity-15" />
-            <p className="tracked-caps relative text-[0.6rem] text-gold">
+          <div className={styles.placeholder}>
+            <Flourish className={styles.flourish} />
+            <p className={`tracked-caps ${styles.label}`}>
               Photograph pending
             </p>
           </div>
@@ -46,7 +47,7 @@ export function Portrait({
       </div>
 
       {site.portrait.credit ? (
-        <figcaption className="mt-3 text-[0.65rem] text-ink-muted">
+        <figcaption className={styles.credit}>
           Photograph by {site.portrait.credit}
         </figcaption>
       ) : null}

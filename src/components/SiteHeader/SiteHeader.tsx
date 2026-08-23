@@ -4,6 +4,7 @@ import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
 import { Logo } from "@/components/ui/Logo";
 import { MailIcon, PhoneIcon } from "@/components/ui/icons";
 import { site } from "@/components/data/site";
+import styles from "@/components/SiteHeader/SiteHeader.module.css";
 
 /**
  * Logo badge, wordmark, role, contact shortcuts, theme toggle.
@@ -21,7 +22,7 @@ import { site } from "@/components/data/site";
  */
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-30 pt-3 sm:pt-5">
+    <header className={styles.header}>
       {/*
         The translucent band is its own layer rather than a background on
         <header>, because backdrop-filter makes an element the containing block
@@ -31,39 +32,29 @@ export function SiteHeader() {
         The blur is so the body's radial glow reads through rather than being cut
         by a flat band.
       */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-surface/90 backdrop-blur-md"
-      />
+      <div aria-hidden="true" className={styles.band} />
 
-      <div className="flex items-center gap-4 px-5 py-4 sm:px-8">
+      <div className={styles.row}>
         <Link
           href="/"
-          className="flex min-w-0 items-center gap-4"
+          className={styles.homeLink}
           aria-label={`${site.name} — home`}
         >
-          <Logo size={48} className="sm:size-14" />
+          <Logo size={48} className={styles.logo} />
 
-          <span className="hidden min-w-0 items-baseline gap-4 lg:flex">
-            <span className="tracked-caps truncate font-display text-2xl font-light text-ink xl:text-3xl">
-              {site.name}
-            </span>
-            <span
-              aria-hidden="true"
-              className="h-6 w-px shrink-0 self-center bg-gold-hairline"
-            />
-            <span className="tracked-caps truncate font-display text-lg font-light text-ink-muted xl:text-xl">
-              {site.role}
-            </span>
+          <span className={styles.wordmark}>
+            <span className={`tracked-caps ${styles.name}`}>{site.name}</span>
+            <span aria-hidden="true" className={styles.separator} />
+            <span className={`tracked-caps ${styles.role}`}>{site.role}</span>
           </span>
         </Link>
 
-        <div className="ml-auto flex items-center gap-1 sm:gap-3">
+        <div className={styles.controls}>
           {site.phone ? (
             <a
               href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}
               aria-label={`Call ${site.name}`}
-              className="inline-flex size-9 items-center justify-center text-ink-muted transition-colors hover:text-gold"
+              className={styles.phoneLink}
             >
               <PhoneIcon />
             </a>
@@ -77,10 +68,10 @@ export function SiteHeader() {
           <a
             href={`mailto:${site.email}`}
             aria-label={`Email ${site.name}`}
-            className="inline-flex items-center gap-2 px-1 text-ink-muted transition-colors hover:text-gold sm:px-2"
+            className={styles.mailLink}
           >
             <MailIcon />
-            <span className="tracked-caps-tight hidden text-[0.65rem] sm:inline">
+            <span className={`tracked-caps-tight ${styles.mailText}`}>
               {site.email}
             </span>
           </a>
@@ -91,13 +82,9 @@ export function SiteHeader() {
       </div>
 
       {/* Mobile wordmark row. */}
-      <div className="px-5 pb-4 text-center lg:hidden">
-        <p className="tracked-caps font-display text-base font-light text-ink sm:text-xl">
-          {site.name}
-        </p>
-        <p className="tracked-caps mt-1 font-display text-[0.65rem] font-light text-ink-muted sm:text-xs">
-          {site.role}
-        </p>
+      <div className={styles.mobileRow}>
+        <p className={`tracked-caps ${styles.mobileName}`}>{site.name}</p>
+        <p className={`tracked-caps ${styles.mobileRole}`}>{site.role}</p>
       </div>
     </header>
   );

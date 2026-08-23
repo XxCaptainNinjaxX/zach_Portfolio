@@ -1,0 +1,167 @@
+.trigger {
+  position: relative;
+  z-index: 50;
+  display: inline-flex;
+  width: 2.25rem;
+  height: 2.25rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-muted);
+  transition-property: color, background-color, border-color, outline-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+@media (hover: hover) {
+  .trigger:hover {
+    color: var(--gold);
+  }
+}
+
+.triggerIcon {
+  transition-property: transform, translate, scale, rotate;
+  transition-timing-function: var(--ease-overshoot);
+  transition-duration: 300ms;
+}
+
+.triggerIconOpen {
+  rotate: 90deg;
+  color: var(--gold);
+}
+
+.triggerIconClosed {
+  rotate: none;
+}
+
+.scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background-color: var(--overlay-scrim);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 220ms;
+}
+
+.scrimOpen {
+  opacity: 1;
+}
+
+.scrimClosed {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.panel {
+  position: fixed;
+  inset-block: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  width: 100%;
+  max-width: 22.5rem;
+  flex-direction: column;
+  border-left-width: 1px;
+  border-left-style: solid;
+  /* Full-opacity fallback for browsers without color-mix; see tailwind-reference.md §3. */
+  border-left-color: var(--gold-hairline);
+  border-left-color: color-mix(in oklab, var(--gold-hairline) 50%, transparent);
+  background-color: var(--surface);
+  padding-inline: var(--space-8);
+  padding-block: var(--space-6);
+  /* `translate`, not `transform` — see the comment in MenuDrawer.tsx. */
+  transition-property: translate, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 220ms;
+}
+
+.panelOpen {
+  translate: 0 0;
+  opacity: 1;
+}
+
+.panelClosed {
+  translate: 100% 0;
+  opacity: 0.6;
+}
+
+.nav {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+/*
+  The transition-property order is load-bearing: the inline transitionDelay list
+  in MenuDrawer.tsx matches these five properties positionally.
+*/
+.navLink {
+  border-left-width: 2px;
+  border-left-style: solid;
+  padding-block: var(--space-5);
+  padding-left: var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  line-height: calc(1.75 / 1.125);
+  transition-property: color, background-color, border-color, translate, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 220ms;
+}
+
+.navLinkOpen {
+  translate: 0 0;
+  opacity: 1;
+}
+
+.navLinkClosed {
+  translate: var(--space-4) 0;
+  opacity: 0;
+}
+
+.navLinkActive {
+  border-left-color: var(--gold);
+  background-color: var(--surface-raised);
+  color: var(--gold);
+}
+
+.navLinkInactive {
+  border-left-color: transparent;
+  color: var(--ink);
+}
+
+@media (hover: hover) {
+  .navLinkInactive:hover {
+    border-left-color: var(--gold-hairline);
+    color: var(--gold);
+  }
+}
+
+.panelFooter {
+  padding-bottom: var(--space-4);
+}
+
+.divider {
+  margin-bottom: var(--space-6);
+}
+
+.emailLink {
+  font-size: var(--text-xs);
+  line-height: calc(1 / 0.75);
+  color: var(--ink-muted);
+  transition-property: color, background-color, border-color, outline-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+@media (hover: hover) {
+  .emailLink:hover {
+    color: var(--gold);
+  }
+}

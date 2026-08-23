@@ -4,6 +4,7 @@ import {
   instrumentationLabels,
   type Composition,
 } from "@/components/data/data";
+import styles from "@/components/CompositionCover/CompositionCover.module.css";
 
 type CompositionCoverProps = {
   composition: Composition;
@@ -34,20 +35,16 @@ export function CompositionCover({
         alt={composition.cover.alt}
         fill
         sizes={sizes}
-        className={`object-cover ${className ?? ""}`}
+        className={`${styles.image} ${className ?? ""}`}
       />
     );
   }
 
   return (
-    <span
-      className={`absolute inset-0 flex flex-col items-center justify-center overflow-hidden bg-surface-sunken px-5 text-center ${className ?? ""}`}
-    >
-      <Flourish className="absolute inset-y-0 left-1/2 h-full -translate-x-1/2 text-gold opacity-15" />
-      <span className="relative font-display text-xl leading-tight font-light text-ink">
-        {composition.title}
-      </span>
-      <span className="tracked-caps relative mt-3 text-[0.6rem] text-gold">
+    <span className={`${styles.placeholder} ${className ?? ""}`}>
+      <Flourish className={styles.flourish} />
+      <span className={styles.placeholderTitle}>{composition.title}</span>
+      <span className={`tracked-caps ${styles.placeholderMeta}`}>
         {composition.year} ·{" "}
         {instrumentationLabels[composition.instrumentation]}
       </span>

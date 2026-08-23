@@ -1,0 +1,17 @@
+.frame {
+  pointer-events: none;
+  position: fixed;
+  inset: var(--space-3);
+  z-index: 20;
+  border-width: 1px;
+  border-style: solid;
+  /* Full-opacity fallback for browsers without color-mix; see tailwind-reference.md §3. */
+  border-color: var(--gold-hairline);
+  border-color: color-mix(in oklab, var(--gold-hairline) 70%, transparent);
+}
+
+@media (min-width: 40rem) {
+  .frame {
+    inset: var(--space-5);
+  }
+}

@@ -6,6 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { MenuIcon } from "@/components/ui/icons";
 import { Divider } from "@/components/ui/Divider";
 import { navItems, site } from "@/components/data/site";
+import styles from "@/components/MenuDrawer/MenuDrawer.module.css";
 
 /**
  * The site's only navigation, at every breakpoint.
@@ -91,7 +92,7 @@ export function MenuDrawer() {
         aria-label={isOpen ? "Close menu" : "Open menu"}
         aria-expanded={isOpen}
         aria-controls="site-menu"
-        className="relative z-50 inline-flex size-9 cursor-pointer items-center justify-center text-ink-muted transition-colors hover:text-gold"
+        className={styles.trigger}
       >
         {/*
           The icon is one path of three bars drawn symmetrically about the 24×24
@@ -100,8 +101,8 @@ export function MenuDrawer() {
           past vertical and settle.
         */}
         <MenuIcon
-          className={`transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
-            isOpen ? "rotate-90 text-gold" : "rotate-0"
+          className={`${styles.triggerIcon} ${
+            isOpen ? styles.triggerIconOpen : styles.triggerIconClosed
           }`}
         />
       </button>
@@ -116,8 +117,8 @@ export function MenuDrawer() {
       <div
         aria-hidden="true"
         onClick={close}
-        className={`fixed inset-0 z-40 bg-(--overlay-scrim) backdrop-blur-sm transition-opacity duration-220 ease-in-out ${
-          isOpen ? "opacity-100" : "pointer-events-none opacity-0"
+        className={`${styles.scrim} ${
+          isOpen ? styles.scrimOpen : styles.scrimClosed
         }`}
       />
 
@@ -128,13 +129,14 @@ export function MenuDrawer() {
         aria-modal="true"
         aria-label="Main menu"
         inert={!isOpen}
-        // `translate`, not `transform`: Tailwind v4 compiles translate-x-* to the
-        // individual `translate` property, so a transition list naming `transform`
-        // animates nothing and the panel jumps into place in one frame.
-        className={`fixed inset-y-0 right-0 z-40 flex w-full max-w-90 flex-col border-l border-gold-hairline/50 bg-surface px-8 py-6 transition-[translate,opacity] duration-220 ease-in-out ${
+        // `translate`, not `transform`: the open/closed classes set the
+        // individual `translate` property, so a transition list naming
+        // `transform` animates nothing and the panel jumps into place in one
+        // frame.
+        className={`${styles.panel} ${
           // Closed sits at 0.6 rather than 0: the panel slides in already mostly
           // opaque, so the motion reads as the edge arriving rather than a fade.
-          isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-60"
+          isOpen ? styles.panelOpen : styles.panelClosed
         }`}
       >
         {/*
@@ -142,10 +144,7 @@ export function MenuDrawer() {
           empty space. That header is two rows on mobile and one on desktop —
           anchoring the links to the top would mean measuring it.
         */}
-        <nav
-          aria-label="Main"
-          className="flex flex-1 flex-col justify-center gap-2"
-        >
+        <nav aria-label="Main" className={styles.nav}>
           {navItems.map((item, index) => {
             const isActive =
               pathname === item.href || pathname.startsWith(`${item.href}/`);
@@ -164,24 +163,19 @@ export function MenuDrawer() {
                 onClick={close}
                 aria-current={isActive ? "page" : undefined}
                 // One delay per property, positionally matched to the
-                // transition-property list on the class below: the three colours
-                // stay instant so hover does not lag, and only the entrance
-                // staggers. Zero on the way out, otherwise closing drags.
+                // transition-property list on .navLink in the module: the three
+                // colours stay instant so hover does not lag, and only the
+                // entrance staggers. Zero on the way out, otherwise closing
+                // drags.
                 style={{
                   transitionDelay: isOpen
                     ? `0ms,0ms,0ms,${entranceDelay}ms,${entranceDelay}ms`
                     : "0ms",
                 }}
                 // `translate` rather than `transform` — see the panel above.
-                className={`tracked-caps border-l-2 py-5 pl-4 font-display text-lg transition-[color,background-color,border-color,translate,opacity] duration-220 ${
-                  isOpen
-                    ? "translate-x-0 opacity-100"
-                    : "translate-x-4 opacity-0"
-                } ${
-                  isActive
-                    ? "border-gold bg-surface-raised text-gold"
-                    : "border-transparent text-ink hover:border-gold-hairline hover:text-gold"
-                }`}
+                className={`tracked-caps ${styles.navLink} ${
+                  isOpen ? styles.navLinkOpen : styles.navLinkClosed
+                } ${isActive ? styles.navLinkActive : styles.navLinkInactive}`}
               >
                 {item.label}
               </Link>
@@ -189,12 +183,12 @@ export function MenuDrawer() {
           })}
         </nav>
 
-        <div className="pb-4">
-          <Divider className="mb-6" />
+        <div className={styles.panelFooter}>
+          <Divider className={styles.divider} />
           <a
             href={`mailto:${site.email}`}
             onClick={close}
-            className="tracked-caps-tight text-xs text-ink-muted transition-colors hover:text-gold"
+            className={`tracked-caps-tight ${styles.emailLink}`}
           >
             {site.email}
           </a>

@@ -1,0 +1,30 @@
+.badge {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--gold);
+  background-color: var(--surface-sunken);
+}
+
+.flourish {
+  position: absolute;
+  inset-block: 0;
+  left: 50%;
+  height: 100%;
+  translate: -50% 0;
+  color: var(--gold);
+  opacity: 0.4;
+}
+
+.monogram {
+  position: relative;
+  font-family: var(--font-display);
+  line-height: 1;
+  color: var(--gold);
+}

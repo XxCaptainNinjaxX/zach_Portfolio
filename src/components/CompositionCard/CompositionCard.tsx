@@ -4,6 +4,7 @@ import {
   instrumentationLabels,
   type Composition,
 } from "@/components/data/data";
+import styles from "@/components/CompositionCard/CompositionCard.module.css";
 
 type CompositionCardProps = {
   composition: Composition;
@@ -22,22 +23,20 @@ export function CompositionCard({
   return (
     <Link
       href={`/compositions/${composition.slug}`}
-      className={`group flex flex-col ${className ?? ""}`}
+      className={`${styles.card} ${className ?? ""}`}
     >
-      <span className="gold-frame relative block aspect-square w-full overflow-hidden">
+      <span className={`gold-frame ${styles.cover}`}>
         <CompositionCover composition={composition} />
       </span>
 
-      <span className="mt-5 block font-display text-lg leading-tight font-light text-ink transition-colors group-hover:text-gold">
-        {composition.title}
-      </span>
+      <span className={styles.title}>{composition.title}</span>
 
-      <span className="tracked-caps-tight mt-2 block text-[0.65rem] text-gold">
+      <span className={`tracked-caps-tight ${styles.meta}`}>
         {composition.year} · {instrumentationLabels[composition.instrumentation]}
         {composition.duration ? ` · ${composition.duration}` : ""}
       </span>
 
-      <span className="mt-3 block text-sm leading-relaxed text-ink-muted">
+      <span className={styles.blurb}>
         {composition.blurb}
       </span>
     </Link>

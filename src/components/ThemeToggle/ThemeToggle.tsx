@@ -10,6 +10,7 @@ import {
   type Theme,
   transitionTheme,
 } from "@/lib/theme";
+import styles from "@/components/ThemeToggle/ThemeToggle.module.css";
 
 function subscribe(onStoreChange: () => void): () => void {
   window.addEventListener(THEME_CHANGE_EVENT, onStoreChange);
@@ -58,26 +59,26 @@ export function ThemeToggle() {
       aria-checked={isDark}
       aria-label="Dark mode"
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="relative inline-flex h-8 w-18 shrink-0 cursor-pointer items-center rounded-full border border-gold-hairline/60 bg-surface-sunken px-1"
+      className={styles.toggle}
     >
       {/* Both icons sit in the track; the opaque knob covers whichever side it rests on. */}
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 left-0 flex w-1/2 items-center justify-center text-gold-hairline"
+        className={`${styles.icon} ${styles.iconLeft}`}
       >
         <SunIcon />
       </span>
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 flex w-1/2 items-center justify-center text-gold-hairline"
+        className={`${styles.icon} ${styles.iconRight}`}
       >
         <MoonIcon />
       </span>
 
       <span
         aria-hidden="true"
-        className={`relative size-6 rounded-full bg-gold shadow-[0_1px_4px_rgb(0_0_0/0.45)] transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
-          isDark ? "translate-x-0" : "translate-x-10"
+        className={`${styles.knob} ${
+          isDark ? styles.knobDark : styles.knobLight
         }`}
       />
     </button>

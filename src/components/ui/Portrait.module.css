@@ -1,0 +1,43 @@
+.frame {
+  position: relative;
+  aspect-ratio: 1;
+  width: 100%;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--surface-sunken);
+}
+
+.flourish {
+  position: absolute;
+  inset-block: 0;
+  left: 50%;
+  height: 100%;
+  translate: -50% 0;
+  color: var(--gold);
+  opacity: 0.15;
+}
+
+/* Was text-[0.6rem]: font-size only, line-height inherits (tailwind-reference.md §1). */
+.label {
+  position: relative;
+  font-size: var(--text-3xs);
+  color: var(--gold);
+}
+
+.credit {
+  margin-top: var(--space-3);
+  font-size: var(--text-2xs);
+  color: var(--ink-muted);
+}

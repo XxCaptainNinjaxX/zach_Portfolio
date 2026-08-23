@@ -1,4 +1,5 @@
 import { Flourish } from "@/components/ui/Flourish";
+import styles from "@/components/ui/Logo.module.css";
 
 /**
  * The circular ZC badge.
@@ -18,13 +19,13 @@ type LogoProps = {
 export function Logo({ size = 56, className }: LogoProps) {
   return (
     <span
-      className={`relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full border border-gold bg-surface-sunken ${className ?? ""}`}
+      className={`${styles.badge} ${className ?? ""}`}
       style={{ width: size, height: size }}
       aria-hidden="true"
     >
-      <Flourish className="absolute inset-y-0 left-1/2 h-full -translate-x-1/2 text-gold opacity-40" />
+      <Flourish className={styles.flourish} />
       <span
-        className="relative font-display leading-none text-gold"
+        className={styles.monogram}
         style={{ fontSize: size * 0.42, letterSpacing: "-0.04em" }}
       >
         ZC

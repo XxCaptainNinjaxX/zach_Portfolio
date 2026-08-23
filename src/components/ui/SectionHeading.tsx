@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import styles from "@/components/ui/SectionHeading.module.css";
 
 type SectionHeadingProps = {
   children: ReactNode;
@@ -19,15 +20,10 @@ export function SectionHeading({
   return (
     <div className={className}>
       {eyebrow ? (
-        <p className="tracked-caps mb-3 text-xs text-gold">{eyebrow}</p>
+        <p className={`tracked-caps ${styles.eyebrow}`}>{eyebrow}</p>
       ) : null}
-      <Element className="tracked-caps font-display text-2xl font-light text-ink sm:text-3xl">
-        {children}
-      </Element>
-      <span
-        aria-hidden="true"
-        className="mt-4 block h-px w-16 bg-gold-hairline"
-      />
+      <Element className={`tracked-caps ${styles.heading}`}>{children}</Element>
+      <span aria-hidden="true" className={styles.rule} />
     </div>
   );
 }

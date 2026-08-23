@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import styles from "@/components/ui/ExternalLink.module.css";
 
 type ExternalLinkProps = {
   href: string;
@@ -18,7 +19,7 @@ export function ExternalLink({ href, children, className }: ExternalLinkProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`underline decoration-gold-hairline underline-offset-4 transition-colors hover:text-gold ${className ?? ""}`}
+      className={`${styles.link} ${className ?? ""}`}
     >
       {children}
       <span className="sr-only"> (opens in a new tab)</span>

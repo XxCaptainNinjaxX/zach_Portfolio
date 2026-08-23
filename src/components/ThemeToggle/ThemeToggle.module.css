@@ -1,0 +1,58 @@
+.toggle {
+  position: relative;
+  display: inline-flex;
+  height: 2rem;
+  width: 4.5rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  align-items: center;
+  border-radius: var(--radius-full);
+  border-width: 1px;
+  border-style: solid;
+  /* Full-opacity fallback for browsers without color-mix; see tailwind-reference.md §3. */
+  border-color: var(--gold-hairline);
+  border-color: color-mix(in oklab, var(--gold-hairline) 60%, transparent);
+  background-color: var(--surface-sunken);
+  padding-inline: var(--space-1);
+}
+
+.icon {
+  pointer-events: none;
+  position: absolute;
+  inset-block: 0;
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-hairline);
+}
+
+.iconLeft {
+  left: 0;
+}
+
+.iconRight {
+  right: 0;
+}
+
+.knob {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--radius-full);
+  background-color: var(--gold);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.45);
+  /* `translate` property, so the knob keeps its own 300ms overshoot during the
+     theme cross-fade (which deliberately leaves transform/translate alone). */
+  transition-property: transform, translate, scale, rotate;
+  transition-timing-function: var(--ease-overshoot);
+  transition-duration: 300ms;
+}
+
+.knobDark {
+  translate: 0 0;
+}
+
+.knobLight {
+  translate: var(--space-10) 0;
+}

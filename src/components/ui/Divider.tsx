@@ -1,3 +1,5 @@
+import styles from "@/components/ui/Divider.module.css";
+
 type DividerProps = {
   className?: string;
 };
@@ -7,11 +9,11 @@ export function Divider({ className }: DividerProps) {
   return (
     <div
       aria-hidden="true"
-      className={`flex items-center gap-4 text-gold-hairline ${className ?? ""}`}
+      className={`${styles.divider} ${className ?? ""}`}
     >
-      <span className="h-px flex-1 bg-current opacity-50" />
-      <span className="size-1.5 rotate-45 border border-current" />
-      <span className="h-px flex-1 bg-current opacity-50" />
+      <span className={styles.line} />
+      <span className={styles.diamond} />
+      <span className={styles.line} />
     </div>
   );
 }

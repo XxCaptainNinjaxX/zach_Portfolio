@@ -9,11 +9,8 @@
  * z-20 puts it over page content (z-auto) but under the header (z-30) and the
  * menu drawer inside it, so the rule does not draw across the open panel.
  */
+import styles from "@/components/PageFrame/PageFrame.module.css";
+
 export function PageFrame() {
-  return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none fixed inset-3 z-20 border border-gold-hairline/70 sm:inset-5"
-    />
-  );
+  return <div aria-hidden="true" className={styles.frame} />;
 }
