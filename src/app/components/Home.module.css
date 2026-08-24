@@ -1,0 +1,41 @@
+.grid {
+  margin-inline: auto;
+  display: grid;
+  max-width: var(--content-width-wide);
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.flourishColumn {
+  display: flex;
+  justify-content: center;
+}
+
+.flourish {
+  height: 10rem;
+}
+
+.carouselColumn {
+  min-width: 0;
+}
+
+@media (min-width: 64rem) {
+  .grid {
+    grid-template-columns: minmax(0, 22rem) minmax(0, 8rem) minmax(0, 1fr);
+    gap: var(--space-8);
+  }
+
+  .flourishColumn {
+    height: 26rem;
+  }
+
+  .flourish {
+    height: 100%;
+  }
+}
+
+@media (min-width: 80rem) {
+  .grid {
+    gap: var(--space-14);
+  }
+}

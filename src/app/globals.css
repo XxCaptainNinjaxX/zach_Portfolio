@@ -322,56 +322,6 @@
     );
   }
 
-  /*
-    Coverflow depth for the featured carousel.
-
-    Driven by scroll position rather than React state: `animation-timeline: view(x)`
-    maps each card's progress across the scrollport onto the keyframes below, so
-    the card at the centre is full size and its neighbours fall away. No JS is
-    involved in the visual, which means it stays in sync during a touch drag,
-    momentum scroll, and trackpad fling — all of which a state-driven transform
-    implementation has to chase and gets wrong.
-
-    Browsers without scroll-driven animation support fall through to a flat,
-    evenly-sized scrolling row. Degraded, still correct, still usable.
-  */
-  .coverflow-track {
-    perspective: 1200px;
-  }
-
-  @supports (animation-timeline: view(x)) {
-    @media (prefers-reduced-motion: no-preference) {
-      .coverflow-card {
-        animation: coverflow-depth linear both;
-        animation-timeline: view(x);
-      }
-    }
-  }
-
-  /* Horizontal scroll track that hides its scrollbar without disabling scrolling. */
-  .scrollbar-none {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .scrollbar-none::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-@keyframes coverflow-depth {
-  0% {
-    transform: scale(0.74) rotateY(24deg);
-    opacity: 0.4;
-  }
-  50% {
-    transform: scale(1) rotateY(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.74) rotateY(-24deg);
-    opacity: 0.4;
-  }
 }
 
 /*

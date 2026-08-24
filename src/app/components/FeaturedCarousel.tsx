@@ -8,6 +8,7 @@ import {
   instrumentationLabels,
   type Composition,
 } from "@/components/data/data";
+import styles from "@/app/components/FeaturedCarousel.module.css";
 
 type FeaturedCarouselProps = {
   compositions: Composition[];
@@ -143,10 +144,10 @@ export function FeaturedCarousel({
     <section
       aria-roledescription="carousel"
       aria-label="Featured compositions"
-      className="w-full"
+      className={styles.carousel}
       onKeyDown={handleKeyDown}
     >
-      <div className="flex items-center gap-2 sm:gap-4">
+      <div className={styles.row}>
         <CarouselButton
           direction="previous"
           disabled={atStart}
@@ -155,20 +156,22 @@ export function FeaturedCarousel({
 
         <ul
           ref={trackRef}
-          className="coverflow-track scrollbar-none flex min-w-0 flex-1 snap-x snap-mandatory items-center gap-6 overflow-x-auto py-8"
+          className={styles.track}
         >
           {compositions.map((composition, index) => (
-            <li
-              key={composition.slug}
-              className="coverflow-card w-[min(62vw,17rem)] shrink-0 snap-center"
-            >
+            <li key={composition.slug} className={styles.card}>
               <Link
                 href={`/compositions/${composition.slug}`}
                 tabIndex={0}
-                className={`group relative block aspect-square w-full overflow-hidden ${
+                className={`${styles.cardLink} ${
                   index === activeIndex ? "gold-frame-strong" : "gold-frame"
                 }`}
               >
+                {/*
+                  ⚠️ Duplication trap: this sizes hint pairs with
+                  width: min(62vw, 17rem) on .card in the module. Change one,
+                  change the other.
+                */}
                 <CompositionCover
                   composition={composition}
                   sizes="(max-width: 640px) 62vw, 17rem"
@@ -190,20 +193,16 @@ export function FeaturedCarousel({
         Announced on change so a screen reader user learns which work is centred
         after pressing next — the visual centring alone tells them nothing.
       */}
-      <div aria-live="polite" className="mt-4 text-center">
-        <p className="tracked-caps font-display text-xl font-light text-ink sm:text-2xl">
-          {active.title}
-        </p>
-        <p className="tracked-caps-tight mt-2 text-[0.65rem] text-gold">
+      <div aria-live="polite" className={styles.caption}>
+        <p className={`tracked-caps ${styles.title}`}>{active.title}</p>
+        <p className={`tracked-caps-tight ${styles.meta}`}>
           {active.year} · {instrumentationLabels[active.instrumentation]}
           {active.duration ? ` · ${active.duration}` : ""}
         </p>
-        <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-ink-muted">
-          {active.blurb}
-        </p>
+        <p className={styles.blurb}>{active.blurb}</p>
       </div>
 
-      <ol className="mt-6 flex justify-center gap-2">
+      <ol className={styles.dots}>
         {compositions.map((composition, index) => (
           <li key={composition.slug}>
             <button
@@ -216,8 +215,8 @@ export function FeaturedCarousel({
               }}
               aria-label={`Show ${composition.title}`}
               aria-current={index === activeIndex ? "true" : undefined}
-              className={`block size-2 rotate-45 cursor-pointer border border-gold transition-colors ${
-                index === activeIndex ? "bg-gold" : "bg-transparent"
+              className={`${styles.dot} ${
+                index === activeIndex ? styles.dotActive : styles.dotInactive
               }`}
             />
           </li>
@@ -244,7 +243,7 @@ function CarouselButton({
       onClick={onActivate}
       disabled={disabled}
       aria-label={`${direction === "previous" ? "Previous" : "Next"} composition`}
-      className="inline-flex size-9 shrink-0 cursor-pointer items-center justify-center text-gold transition-opacity disabled:cursor-default disabled:opacity-25"
+      className={styles.navButton}
     >
       {direction === "previous" ? <ChevronLeftIcon /> : <ChevronRightIcon />}
     </button>

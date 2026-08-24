@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Portrait } from "@/components/ui/Portrait";
 import { site } from "@/components/data/site";
+import styles from "@/app/components/Hero.module.css";
 
 /**
  * Portrait plus a short introduction.
@@ -12,15 +13,12 @@ import { site } from "@/components/data/site";
  */
 export function Hero() {
   return (
-    <div className="flex flex-col items-center gap-8 text-center lg:items-start lg:text-left">
-      <Portrait priority className="w-full max-w-sm" />
+    <div className={styles.hero}>
+      <Portrait priority className={styles.portrait} />
 
-      <p className="max-w-sm leading-relaxed text-ink-muted">{site.bioShort}</p>
+      <p className={styles.bio}>{site.bioShort}</p>
 
-      <Link
-        href="/about"
-        className="tracked-caps-tight border-b border-gold pb-1 text-[0.65rem] text-gold transition-opacity hover:opacity-70"
-      >
+      <Link href="/about" className={`tracked-caps-tight ${styles.aboutLink}`}>
         More about {site.name.split(" ")[0]}
       </Link>
     </div>

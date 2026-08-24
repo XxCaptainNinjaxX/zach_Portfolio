@@ -1,0 +1,23 @@
+/*
+  Conditional shared-subset layer (CONVENTIONS §5). Earned by exactly one rule:
+  the page shell padding, byte-identical across all five route page components
+  (Home, About, Achievements, Compositions, CompositionDetail). Per-page
+  max-width columns differ and stay in each page's own module. Do not grow this
+  file without the same 2+-identical-consumers justification.
+*/
+.pageShell {
+  padding-inline: var(--space-5);
+  padding-block: var(--space-12);
+}
+
+@media (min-width: 40rem) {
+  .pageShell {
+    padding-inline: var(--space-8);
+  }
+}
+
+@media (min-width: 64rem) {
+  .pageShell {
+    padding-block: var(--space-20);
+  }
+}
