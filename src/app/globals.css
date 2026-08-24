@@ -1,4 +1,9 @@
-@import "tailwindcss";
+/*
+  Layer order. Tailwind's import used to establish this; with it gone, the
+  declaration guarantees `utilities` outranks `base` regardless of source order.
+  Module CSS is unlayered and therefore outranks both — intended.
+*/
+@layer base, utilities;
 
 /*
   Theme tokens.
@@ -88,9 +93,8 @@
   --measure-tight: 60ch;
 
   /*
-    Full font stacks, declared here so they survive the removal of the
-    @theme inline block below. --font-cormorant and --font-inter are set on
-    <html> by next/font in layout.tsx.
+    Full font stacks. --font-cormorant and --font-inter are set on <html> by
+    next/font in layout.tsx.
   */
   --font-display: var(--font-cormorant), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -114,26 +118,6 @@
 
   --overlay-scrim: rgb(244 246 250 / 0.94);
   --focus-ring: #5f4808;
-}
-
-/*
-  `inline` is load-bearing: it makes the generated utilities resolve *through*
-  the custom property at runtime rather than baking its value in at build time.
-  That is what lets `bg-surface` mean navy or near-white depending on the
-  [data-theme] attribute, with no `dark:` variant anywhere in component code.
-*/
-@theme inline {
-  --color-surface: var(--surface);
-  --color-surface-raised: var(--surface-raised);
-  --color-surface-sunken: var(--surface-sunken);
-  --color-ink: var(--ink);
-  --color-ink-muted: var(--ink-muted);
-  --color-gold: var(--gold);
-  --color-gold-hairline: var(--gold-hairline);
-  --color-gold-strong: var(--gold-strong);
-
-  --font-display: var(--font-cormorant), Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -251,9 +235,8 @@
   }
 
   /*
-    One focus style for the whole site. The default UA ring is invisible on navy,
-    and Tailwind's preflight removes the outline on some elements, so this is set
-    explicitly rather than relied upon.
+    One focus style for the whole site. The default UA ring is invisible on
+    navy, so this is set explicitly rather than relied upon.
   */
   :focus-visible {
     outline: 2px solid var(--focus-ring);
