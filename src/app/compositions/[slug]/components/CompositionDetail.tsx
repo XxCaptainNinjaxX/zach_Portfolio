@@ -10,6 +10,8 @@ import { ExternalLink } from "@/components/ui/ExternalLink";
 import { instrumentationLabels, type Composition } from "@/components/data/data";
 import { getByCompositionSlug } from "@/lib/achievements";
 import { getRelated } from "@/lib/compositions";
+import subpageStyles from "@/app/subpage.module.css";
+import styles from "@/app/compositions/[slug]/components/CompositionDetail.module.css";
 
 type CompositionDetailProps = {
   composition: Composition;
@@ -68,52 +70,48 @@ export function CompositionDetail({ composition }: CompositionDetailProps) {
   }
 
   return (
-    <div className="px-5 py-12 sm:px-8 lg:py-20">
-      <div className="mx-auto max-w-6xl">
+    <div className={subpageStyles.pageShell}>
+      <div className={styles.column}>
         <Link
           href="/compositions"
-          className="tracked-caps-tight text-[0.65rem] text-ink-muted transition-colors hover:text-gold"
+          className={`tracked-caps-tight ${styles.backLink}`}
         >
           ← All compositions
         </Link>
 
-        <div className="mt-10 grid gap-12 lg:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] lg:gap-16">
+        <div className={styles.grid}>
           <div>
-            <div className="gold-frame relative aspect-square w-full overflow-hidden">
+            <div className={`gold-frame ${styles.cover}`}>
               <CompositionCover
                 composition={composition}
                 sizes="(max-width: 1024px) 80vw, 22rem"
               />
             </div>
 
-            <MetaRow entries={meta} className="mt-8" />
+            <MetaRow entries={meta} className={styles.meta} />
           </div>
 
           <div>
-            <h1 className="tracked-caps font-display text-3xl leading-tight font-light text-ink sm:text-4xl">
+            <h1 className={`tracked-caps ${styles.title}`}>
               {composition.title}
             </h1>
 
             {composition.subtitle ? (
-              <p className="mt-3 font-display text-lg font-light text-ink-muted">
-                {composition.subtitle}
-              </p>
+              <p className={styles.subtitle}>{composition.subtitle}</p>
             ) : null}
 
-            <p className="mt-8 max-w-[60ch] leading-relaxed text-ink-muted">
-              {composition.blurb}
-            </p>
+            <p className={styles.blurb}>{composition.blurb}</p>
 
             {composition.programNote ? (
-              <section className="mt-12">
-                <h2 className="tracked-caps font-display text-sm text-gold">
+              <section className={styles.section}>
+                <h2 className={`tracked-caps ${styles.sectionHeading}`}>
                   Program note
                 </h2>
-                <div className="mt-5 max-w-[65ch] space-y-5">
+                <div className={styles.noteBody}>
                   {composition.programNote.map((paragraph) => (
                     <p
                       key={paragraph.slice(0, 48)}
-                      className="leading-relaxed text-ink-muted"
+                      className={styles.noteParagraph}
                     >
                       {paragraph}
                     </p>
@@ -123,18 +121,16 @@ export function CompositionDetail({ composition }: CompositionDetailProps) {
             ) : null}
 
             {composition.audio && composition.audio.length > 0 ? (
-              <section className="mt-12">
-                <h2 className="tracked-caps font-display text-sm text-gold">
+              <section className={styles.section}>
+                <h2 className={`tracked-caps ${styles.sectionHeading}`}>
                   Listen
                 </h2>
-                <ul className="mt-5 space-y-4">
+                <ul className={styles.trackList}>
                   {composition.audio.map((track) => (
                     <li key={track.src}>
-                      <p className="mb-2 text-sm text-ink-muted">
-                        {track.label}
-                      </p>
+                      <p className={styles.trackLabel}>{track.label}</p>
                       {/* Native controls: no custom player, no client JS, keyboard-accessible by default. */}
-                      <audio controls preload="none" src={track.src} className="w-full max-w-md">
+                      <audio controls preload="none" src={track.src} className={styles.audio}>
                         Your browser does not support audio playback.
                       </audio>
                     </li>
@@ -144,14 +140,14 @@ export function CompositionDetail({ composition }: CompositionDetailProps) {
             ) : null}
 
             {composition.score ? (
-              <section className="mt-12">
-                <h2 className="tracked-caps font-display text-sm text-gold">
+              <section className={styles.section}>
+                <h2 className={`tracked-caps ${styles.sectionHeading}`}>
                   Score
                 </h2>
-                <p className="mt-4">
+                <p className={styles.scoreParagraph}>
                   <ExternalLink
                     href={composition.score.src}
-                    className="text-sm text-ink-muted"
+                    className={styles.scoreLink}
                   >
                     {composition.score.label}
                   </ExternalLink>
@@ -160,13 +156,13 @@ export function CompositionDetail({ composition }: CompositionDetailProps) {
             ) : null}
 
             {linkedAchievements.length > 0 ? (
-              <section className="mt-12">
-                <h2 className="tracked-caps font-display text-sm text-gold">
+              <section className={styles.section}>
+                <h2 className={`tracked-caps ${styles.sectionHeading}`}>
                   Recognition
                 </h2>
-                <ul className="mt-5 space-y-2">
+                <ul className={styles.recognitionList}>
                   {linkedAchievements.map((achievement) => (
-                    <li key={achievement.id} className="text-sm text-ink-muted">
+                    <li key={achievement.id} className={styles.recognitionItem}>
                       {achievement.year} — {achievement.title}
                       {achievement.organization
                         ? `, ${achievement.organization}`
@@ -181,12 +177,12 @@ export function CompositionDetail({ composition }: CompositionDetailProps) {
 
         {related.length > 0 ? (
           <>
-            <Divider className="mt-20" />
-            <section className="mt-12">
-              <h2 className="tracked-caps font-display text-sm text-gold">
+            <Divider className={styles.divider} />
+            <section className={styles.section}>
+              <h2 className={`tracked-caps ${styles.sectionHeading}`}>
                 Other works
               </h2>
-              <ul className="mt-8 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className={styles.relatedGrid}>
                 {related.map((other) => (
                   <li key={other.slug}>
                     <CompositionCard composition={other} />

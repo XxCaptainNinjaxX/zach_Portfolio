@@ -7,6 +7,7 @@ import {
   type Composition,
   type Instrumentation,
 } from "@/components/data/data";
+import styles from "@/app/compositions/components/CompositionBrowser.module.css";
 
 type CompositionBrowserProps = {
   compositions: Composition[];
@@ -46,7 +47,7 @@ export function CompositionBrowser({
         <div
           role="group"
           aria-label="Filter by instrumentation"
-          className="flex flex-wrap gap-x-6 gap-y-3 border-b border-gold-hairline/30 pb-5"
+          className={styles.filters}
         >
           <FilterButton
             label="All"
@@ -68,7 +69,7 @@ export function CompositionBrowser({
         {visible.length} {visible.length === 1 ? "work" : "works"} shown
       </p>
 
-      <ul className="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 xl:grid-cols-3">
+      <ul className={styles.grid}>
         {visible.map((composition) => (
           <li key={composition.slug}>
             <CompositionCard composition={composition} />
@@ -91,10 +92,8 @@ function FilterButton({ label, isActive, onSelect }: FilterButtonProps) {
       type="button"
       onClick={onSelect}
       aria-pressed={isActive}
-      className={`tracked-caps-tight cursor-pointer border-b-2 pb-1 text-[0.65rem] transition-colors ${
-        isActive
-          ? "border-gold text-gold"
-          : "border-transparent text-ink-muted hover:text-gold"
+      className={`tracked-caps-tight ${styles.filterButton} ${
+        isActive ? styles.filterButtonActive : styles.filterButtonInactive
       }`}
     >
       {label}

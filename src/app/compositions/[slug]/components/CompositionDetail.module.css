@@ -1,0 +1,172 @@
+.column {
+  margin-inline: auto;
+  max-width: var(--content-width);
+}
+
+/* Was text-[0.65rem]: font-size only, line-height inherits (tailwind-reference.md §1). */
+.backLink {
+  font-size: var(--text-2xs);
+  color: var(--ink-muted);
+  transition-property: color, background-color, border-color, outline-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+@media (hover: hover) {
+  .backLink:hover {
+    color: var(--gold);
+  }
+}
+
+.grid {
+  margin-top: var(--space-10);
+  display: grid;
+  gap: var(--space-12);
+}
+
+@media (min-width: 64rem) {
+  .grid {
+    grid-template-columns: minmax(0, 22rem) minmax(0, 1fr);
+    gap: var(--space-16);
+  }
+}
+
+.cover {
+  position: relative;
+  aspect-ratio: 1;
+  width: 100%;
+  overflow: hidden;
+}
+
+.meta {
+  margin-top: var(--space-8);
+}
+
+/* leading-tight overrides the size's default line-height at both breakpoints. */
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  line-height: 1.25;
+  font-weight: 300;
+  color: var(--ink);
+}
+
+@media (min-width: 40rem) {
+  .title {
+    font-size: var(--text-4xl);
+  }
+}
+
+.subtitle {
+  margin-top: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  line-height: calc(1.75 / 1.125);
+  font-weight: 300;
+  color: var(--ink-muted);
+}
+
+.blurb {
+  margin-top: var(--space-8);
+  max-width: var(--measure-tight);
+  line-height: 1.625;
+  color: var(--ink-muted);
+}
+
+.section {
+  margin-top: var(--space-12);
+}
+
+.sectionHeading {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  line-height: calc(1.25 / 0.875);
+  color: var(--gold);
+}
+
+.noteBody {
+  margin-top: var(--space-5);
+  max-width: var(--measure);
+}
+
+/* Was space-y-5 (tailwind-reference.md §5). */
+.noteBody > :not(:last-child) {
+  margin-block-end: var(--space-5);
+}
+
+.noteParagraph {
+  line-height: 1.625;
+  color: var(--ink-muted);
+}
+
+.trackList {
+  margin-top: var(--space-5);
+}
+
+/* Was space-y-4 (tailwind-reference.md §5). */
+.trackList > :not(:last-child) {
+  margin-block-end: var(--space-4);
+}
+
+.trackLabel {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+  line-height: calc(1.25 / 0.875);
+  color: var(--ink-muted);
+}
+
+.audio {
+  width: 100%;
+  max-width: 28rem;
+}
+
+.scoreParagraph {
+  margin-top: var(--space-4);
+}
+
+.scoreLink {
+  font-size: var(--text-sm);
+  line-height: calc(1.25 / 0.875);
+  color: var(--ink-muted);
+}
+
+.recognitionList {
+  margin-top: var(--space-5);
+}
+
+/* Was space-y-2 (tailwind-reference.md §5). */
+.recognitionList > :not(:last-child) {
+  margin-block-end: var(--space-2);
+}
+
+.recognitionItem {
+  font-size: var(--text-sm);
+  line-height: calc(1.25 / 0.875);
+  color: var(--ink-muted);
+}
+
+.divider {
+  margin-top: var(--space-20);
+}
+
+.relatedGrid {
+  margin-top: var(--space-8);
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  column-gap: var(--space-8);
+  row-gap: var(--space-12);
+}
+
+@media (min-width: 40rem) {
+  .relatedGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 3-up at lg here, unlike the catalogue grid (xl). */
+@media (min-width: 64rem) {
+  .relatedGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

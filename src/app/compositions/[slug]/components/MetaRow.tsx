@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import styles from "@/app/compositions/[slug]/components/MetaRow.module.css";
 
 export type MetaEntry = {
   label: string;
@@ -22,13 +23,13 @@ export function MetaRow({ entries, className }: MetaRowProps) {
   if (entries.length === 0) return null;
 
   return (
-    <dl className={`space-y-3 ${className ?? ""}`}>
+    <dl className={`${styles.list} ${className ?? ""}`}>
       {entries.map((entry) => (
-        <div key={entry.label} className="grid grid-cols-[7rem_1fr] gap-4">
-          <dt className="tracked-caps-tight pt-0.5 text-[0.65rem] text-gold">
+        <div key={entry.label} className={styles.entry}>
+          <dt className={`tracked-caps-tight ${styles.label}`}>
             {entry.label}
           </dt>
-          <dd className="text-sm text-ink-muted">{entry.value}</dd>
+          <dd className={styles.value}>{entry.value}</dd>
         </div>
       ))}
     </dl>

@@ -1,18 +1,20 @@
 import { CompositionBrowser } from "@/app/compositions/components/CompositionBrowser";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { byYearDesc, usedInstrumentations } from "@/lib/compositions";
+import subpageStyles from "@/app/subpage.module.css";
+import styles from "@/app/compositions/components/Compositions.module.css";
 
 export function Compositions() {
   const catalogue = byYearDesc();
 
   return (
-    <div className="px-5 py-12 sm:px-8 lg:py-20">
-      <div className="mx-auto max-w-6xl">
+    <div className={subpageStyles.pageShell}>
+      <div className={styles.column}>
         <SectionHeading as="h1" eyebrow="Catalogue">
           Compositions
         </SectionHeading>
 
-        <div className="mt-12">
+        <div className={styles.browser}>
           <CompositionBrowser
             compositions={catalogue}
             facets={usedInstrumentations()}

@@ -1,0 +1,52 @@
+.wrapper {
+  display: flex;
+  min-height: 50vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: var(--space-5);
+  padding-block: var(--space-20);
+  text-align: center;
+}
+
+.flourish {
+  height: 8rem;
+  opacity: 0.5;
+}
+
+.heading {
+  margin-top: var(--space-10);
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  line-height: calc(2 / 1.5);
+  font-weight: 300;
+  color: var(--ink);
+}
+
+.body {
+  margin-top: var(--space-4);
+  max-width: 24rem;
+  font-size: var(--text-sm);
+  line-height: 1.625;
+  color: var(--ink-muted);
+}
+
+/* Was text-[0.65rem]: font-size only, line-height inherits (tailwind-reference.md §1). */
+.homeLink {
+  margin-top: var(--space-8);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--gold);
+  padding-bottom: var(--space-1);
+  font-size: var(--text-2xs);
+  color: var(--gold);
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+@media (hover: hover) {
+  .homeLink:hover {
+    opacity: 0.7;
+  }
+}

@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/SiteFooter/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader/SiteHeader";
 import { ThemeScript } from "@/components/ThemeScript/ThemeScript";
 import { site } from "@/components/data/site";
+import styles from "@/app/layout.module.css";
 import "./globals.css";
 
 /**
@@ -70,18 +71,15 @@ export default function RootLayout({
       // attribute restores the instant jump on route change while leaving
       // in-page anchor scrolling smooth.
       data-scroll-behavior="smooth"
-      className={`${displayFont.variable} ${bodyFont.variable} h-full`}
+      className={`${displayFont.variable} ${bodyFont.variable} ${styles.html}`}
     >
       <head>
         <ThemeScript />
       </head>
-      <body className="surface-glow flex min-h-full flex-col bg-surface">
+      <body className={`surface-glow ${styles.body}`}>
         <PageFrame />
 
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-6 focus:top-6 focus:z-50 focus:bg-surface-raised focus:px-4 focus:py-2 focus:text-ink"
-        >
+        <a href="#main" className={`sr-only ${styles.skipLink}`}>
           Skip to content
         </a>
 
@@ -90,9 +88,9 @@ export default function RootLayout({
           true viewport top without leaving a strip for scrolled content to show
           through above it.
         */}
-        <div className="flex min-h-full min-w-0 flex-1 flex-col px-3 pb-3 sm:px-5 sm:pb-5">
+        <div className={styles.content}>
           <SiteHeader />
-          <main id="main" className="flex-1">
+          <main id="main" className={styles.main}>
             {children}
           </main>
           <SiteFooter />

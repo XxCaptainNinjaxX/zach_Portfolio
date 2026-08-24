@@ -1,0 +1,8 @@
+.column {
+  margin-inline: auto;
+  max-width: var(--content-width);
+}
+
+.browser {
+  margin-top: var(--space-12);
+}

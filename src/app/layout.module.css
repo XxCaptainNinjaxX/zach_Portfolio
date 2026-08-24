@@ -1,0 +1,52 @@
+.html {
+  height: 100%;
+}
+
+.body {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  background-color: var(--surface);
+}
+
+/*
+  Focus inverse of the global .sr-only (tailwind-reference.md §5): the skip link
+  becomes a visible pill near the top-left corner only while focused.
+*/
+.skipLink:focus {
+  clip-path: none;
+  white-space: normal;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: absolute;
+  left: var(--space-6);
+  top: var(--space-6);
+  z-index: 50;
+  background-color: var(--surface-raised);
+  padding-inline: var(--space-4);
+  padding-block: var(--space-2);
+  color: var(--ink);
+}
+
+.content {
+  display: flex;
+  min-height: 100%;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  padding-inline: var(--space-3);
+  padding-bottom: var(--space-3);
+}
+
+@media (min-width: 40rem) {
+  .content {
+    padding-inline: var(--space-5);
+    padding-bottom: var(--space-5);
+  }
+}
+
+.main {
+  flex: 1;
+}

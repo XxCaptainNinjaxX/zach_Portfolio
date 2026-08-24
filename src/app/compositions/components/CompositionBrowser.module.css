@@ -1,0 +1,62 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--space-6);
+  row-gap: var(--space-3);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  /* Full-opacity fallback for browsers without color-mix; see tailwind-reference.md §3. */
+  border-bottom-color: var(--gold-hairline);
+  border-bottom-color: color-mix(in oklab, var(--gold-hairline) 30%, transparent);
+  padding-bottom: var(--space-5);
+}
+
+.grid {
+  margin-top: var(--space-10);
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  column-gap: var(--space-8);
+  row-gap: var(--space-12);
+}
+
+@media (min-width: 40rem) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 3-up at xl here, unlike the related-works grid on the detail page (lg). */
+@media (min-width: 80rem) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Was text-[0.65rem]: font-size only, line-height inherits (tailwind-reference.md §1). */
+.filterButton {
+  cursor: pointer;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  padding-bottom: var(--space-1);
+  font-size: var(--text-2xs);
+  transition-property: color, background-color, border-color, outline-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.filterButtonActive {
+  border-bottom-color: var(--gold);
+  color: var(--gold);
+}
+
+.filterButtonInactive {
+  border-bottom-color: transparent;
+  color: var(--ink-muted);
+}
+
+@media (hover: hover) {
+  .filterButtonInactive:hover {
+    color: var(--gold);
+  }
+}
