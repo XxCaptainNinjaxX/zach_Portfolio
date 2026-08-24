@@ -8,24 +8,6 @@ import { Divider } from "@/components/ui/Divider";
 import { navItems, site } from "@/components/data/site";
 import styles from "@/components/MenuDrawer/MenuDrawer.module.css";
 
-/**
- * The site's only navigation, at every breakpoint.
- *
- * One hamburger in the header opens a panel on the right edge. The button is
- * also the close control — it is not replaced by an X inside the panel — so its
- * three horizontal bars rotate a quarter turn into three vertical bars to show
- * the open state.
- *
- * Layering: SiteHeader is `sticky z-30`, which makes it a stacking context, so
- * every z-index below competes only with its siblings inside that context, not
- * with the rest of the page. The header as a whole outranks PageFrame (z-20),
- * which is what keeps the gold rule from drawing across the open panel.
- *
- * SiteHeader must not carry a filter or backdrop-filter of its own — that would
- * make it the containing block for the fixed scrim and panel below, shrinking
- * both to the header's box. Its translucent band is a separate layer for exactly
- * this reason.
- */
 export function MenuDrawer() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
@@ -59,7 +41,7 @@ export function MenuDrawer() {
       const focusable = [
         trigger,
         ...panel.querySelectorAll<HTMLElement>(
-          'a[href], button:not([disabled])',
+          "a[href], button:not([disabled])",
         ),
       ];
 
@@ -129,10 +111,6 @@ export function MenuDrawer() {
         aria-modal="true"
         aria-label="Main menu"
         inert={!isOpen}
-        // `translate`, not `transform`: the open/closed classes set the
-        // individual `translate` property, so a transition list naming
-        // `transform` animates nothing and the panel jumps into place in one
-        // frame.
         className={`${styles.panel} ${
           // Closed sits at 0.6 rather than 0: the panel slides in already mostly
           // opaque, so the motion reads as the edge arriving rather than a fade.
@@ -145,13 +123,9 @@ export function MenuDrawer() {
           anchoring the links to the top would mean measuring it.
         */}
         <nav aria-label="Main" className={styles.nav}>
-          {navItems.map((item, index) => {
+          {navItems.map((item) => {
             const isActive =
               pathname === item.href || pathname.startsWith(`${item.href}/`);
-
-            // Entrance stagger, so the links arrive just behind the panel rather
-            // than riding in with it.
-            const entranceDelay = 60 + index * 45;
 
             return (
               <Link
@@ -162,20 +136,9 @@ export function MenuDrawer() {
                 // already showing, which produces no pathname change to react to.
                 onClick={close}
                 aria-current={isActive ? "page" : undefined}
-                // One delay per property, positionally matched to the
-                // transition-property list on .navLink in the module: the three
-                // colours stay instant so hover does not lag, and only the
-                // entrance staggers. Zero on the way out, otherwise closing
-                // drags.
-                style={{
-                  transitionDelay: isOpen
-                    ? `0ms,0ms,0ms,${entranceDelay}ms,${entranceDelay}ms`
-                    : "0ms",
-                }}
-                // `translate` rather than `transform` — see the panel above.
                 className={`tracked-caps ${styles.navLink} ${
-                  isOpen ? styles.navLinkOpen : styles.navLinkClosed
-                } ${isActive ? styles.navLinkActive : styles.navLinkInactive}`}
+                  isActive ? styles.navLinkActive : styles.navLinkInactive
+                }`}
               >
                 {item.label}
               </Link>

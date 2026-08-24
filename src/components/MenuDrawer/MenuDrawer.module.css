@@ -8,8 +8,9 @@
   align-items: center;
   justify-content: center;
   color: var(--ink-muted);
-  transition-property: color, background-color, border-color, outline-color,
-    text-decoration-color, fill, stroke;
+  transition-property:
+    color, background-color, border-color, outline-color, text-decoration-color,
+    fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -23,7 +24,7 @@
 .triggerIcon {
   transition-property: transform, translate, scale, rotate;
   transition-timing-function: var(--ease-overshoot);
-  transition-duration: 300ms;
+  transition-duration: 160ms;
 }
 
 .triggerIconOpen {
@@ -44,7 +45,7 @@
   backdrop-filter: blur(8px);
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 220ms;
+  transition-duration: 160ms;
 }
 
 .scrimOpen {
@@ -73,10 +74,14 @@
   background-color: var(--surface);
   padding-inline: var(--space-8);
   padding-block: var(--space-6);
-  /* `translate`, not `transform` — see the comment in MenuDrawer.tsx. */
+  /*
+    The offset below is set via the standalone `translate` property, so the
+    transition list must name `translate`. Naming `transform` instead animates
+    nothing and the panel jumps into place in one frame.
+  */
   transition-property: translate, opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 220ms;
+  transition-duration: 160ms;
 }
 
 .panelOpen {
@@ -98,8 +103,9 @@
 }
 
 /*
-  The transition-property order is load-bearing: the inline transitionDelay list
-  in MenuDrawer.tsx matches these five properties positionally.
+  No entrance transition here on purpose: the links ride in with the panel and
+  are fully opaque from the first frame, so the drawer never shows an empty
+  interior. Only the hover colours transition.
 */
 .navLink {
   border-left-width: 2px;
@@ -109,19 +115,9 @@
   font-family: var(--font-display);
   font-size: var(--text-lg);
   line-height: calc(1.75 / 1.125);
-  transition-property: color, background-color, border-color, translate, opacity;
+  transition-property: color, background-color, border-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 220ms;
-}
-
-.navLinkOpen {
-  translate: 0 0;
-  opacity: 1;
-}
-
-.navLinkClosed {
-  translate: var(--space-4) 0;
-  opacity: 0;
+  transition-duration: 150ms;
 }
 
 .navLinkActive {
@@ -154,8 +150,9 @@
   font-size: var(--text-xs);
   line-height: calc(1 / 0.75);
   color: var(--ink-muted);
-  transition-property: color, background-color, border-color, outline-color,
-    text-decoration-color, fill, stroke;
+  transition-property:
+    color, background-color, border-color, outline-color, text-decoration-color,
+    fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
