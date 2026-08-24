@@ -3,13 +3,15 @@ import { Divider } from "@/components/ui/Divider";
 import { Portrait } from "@/components/ui/Portrait";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { site } from "@/components/data/site";
+import subpageStyles from "@/app/subpage.module.css";
+import styles from "@/app/about/components/About.module.css";
 
 export function About() {
   return (
-    <div className="px-5 py-12 sm:px-8 lg:py-20">
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[minmax(0,20rem)_minmax(0,1fr)] lg:gap-16">
+    <div className={subpageStyles.pageShell}>
+      <div className={styles.grid}>
         {/* Sticky on desktop so the portrait stays with the prose on a long bio. */}
-        <div className="lg:sticky lg:top-10 lg:self-start">
+        <div className={styles.portraitColumn}>
           <Portrait priority sizes="(max-width: 1024px) 80vw, 20rem" />
         </div>
 
@@ -18,29 +20,29 @@ export function About() {
             About
           </SectionHeading>
 
-          <Prose paragraphs={site.bioLong} className="mt-10" />
+          <Prose paragraphs={site.bioLong} className={styles.prose} />
 
-          <Divider className="my-12 max-w-[65ch]" />
+          <Divider className={styles.divider} />
 
-          <div className="max-w-[65ch]">
-            <h2 className="tracked-caps font-display text-lg font-light text-ink">
+          <div className={styles.contact}>
+            <h2 className={`tracked-caps ${styles.contactHeading}`}>
               Working together
             </h2>
-            <p className="mt-4 leading-relaxed text-ink-muted">
+            <p className={styles.contactBody}>
               For commissions, score enquiries, and performance materials, the
               fastest route is email.
             </p>
-            <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3">
+            <div className={styles.contactRow}>
               <a
                 href={`mailto:${site.email}`}
-                className="tracked-caps-tight border-b border-gold pb-1 text-[0.65rem] text-gold transition-opacity hover:opacity-70"
+                className={`tracked-caps-tight ${styles.emailLink}`}
               >
                 Get in touch
               </a>
               {site.cvPath ? (
                 <a
                   href={site.cvPath}
-                  className="tracked-caps-tight border-b border-gold-hairline pb-1 text-[0.65rem] text-ink-muted transition-colors hover:text-gold"
+                  className={`tracked-caps-tight ${styles.cvLink}`}
                 >
                   Download CV
                 </a>

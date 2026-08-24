@@ -1,3 +1,5 @@
+import styles from "@/app/about/components/Prose.module.css";
+
 type ProseProps = {
   /** One string per paragraph. */
   paragraphs: readonly string[];
@@ -10,9 +12,9 @@ type ProseProps = {
  */
 export function Prose({ paragraphs, className }: ProseProps) {
   return (
-    <div className={`max-w-[65ch] space-y-5 ${className ?? ""}`}>
+    <div className={`${styles.prose} ${className ?? ""}`}>
       {paragraphs.map((paragraph) => (
-        <p key={paragraph.slice(0, 48)} className="leading-relaxed text-ink-muted">
+        <p key={paragraph.slice(0, 48)} className={styles.paragraph}>
           {paragraph}
         </p>
       ))}

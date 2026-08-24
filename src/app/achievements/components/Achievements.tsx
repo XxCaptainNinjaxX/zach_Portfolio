@@ -4,6 +4,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { achievementKindLabels } from "@/components/data/data";
 import { groupedByYear } from "@/lib/achievements";
 import { getBySlug } from "@/lib/compositions";
+import subpageStyles from "@/app/subpage.module.css";
+import styles from "@/app/achievements/components/Achievements.module.css";
 
 /**
  * ⚠️ VERIFY: the contents of this page were never specified — see PLAN.md
@@ -15,41 +17,38 @@ export function Achievements() {
   const years = groupedByYear();
 
   return (
-    <div className="px-5 py-12 sm:px-8 lg:py-20">
-      <div className="mx-auto max-w-4xl">
+    <div className={subpageStyles.pageShell}>
+      <div className={styles.column}>
         <SectionHeading as="h1" eyebrow="Selected">
           Achievements
         </SectionHeading>
 
-        <div className="mt-14 space-y-12">
+        <div className={styles.timeline}>
           {[...years.entries()].map(([year, entries]) => (
             <section key={year} aria-labelledby={`year-${year}`}>
               <h2
                 id={`year-${year}`}
-                className="tracked-caps font-display text-sm text-gold"
+                className={`tracked-caps ${styles.year}`}
               >
                 {year}
               </h2>
 
               {/* The gold spine of the timeline. */}
-              <ul className="mt-5 space-y-8 border-l border-gold-hairline/50 pl-6 sm:pl-8">
+              <ul className={styles.entries}>
                 {entries.map((achievement) => {
                   const related = achievement.compositionSlug
                     ? getBySlug(achievement.compositionSlug)
                     : undefined;
 
                   return (
-                    <li key={achievement.id} className="relative">
-                      <span
-                        aria-hidden="true"
-                        className="absolute -left-[1.85rem] top-2 size-1.5 rotate-45 border border-gold bg-surface sm:-left-[2.35rem]"
-                      />
+                    <li key={achievement.id} className={styles.entry}>
+                      <span aria-hidden="true" className={styles.marker} />
 
-                      <p className="tracked-caps-tight text-[0.6rem] text-gold">
+                      <p className={`tracked-caps-tight ${styles.kind}`}>
                         {achievementKindLabels[achievement.kind]}
                       </p>
 
-                      <h3 className="mt-2 font-display text-lg leading-tight font-light text-ink">
+                      <h3 className={styles.title}>
                         {achievement.href ? (
                           <ExternalLink href={achievement.href}>
                             {achievement.title}
@@ -60,13 +59,13 @@ export function Achievements() {
                       </h3>
 
                       {achievement.organization ? (
-                        <p className="mt-1 text-sm text-ink-muted">
+                        <p className={styles.organization}>
                           {achievement.organization}
                         </p>
                       ) : null}
 
                       {achievement.detail ? (
-                        <p className="mt-3 max-w-[60ch] text-sm leading-relaxed text-ink-muted">
+                        <p className={styles.detail}>
                           {achievement.detail}
                         </p>
                       ) : null}
@@ -74,7 +73,7 @@ export function Achievements() {
                       {related ? (
                         <Link
                           href={`/compositions/${related.slug}`}
-                          className="tracked-caps-tight mt-3 inline-block border-b border-gold-hairline pb-0.5 text-[0.6rem] text-ink-muted transition-colors hover:text-gold"
+                          className={`tracked-caps-tight ${styles.relatedLink}`}
                         >
                           {related.title}
                         </Link>

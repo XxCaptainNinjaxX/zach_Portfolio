@@ -1,0 +1,13 @@
+.prose {
+  max-width: var(--measure);
+}
+
+/* Was space-y-5 (tailwind-reference.md §5). */
+.prose > :not(:last-child) {
+  margin-block-end: var(--space-5);
+}
+
+.paragraph {
+  line-height: 1.625;
+  color: var(--ink-muted);
+}
