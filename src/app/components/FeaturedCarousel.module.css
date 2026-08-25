@@ -11,72 +11,63 @@
 /*
   Coverflow depth for the featured carousel.
 
-  Driven by scroll position rather than React state: `animation-timeline: view(x)`
-  maps each card's progress across the scrollport onto the keyframes below, so
-  the card at the centre is full size and its neighbours fall away. No JS is
-  involved in the visual, which means it stays in sync during a touch drag,
-  momentum scroll, and trackpad fling — all of which a state-driven transform
-  implementation has to chase and gets wrong.
-
-  Browsers without scroll-driven animation support fall through to a flat,
-  evenly-sized scrolling row. Degraded, still correct, still usable.
-
-  The track hides its scrollbar without disabling scrolling.
+  State-driven, not scroll-driven: FeaturedCarousel.tsx renders exactly the
+  three cards around activeIndex (center + one flank each side) and this
+  file positions them. The stage supplies perspective once, on the
+  container, so each card's rotateY reads as depth rather than a squash.
+  Cards beyond the visible three are not rendered at all.
 */
-.track {
-  perspective: 1200px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  display: flex;
+.stage {
+  --card-width: min(62vw, 17rem);
+  position: relative;
   min-width: 0;
   flex: 1;
-  scroll-snap-type: x mandatory;
-  align-items: center;
-  gap: var(--space-6);
-  overflow-x: auto;
-  padding-block: var(--space-8);
-  /* Defensively outranks globals.css's site-wide reduced-motion clamp
-     (scroll-behavior: auto !important) — this carousel always animates. */
-  scroll-behavior: smooth !important;
-}
-
-.track::-webkit-scrollbar {
-  display: none;
+  height: var(--card-width);
+  margin-block: var(--space-8);
+  perspective: 1200px;
+  /* Velocity blur during travel. React sets --travel-blur per step (a
+     triangular 0 → peak → 0 ramp over the whole multi-step trip) and this
+     transition smooths the jump between step values. Lives on this single
+     wrapper, not split across a separate element from the cards' own
+     transform transitions below. */
+  filter: blur(var(--travel-blur, 0px));
+  transition: filter var(--step-duration, 320ms) linear;
 }
 
 /*
-  ⚠️ Duplication trap: this width pairs with the JSX
+  ⚠️ Duplication trap: --card-width above pairs with the JSX
   sizes="(max-width: 640px) 62vw, 17rem" on CompositionCover in
   FeaturedCarousel.tsx. Change one, change the other.
 */
 .card {
-  width: min(62vw, 17rem);
-  flex-shrink: 0;
-  scroll-snap-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--card-width);
+  /* --step-duration is set inline per step by React — 320ms for a single
+     step, compressed for longer jumps so the whole trip stays capped. */
+  transition: transform var(--step-duration, 320ms) var(--ease-standard),
+    opacity var(--step-duration, 320ms) var(--ease-standard);
 }
 
-@supports (animation-timeline: view(x)) {
-  @media (prefers-reduced-motion: no-preference) {
-    .card {
-      animation: coverflow-depth linear both;
-      animation-timeline: view(x);
-    }
-  }
+.cardCenter {
+  z-index: 3;
+  transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+  opacity: 1;
 }
 
-@keyframes coverflow-depth {
-  0% {
-    transform: scale(0.74) rotateY(24deg);
-    opacity: 0.4;
-  }
-  50% {
-    transform: scale(1) rotateY(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.74) rotateY(-24deg);
-    opacity: 0.4;
-  }
+.cardLeft {
+  z-index: 1;
+  transform: translate(-50%, -50%) translateX(calc(var(--card-width) * -0.55))
+    scale(0.82) rotateY(40deg);
+  opacity: 0.55;
+}
+
+.cardRight {
+  z-index: 1;
+  transform: translate(-50%, -50%) translateX(calc(var(--card-width) * 0.55))
+    scale(0.82) rotateY(-40deg);
+  opacity: 0.55;
 }
 
 .cardLink {
