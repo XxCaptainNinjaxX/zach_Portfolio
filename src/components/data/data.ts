@@ -1,3 +1,12 @@
+//------- Images -------
+
+// Files under public/images.
+export const images = {
+  marchingSS: "/images/MarchingSS.png",
+  jazzEnsTitles: "/images/jazzEnsTitles.jpg",
+  zach: "/images/zach.png",
+} as const;
+
 //------- Compositions -------
 
 export type CompositionType = "orchestra" | "chamber" | "solo";
@@ -23,9 +32,7 @@ export type Composition = {
   score?: { src: string; label: string };
   youtube?: { src: string; label: string };
   purchaseUrl?: string;
-  /** The single work centered as the landing-page hero on load. */
   landingComp?: true;
-  /** Whether this work appears in the landing page's featured carousel. */
   featured?: true;
 };
 
@@ -36,7 +43,7 @@ export const compositions: Composition[] = [
     subtitle: "for full orchestra",
     year: 2025,
     type: "orchestra",
-    duration: "14'00\"",
+    duration: "14 minutes",
     scoring: "3.2.2.2 / 4.3.3.1 / timp / 2 perc / hp / str",
     blurb:
       "A single arc from stillness to full tide, built on a rising figure that never quite resolves until the final bar.",
@@ -44,6 +51,12 @@ export const compositions: Composition[] = [
       "akwndwakjdawdjbawdkjbwadkjbwfjbafkjbawdkjBWJRlawjndjnkjawdjnwjkaw djawkndiaowdnwoawdnwkaldnwaidowadnsawldksnawkldsawndlksnalwndsknawlkdnsanwlkdnslkanwlkdnslkanwdnslknawkndskjrbgjkbriugbriuviusbuibuenmlsudnfwdiwnueaoanfneaoaenfuutjnlkaenvljnefnaowiufneujknkjnkjawnkjawnckjawnckajwcnkajcnkajwcnkajcwnnoiseofijefoijtuikjna, a,xncaiwflamcklai dont knwow aht ia ma writing this is a really long blueb or somethinglawndlkawdlknlkn",
     ],
     image: null,
+    audio: [{ src: "/audio/tidewater.mp3", label: "Placeholder recording" }],
+    score: { src: "https://www.google.com", label: "Placeholder score (PDF)" },
+    youtube: {
+      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
+      label: "Placeholder video",
+    },
     purchaseUrl: "https://www.google.com",
     landingComp: true,
     featured: true,
@@ -59,6 +72,9 @@ export const compositions: Composition[] = [
     blurb:
       "Written for string orchestra, a study in cold, high sonority and the slow warming beneath it.",
     image: null,
+    audio: [{ src: "/audio/north-light.mp3", label: "Placeholder recording" }],
+    score: { src: "https://www.google.com", label: "Placeholder score (PDF)" },
+    youtube: { src: "https://www.google.com", label: "Placeholder video" },
     purchaseUrl: "https://www.google.com",
     featured: true,
   },
@@ -72,6 +88,13 @@ export const compositions: Composition[] = [
     blurb:
       "Three short movements, each built from the same four-note descent heard at a different speed.",
     image: null,
+    audio: [
+      { src: "/audio/three-elegies-i.mp3", label: "I. Placeholder" },
+      { src: "/audio/three-elegies-ii.mp3", label: "II. Placeholder" },
+      { src: "/audio/three-elegies-iii.mp3", label: "III. Placeholder" },
+    ],
+    score: { src: "https://www.google.com", label: "Placeholder score (PDF)" },
+    youtube: { src: "https://www.google.com", label: "Placeholder video" },
     purchaseUrl: "https://www.google.com",
     featured: true,
   },
@@ -158,7 +181,7 @@ export const compositions: Composition[] = [
     duration: "11'00\"",
     blurb:
       "Written for wind ensemble, a continuous climb through six key areas without a single full cadence.",
-    image: "/images/MarchingSS.png",
+    image: images.marchingSS,
     featured: true,
   },
 ];
@@ -254,17 +277,17 @@ export type FeaturedImage = {
 export const featuredImages: FeaturedImage[] = [
   {
     id: "hero-rotation-1",
-    src: "/images/MarchingSS.png",
+    src: images.marchingSS,
     alt: "Zachary Crawford, photograph one",
   },
   {
     id: "hero-rotation-2",
-    src: "/images/jazzEnsTitles.jpg",
+    src: images.jazzEnsTitles,
     alt: "Zachary Crawford, photograph two",
   },
   {
     id: "hero-rotation-3",
-    src: "/images/zach.png",
+    src: images.zach,
     alt: "Zachary Crawford, photograph three",
   },
 ];
