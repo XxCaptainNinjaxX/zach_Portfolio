@@ -22,7 +22,7 @@ export function getLandingComp(): Composition {
   if (flagged.length !== 1) {
     throw new Error(
       `Expected exactly one composition with \`landingComp: true\`, found ${flagged.length}. ` +
-        `Fix src/content/compositions.ts.`,
+        `Fix src/components/data/data.ts.`,
     );
   }
 
@@ -94,6 +94,25 @@ export function getRelated(slug: string, limit = 3): Composition[] {
 export const allSlugs: string[] = compositions.map(
   (composition) => composition.slug,
 );
+
+/*
+  Runs at import time, same reasoning as getLandingComp(): a repeated slug is a
+  content bug that otherwise fails silently and looks like a rendering bug. Two
+  entries sharing a slug render as two cards pointing at the same detail page,
+  getBySlug() quietly returns only the first, and generateStaticParams() emits a
+  duplicate route. Copy-pasting an entry as a template is the normal way to add a
+  work, so forgetting to change the slug is the expected mistake.
+*/
+const repeatedSlugs = allSlugs.filter(
+  (slug, index) => allSlugs.indexOf(slug) !== index,
+);
+
+if (repeatedSlugs.length > 0) {
+  throw new Error(
+    `Duplicate composition slugs: ${[...new Set(repeatedSlugs)].join(", ")}. ` +
+      `Every slug must be unique. Fix src/components/data/data.ts.`,
+  );
+}
 
 /** Catalogue filtered to a single type, newest-first. */
 export function byType(family: CompositionType): Composition[] {
