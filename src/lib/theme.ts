@@ -22,6 +22,9 @@ export function readStoredTheme(): Theme {
 
 export const THEME_TRANSITION_ATTRIBUTE = "data-theme-transition";
 
+/** Set only around the View Transition wipe — see transitionTheme. */
+export const THEME_WIPING_ATTRIBUTE = "data-theme-wiping";
+
 const THEME_TRANSITION_TIMEOUT_MS = 700;
 
 let transitionTimer: number | undefined;
@@ -119,10 +122,19 @@ export function transitionTheme(theme: Theme, origin: TransitionOrigin): void {
 
   const radius = radiusToFarthestCorner(origin);
 
+  // Sheds the header's backdrop-filter for the wipe's duration — expensive
+  // to re-rasterize into the View Transition snapshot, and the likely
+  // cause of a mid-wipe stall. Cleared once the whole transition settles.
+  root.setAttribute(THEME_WIPING_ATTRIBUTE, "");
+
   const viewTransition = document.startViewTransition(() => {
     // Instant inside the callback: the wipe is doing the animating, and a
     // simultaneous colour tween would animate the new snapshot as well.
     applyTheme(theme, { animate: false });
+  });
+
+  viewTransition.finished.finally(() => {
+    root.removeAttribute(THEME_WIPING_ATTRIBUTE);
   });
 
   viewTransition.ready

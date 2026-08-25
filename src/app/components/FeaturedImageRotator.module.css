@@ -2,6 +2,12 @@
   display: flex;
   align-items: center;
   gap: var(--space-2);
+  /* Matches FeaturedCarousel's .track top padding so the photo and the
+     carousel's cards align horizontally on desktop, minus 2px: the
+     carousel's active card wears gold-frame-strong (6px box-shadow spread)
+     while this frame wears gold-frame (4px) — the visual ring would
+     otherwise sit 2px lower than the card's. */
+  padding-top: calc(var(--space-8) - 2px);
 }
 
 .frame {
@@ -52,6 +58,14 @@
 .layerInactive {
   opacity: 0;
   filter: blur(12px);
+}
+
+/* Shed during the theme wipe — up to two of these sit permanently blurred
+   at full frame size, a much larger rasterization cost for the View
+   Transition snapshot than the header band; see THEME_WIPING_ATTRIBUTE in
+   src/lib/theme.ts. */
+:global([data-theme-wiping]) .layerInactive {
+  filter: blur(0);
 }
 
 .image {

@@ -16,6 +16,13 @@
   backdrop-filter: blur(12px);
 }
 
+/* Shed during the theme wipe — expensive to re-rasterize into the View
+   Transition snapshot; see THEME_WIPING_ATTRIBUTE in src/lib/theme.ts. */
+:global([data-theme-wiping]) .band {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
 .row {
   display: flex;
   align-items: center;
