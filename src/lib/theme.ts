@@ -102,22 +102,18 @@ function radiusToFarthestCorner({ x, y }: TransitionOrigin): number {
  * trick: nothing is re-rendered twice, and the two states are real screenshots,
  * so every element crosses over together instead of each tweening its own colour.
  *
- * Where the API is missing, or the visitor asked for reduced motion, this falls
- * through to applyTheme — which cross-fades the colour tokens instead, or snaps
- * them instantly under reduced motion. Both are correct end states; only the
- * theatre differs.
+ * Where the API is missing, this falls through to applyTheme's cross-fade
+ * instead. Both are correct end states; only the theatre differs.
+ *
+ * Deliberately ignores prefers-reduced-motion — the wipe always plays,
+ * matching the same later decision applied to FeaturedImageRotator, the
+ * theme toggle's knob, MenuDrawer, and FeaturedCarousel.
  */
 export function transitionTheme(theme: Theme, origin: TransitionOrigin): void {
   const root = document.documentElement;
-  const prefersReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)",
-  ).matches;
 
-  if (
-    prefersReducedMotion ||
-    typeof document.startViewTransition !== "function"
-  ) {
-    applyTheme(theme, { animate: !prefersReducedMotion });
+  if (typeof document.startViewTransition !== "function") {
+    applyTheme(theme, { animate: true });
     return;
   }
 

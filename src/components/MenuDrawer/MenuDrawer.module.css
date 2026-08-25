@@ -21,10 +21,13 @@
   }
 }
 
+/* Deliberately outrank globals.css's site-wide reduced-motion clamp — same
+   decision as FeaturedImageRotator, the theme toggle, and FeaturedCarousel:
+   this motion always plays. */
 .triggerIcon {
   transition-property: transform, translate, scale, rotate;
   transition-timing-function: var(--ease-overshoot);
-  transition-duration: 160ms;
+  transition-duration: 160ms !important;
 }
 
 .triggerIconOpen {
@@ -45,7 +48,7 @@
   backdrop-filter: blur(8px);
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 160ms;
+  transition-duration: 160ms !important;
 }
 
 .scrimOpen {
@@ -81,7 +84,7 @@
   */
   transition-property: translate, opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 160ms;
+  transition-duration: 160ms !important;
 }
 
 .panelOpen {

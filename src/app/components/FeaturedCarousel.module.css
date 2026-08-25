@@ -35,6 +35,9 @@
   gap: var(--space-6);
   overflow-x: auto;
   padding-block: var(--space-8);
+  /* Defensively outranks globals.css's site-wide reduced-motion clamp
+     (scroll-behavior: auto !important) — this carousel always animates. */
+  scroll-behavior: smooth !important;
 }
 
 .track::-webkit-scrollbar {

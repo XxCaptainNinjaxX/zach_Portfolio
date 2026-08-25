@@ -116,12 +116,7 @@ export function FeaturedCarousel({
       compositions.length - 1,
       Math.max(0, activeIndex + delta),
     );
-    // Read the preference at click time rather than at mount: the user can
-    // change it mid-session, and this costs nothing.
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    scrollToIndex(next, !prefersReducedMotion);
+    scrollToIndex(next, true);
   }
 
   function handleKeyDown(event: React.KeyboardEvent<HTMLDivElement>) {
@@ -207,12 +202,7 @@ export function FeaturedCarousel({
           <li key={composition.slug}>
             <button
               type="button"
-              onClick={() => {
-                const prefersReducedMotion = window.matchMedia(
-                  "(prefers-reduced-motion: reduce)",
-                ).matches;
-                scrollToIndex(index, !prefersReducedMotion);
-              }}
+              onClick={() => scrollToIndex(index, true)}
               aria-label={`Show ${composition.title}`}
               aria-current={index === activeIndex ? "true" : undefined}
               className={`${styles.dot} ${

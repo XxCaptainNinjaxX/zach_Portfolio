@@ -251,10 +251,16 @@ fourth without a stated reason.
 overrides light under a single `[data-theme="light"]` block.
 
 `src/lib/theme.ts` and `src/components/ThemeScript/` are **load-bearing and
-off-limits.** The inline pre-paint script prevents flash-of-wrong-theme; the
-View Transitions circular wipe and its `prefers-reduced-motion` fallback
-depend on the exact attribute and storage key. Phase 3 may change which CSS
-variables they read. It may not change how or when they run.
+off-limits** for their attribute/storage-key mechanics. The inline pre-paint
+script prevents flash-of-wrong-theme; the View Transitions circular wipe
+depends on the exact attribute name. Phase 3 may change which CSS variables
+they read. It may not change how or when they run.
+
+**Exception, reversing the motion guidance above:** the wipe and its CSS
+cross-fade fallback deliberately ignore `prefers-reduced-motion` as of a
+later decision — they always animate, matching the same choice made for
+FeaturedImageRotator, the theme toggle's knob, MenuDrawer, and
+FeaturedCarousel. Everything else about how/when they run stays off-limits.
 
 ---
 

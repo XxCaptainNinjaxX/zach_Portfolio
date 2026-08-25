@@ -43,10 +43,13 @@
   background-color: var(--gold);
   box-shadow: 0 1px 4px rgb(0 0 0 / 0.45);
   /* `translate` property, so the knob keeps its own 300ms overshoot during the
-     theme cross-fade (which deliberately leaves transform/translate alone). */
+     theme cross-fade (which deliberately leaves transform/translate alone).
+     !important deliberately outranks globals.css's site-wide reduced-motion
+     clamp — same decision as FeaturedImageRotator, MenuDrawer, and
+     FeaturedCarousel: this motion always plays. */
   transition-property: transform, translate, scale, rotate;
   transition-timing-function: var(--ease-overshoot);
-  transition-duration: 300ms;
+  transition-duration: 300ms !important;
 }
 
 .knobDark {

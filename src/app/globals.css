@@ -349,29 +349,27 @@
   would feel waterlogged, and any element entering the DOM — a route change, a carousel
   card — would fade its colours in from nothing.
 
-  The reduced-motion guard is written here rather than left to the global clamp below:
-  `[data-theme-transition] *` outranks the bare `*` that clamp uses, so with both marked
-  !important this rule would win and override the user's stated preference. Scoping it
-  inside no-preference makes that impossible.
+  Deliberately unguarded against prefers-reduced-motion: `[data-theme-transition] *`
+  outranks the global clamp's bare `*` below, so with both marked !important this rule
+  wins and the cross-fade always plays — the same later decision applied to
+  FeaturedImageRotator, the theme toggle's knob, MenuDrawer, and FeaturedCarousel.
 
   !important is needed because components carry their own `transition-colors` (150ms),
   which has equal specificity and lands in a later cascade layer. `transform` is left out
   on purpose so the toggle knob keeps its own 300ms overshoot.
 */
-@media (prefers-reduced-motion: no-preference) {
-  [data-theme-transition],
-  [data-theme-transition] *,
-  [data-theme-transition] *::before,
-  [data-theme-transition] *::after {
-    transition:
-      background-color 670ms ease,
-      border-color 670ms ease,
-      color 670ms ease,
-      fill 670ms ease,
-      stroke 670ms ease,
-      box-shadow 670ms ease !important;
-    transition-delay: 0s !important;
-  }
+[data-theme-transition],
+[data-theme-transition] *,
+[data-theme-transition] *::before,
+[data-theme-transition] *::after {
+  transition:
+    background-color 670ms ease,
+    border-color 670ms ease,
+    color 670ms ease,
+    fill 670ms ease,
+    stroke 670ms ease,
+    box-shadow 670ms ease !important;
+  transition-delay: 0s !important;
 }
 
 /*
