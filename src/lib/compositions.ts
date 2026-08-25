@@ -1,7 +1,7 @@
 import {
   compositions,
   type Composition,
-  type Instrumentation,
+  type CompositionType,
 } from "@/components/data/data";
 
 /**
@@ -52,11 +52,11 @@ export function carouselOrder(): Composition[] {
   return [...rest.slice(0, half), featured, ...rest.slice(half)];
 }
 
-/** Only the instrumentations actually present in the catalogue, in catalogue order. */
-export function usedInstrumentations(): Instrumentation[] {
-  const seen = new Set<Instrumentation>();
+/** Only the types actually present in the catalogue, in catalogue order. */
+export function usedCompositionTypes(): CompositionType[] {
+  const seen = new Set<CompositionType>();
   for (const composition of byYearDesc()) {
-    seen.add(composition.instrumentation);
+    seen.add(composition.type);
   }
   return [...seen];
 }
@@ -66,8 +66,8 @@ export function getBySlug(slug: string): Composition | undefined {
 }
 
 /**
- * Up to `limit` other works, preferring the same instrumentation before falling
- * back to the rest of the catalogue so the strip is never short.
+ * Up to `limit` other works, preferring the same type before falling back to the
+ * rest of the catalogue so the strip is never short.
  */
 export function getRelated(slug: string, limit = 3): Composition[] {
   const current = getBySlug(slug);
@@ -77,10 +77,10 @@ export function getRelated(slug: string, limit = 3): Composition[] {
     (composition) => composition.slug !== slug,
   );
   const sameFamily = others.filter(
-    (composition) => composition.instrumentation === current.instrumentation,
+    (composition) => composition.type === current.type,
   );
   const otherFamilies = others.filter(
-    (composition) => composition.instrumentation !== current.instrumentation,
+    (composition) => composition.type !== current.type,
   );
 
   return [...sameFamily, ...otherFamilies].slice(0, limit);
@@ -90,9 +90,7 @@ export const allSlugs: string[] = compositions.map(
   (composition) => composition.slug,
 );
 
-/** Catalogue filtered to a single instrumentation, newest-first. */
-export function byInstrumentation(family: Instrumentation): Composition[] {
-  return byYearDesc().filter(
-    (composition) => composition.instrumentation === family,
-  );
+/** Catalogue filtered to a single type, newest-first. */
+export function byType(family: CompositionType): Composition[] {
+  return byYearDesc().filter((composition) => composition.type === family);
 }

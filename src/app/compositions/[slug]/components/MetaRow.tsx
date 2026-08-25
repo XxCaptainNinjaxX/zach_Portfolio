@@ -12,7 +12,7 @@ type MetaRowProps = {
 };
 
 /**
- * Label/value pairs for work metadata — year, duration, scoring, premiere.
+ * Label/value pairs for work metadata — year, duration, scoring.
  * A description list rather than a table: these are term/definition pairs, and
  * <dl> gives screen readers that relationship for free.
  *

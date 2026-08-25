@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CompositionCover } from "@/components/CompositionCover/CompositionCover";
 import {
-  instrumentationLabels,
+  compositionTypeLabels,
   type Composition,
 } from "@/components/data/data";
 import styles from "@/components/CompositionCard/CompositionCard.module.css";
@@ -32,7 +32,7 @@ export function CompositionCard({
       <span className={styles.title}>{composition.title}</span>
 
       <span className={`tracked-caps-tight ${styles.meta}`}>
-        {composition.year} · {instrumentationLabels[composition.instrumentation]}
+        {composition.year} · {compositionTypeLabels[composition.type]}
         {composition.duration ? ` · ${composition.duration}` : ""}
       </span>
 

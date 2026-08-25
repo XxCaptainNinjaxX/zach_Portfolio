@@ -68,7 +68,7 @@
 }
 
 /* Was text-[0.6rem]: font-size only, line-height inherits (tailwind-reference.md §1). */
-.kind {
+.type {
   font-size: var(--text-3xs);
   color: var(--gold);
 }

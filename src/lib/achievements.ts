@@ -1,7 +1,7 @@
 import {
   achievements,
   type Achievement,
-  type AchievementKind,
+  type AchievementType,
 } from "@/components/data/data";
 
 /** Derived views over the achievements list. See lib/compositions.ts for the same pattern. */
@@ -33,17 +33,11 @@ export function groupedByYear(): Map<number, Achievement[]> {
   return groups;
 }
 
-/** Only the kinds actually present, so the filter row never offers an empty facet. */
-export function usedKinds(): AchievementKind[] {
-  const seen = new Set<AchievementKind>();
+/** Only the types actually present, so the filter row never offers an empty facet. */
+export function usedAchievementTypes(): AchievementType[] {
+  const seen = new Set<AchievementType>();
   for (const achievement of byYearDesc()) {
-    seen.add(achievement.kind);
+    seen.add(achievement.type);
   }
   return [...seen];
-}
-
-export function getByCompositionSlug(slug: string): Achievement[] {
-  return byYearDesc().filter(
-    (achievement) => achievement.compositionSlug === slug,
-  );
 }

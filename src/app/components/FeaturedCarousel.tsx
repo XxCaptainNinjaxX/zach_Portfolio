@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { CompositionCover } from "@/components/CompositionCover/CompositionCover";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/ui/icons";
 import {
-  instrumentationLabels,
+  compositionTypeLabels,
   type Composition,
 } from "@/components/data/data";
 import styles from "@/app/components/FeaturedCarousel.module.css";
@@ -196,7 +196,7 @@ export function FeaturedCarousel({
       <div aria-live="polite" className={styles.caption}>
         <p className={`tracked-caps ${styles.title}`}>{active.title}</p>
         <p className={`tracked-caps-tight ${styles.meta}`}>
-          {active.year} · {instrumentationLabels[active.instrumentation]}
+          {active.year} · {compositionTypeLabels[active.type]}
           {active.duration ? ` · ${active.duration}` : ""}
         </p>
         <p className={styles.blurb}>{active.blurb}</p>

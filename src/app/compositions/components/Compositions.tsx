@@ -1,6 +1,6 @@
 import { CompositionBrowser } from "@/app/compositions/components/CompositionBrowser";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { byYearDesc, usedInstrumentations } from "@/lib/compositions";
+import { byYearDesc, usedCompositionTypes } from "@/lib/compositions";
 import subpageStyles from "@/app/subpage.module.css";
 import styles from "@/app/compositions/components/Compositions.module.css";
 
@@ -17,7 +17,7 @@ export function Compositions() {
         <div className={styles.browser}>
           <CompositionBrowser
             compositions={catalogue}
-            facets={usedInstrumentations()}
+            facets={usedCompositionTypes()}
           />
         </div>
       </div>

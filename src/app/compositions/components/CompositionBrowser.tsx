@@ -3,22 +3,22 @@
 import { useMemo, useState } from "react";
 import { CompositionCard } from "@/components/CompositionCard/CompositionCard";
 import {
-  instrumentationLabels,
+  compositionTypeLabels,
   type Composition,
-  type Instrumentation,
+  type CompositionType,
 } from "@/components/data/data";
 import styles from "@/app/compositions/components/CompositionBrowser.module.css";
 
 type CompositionBrowserProps = {
   compositions: Composition[];
-  /** Only the instrumentations present in the catalogue, so no facet is ever empty. */
-  facets: Instrumentation[];
+  /** Only the types present in the catalogue, so no facet is ever empty. */
+  facets: CompositionType[];
 };
 
-type Filter = Instrumentation | "all";
+type Filter = CompositionType | "all";
 
 /**
- * Catalogue grid with an instrumentation filter.
+ * Catalogue grid with a type filter.
  *
  * Filter state is client-side rather than a URL search param on purpose: reading
  * searchParams would make the page dynamic and forfeit static prerendering, and
@@ -33,9 +33,7 @@ export function CompositionBrowser({
 
   const visible = useMemo(() => {
     if (filter === "all") return compositions;
-    return compositions.filter(
-      (composition) => composition.instrumentation === filter,
-    );
+    return compositions.filter((composition) => composition.type === filter);
   }, [compositions, filter]);
 
   // Only worth a filter row when there is more than one thing to filter by.
@@ -46,7 +44,7 @@ export function CompositionBrowser({
       {showFilters ? (
         <div
           role="group"
-          aria-label="Filter by instrumentation"
+          aria-label="Filter by type"
           className={styles.filters}
         >
           <FilterButton
@@ -57,7 +55,7 @@ export function CompositionBrowser({
           {facets.map((facet) => (
             <FilterButton
               key={facet}
-              label={instrumentationLabels[facet]}
+              label={compositionTypeLabels[facet]}
               isActive={filter === facet}
               onSelect={() => setFilter(facet)}
             />

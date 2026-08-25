@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Flourish } from "@/components/ui/Flourish";
 import {
-  instrumentationLabels,
+  compositionTypeLabels,
   type Composition,
 } from "@/components/data/data";
 import styles from "@/components/CompositionCover/CompositionCover.module.css";
@@ -45,8 +45,7 @@ export function CompositionCover({
       <Flourish className={styles.flourish} />
       <span className={styles.placeholderTitle}>{composition.title}</span>
       <span className={`tracked-caps ${styles.placeholderMeta}`}>
-        {composition.year} ·{" "}
-        {instrumentationLabels[composition.instrumentation]}
+        {composition.year} · {compositionTypeLabels[composition.type]}
       </span>
     </span>
   );

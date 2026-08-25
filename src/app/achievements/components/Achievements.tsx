@@ -1,9 +1,7 @@
-import Link from "next/link";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { achievementKindLabels } from "@/components/data/data";
+import { achievementTypeLabels } from "@/components/data/data";
 import { groupedByYear } from "@/lib/achievements";
-import { getBySlug } from "@/lib/compositions";
 import subpageStyles from "@/app/subpage.module.css";
 import styles from "@/app/achievements/components/Achievements.module.css";
 
@@ -35,52 +33,35 @@ export function Achievements() {
 
               {/* The gold spine of the timeline. */}
               <ul className={styles.entries}>
-                {entries.map((achievement) => {
-                  const related = achievement.compositionSlug
-                    ? getBySlug(achievement.compositionSlug)
-                    : undefined;
+                {entries.map((achievement) => (
+                  <li key={achievement.id} className={styles.entry}>
+                    <span aria-hidden="true" className={styles.marker} />
 
-                  return (
-                    <li key={achievement.id} className={styles.entry}>
-                      <span aria-hidden="true" className={styles.marker} />
+                    <p className={`tracked-caps-tight ${styles.type}`}>
+                      {achievementTypeLabels[achievement.type]}
+                    </p>
 
-                      <p className={`tracked-caps-tight ${styles.kind}`}>
-                        {achievementKindLabels[achievement.kind]}
+                    <h3 className={styles.title}>
+                      {achievement.href ? (
+                        <ExternalLink href={achievement.href}>
+                          {achievement.title}
+                        </ExternalLink>
+                      ) : (
+                        achievement.title
+                      )}
+                    </h3>
+
+                    {achievement.organization ? (
+                      <p className={styles.organization}>
+                        {achievement.organization}
                       </p>
+                    ) : null}
 
-                      <h3 className={styles.title}>
-                        {achievement.href ? (
-                          <ExternalLink href={achievement.href}>
-                            {achievement.title}
-                          </ExternalLink>
-                        ) : (
-                          achievement.title
-                        )}
-                      </h3>
-
-                      {achievement.organization ? (
-                        <p className={styles.organization}>
-                          {achievement.organization}
-                        </p>
-                      ) : null}
-
-                      {achievement.detail ? (
-                        <p className={styles.detail}>
-                          {achievement.detail}
-                        </p>
-                      ) : null}
-
-                      {related ? (
-                        <Link
-                          href={`/compositions/${related.slug}`}
-                          className={`tracked-caps-tight ${styles.relatedLink}`}
-                        >
-                          {related.title}
-                        </Link>
-                      ) : null}
-                    </li>
-                  );
-                })}
+                    {achievement.detail ? (
+                      <p className={styles.detail}>{achievement.detail}</p>
+                    ) : null}
+                  </li>
+                ))}
               </ul>
             </section>
           ))}
