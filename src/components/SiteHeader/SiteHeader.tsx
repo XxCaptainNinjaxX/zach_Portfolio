@@ -2,7 +2,7 @@ import Link from "next/link";
 import { MenuDrawer } from "@/components/MenuDrawer/MenuDrawer";
 import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
 import { Logo } from "@/components/ui/Logo";
-import { MailIcon, PhoneIcon } from "@/components/ui/icons";
+import { MailIcon } from "@/components/ui/icons";
 import { site } from "@/components/data/site";
 import styles from "@/components/SiteHeader/SiteHeader.module.css";
 
@@ -50,16 +50,6 @@ export function SiteHeader() {
         </Link>
 
         <div className={styles.controls}>
-          {site.phone ? (
-            <a
-              href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}
-              aria-label={`Call ${site.name}`}
-              className={styles.phoneLink}
-            >
-              <PhoneIcon />
-            </a>
-          ) : null}
-
           {/*
             The site's only contact surface — there is no /contact route. The
             address shows from `sm` up; below that it is too long for the header

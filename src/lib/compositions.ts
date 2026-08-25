@@ -12,16 +12,16 @@ import {
 /**
  * The landing page hero.
  *
- * Throws rather than returning undefined: the featured work is a flag on the
- * catalogue, not a second list, so zero or two matches is a content bug that
- * should fail the build loudly instead of rendering an empty hero.
+ * Throws rather than returning undefined: the landing composition is a flag
+ * on the catalogue, not a second list, so zero or two matches is a content
+ * bug that should fail the build loudly instead of rendering an empty hero.
  */
-export function getFeatured(): Composition {
-  const flagged = compositions.filter((composition) => composition.featured);
+export function getLandingComp(): Composition {
+  const flagged = compositions.filter((composition) => composition.landingComp);
 
   if (flagged.length !== 1) {
     throw new Error(
-      `Expected exactly one composition with \`featured: true\`, found ${flagged.length}. ` +
+      `Expected exactly one composition with \`landingComp: true\`, found ${flagged.length}. ` +
         `Fix src/content/compositions.ts.`,
     );
   }
@@ -38,18 +38,23 @@ export function byYearDesc(): Composition[] {
 }
 
 /**
- * Carousel order: featured work first, then the rest newest-first. Puts the
- * highlighted work at the centre of the track without duplicating it.
+ * Carousel order: the landing composition first, then the rest newest-first.
+ * Puts the highlighted work at the centre of the track without duplicating it.
+ *
+ * Membership is `featured`, separate from `landingComp` — `landingComp` only
+ * decides which single work is the landing-page hero (getLandingComp() above
+ * still throws unless exactly one is flagged), while `featured` decides who
+ * else rides along with it in the carousel.
  */
 export function carouselOrder(): Composition[] {
-  const featured = getFeatured();
+  const landingComp = getLandingComp();
   const rest = byYearDesc().filter(
-    (composition) => composition.slug !== featured.slug,
+    (composition) => composition.featured && composition.slug !== landingComp.slug,
   );
 
-  // Split the remainder around the featured work so it sits mid-track.
+  // Split the remainder around the landing composition so it sits mid-track.
   const half = Math.floor(rest.length / 2);
-  return [...rest.slice(0, half), featured, ...rest.slice(half)];
+  return [...rest.slice(0, half), landingComp, ...rest.slice(half)];
 }
 
 /** Only the types actually present in the catalogue, in catalogue order. */

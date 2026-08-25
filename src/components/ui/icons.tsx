@@ -39,14 +39,6 @@ export function MailIcon({ size = 18, className }: IconProps) {
   );
 }
 
-export function PhoneIcon({ size = 18, className }: IconProps) {
-  return (
-    <svg {...iconAttributes(size, className)}>
-      <path d="M6.5 3h3l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5L17 13l4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.2 2 2 0 0 1 5 3h1.5Z" />
-    </svg>
-  );
-}
-
 export function MenuIcon({ size = 22, className }: IconProps) {
   return (
     <svg {...iconAttributes(size, className)}>

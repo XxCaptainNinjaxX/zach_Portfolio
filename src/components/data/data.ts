@@ -1,17 +1,7 @@
 //------- Compositions -------
 
-/**
- * The catalogue. Adding a composition is appending one object to `compositions`
- * — the index page, the landing carousel, /compositions/<slug>, the sitemap, and
- * the "related works" strip all read from here.
- *
- * ⚠️ VERIFY: every entry below is placeholder with invented titles and dates.
- * The shape is real; the content is not.
- */
-
 export type CompositionType = "orchestra" | "chamber" | "solo";
 
-/** Display labels for the filter row. Keys must stay in sync with CompositionType. */
 export const compositionTypeLabels: Record<CompositionType, string> = {
   orchestra: "Orchestra",
   chamber: "Chamber",
@@ -19,26 +9,23 @@ export const compositionTypeLabels: Record<CompositionType, string> = {
 };
 
 export type Composition = {
-  /** Permalink segment. Never change once the page has been shared or indexed. */
   slug: string;
   title: string;
   subtitle?: string;
   year: number;
-  /** Ensemble category. The exact scoring lives in `scoring`. */
   type: CompositionType;
-  /** Performance duration, conventionally minutes'seconds" — e.g. 12'30" */
   duration?: string;
-  /** Orchestral shorthand, e.g. 2.2.2.2 / 4.3.3.1 / timp / str */
   scoring?: string;
-  /** One or two sentences. Reused on cards, in the carousel, and as the meta description. */
   blurb: string;
-  /** Long-form note, one string per paragraph. `blurb` is the short form. */
   description?: string[];
-  /** Local path under /public, or null for a generated typographic placeholder. */
   image: string | null;
   audio?: { src: string; label: string }[];
   score?: { src: string; label: string };
-  /** Exactly one compositio may set this. getFeatured() enforces it at build time. */
+  youtube?: { src: string; label: string };
+  purchaseUrl?: string;
+  /** The single work centered as the landing-page hero on load. */
+  landingComp?: true;
+  /** Whether this work appears in the landing page's featured carousel. */
   featured?: true;
 };
 
@@ -57,6 +44,8 @@ export const compositions: Composition[] = [
       "akwndwakjdawdjbawdkjbwadkjbwfjbafkjbawdkjBWJRlawjndjnkjawdjnwjkaw djawkndiaowdnwoawdnwkaldnwaidowadnsawldksnawkldsawndlksnalwndsknawlkdnsanwlkdnslkanwlkdnslkanwdnslknawkndskjrbgjkbriugbriuviusbuibuenmlsudnfwdiwnueaoanfneaoaenfuutjnlkaenvljnefnaowiufneujknkjnkjawnkjawnckjawnckajwcnkajcnkajwcnkajcwnnoiseofijefoijtuikjna, a,xncaiwflamcklai dont knwow aht ia ma writing this is a really long blueb or somethinglawndlkawdlknlkn",
     ],
     image: null,
+    purchaseUrl: "https://www.google.com",
+    landingComp: true,
     featured: true,
   },
   {
@@ -70,6 +59,8 @@ export const compositions: Composition[] = [
     blurb:
       "Written for string orchestra, a study in cold, high sonority and the slow warming beneath it.",
     image: null,
+    purchaseUrl: "https://www.google.com",
+    featured: true,
   },
   {
     slug: "three-elegies",
@@ -81,19 +72,21 @@ export const compositions: Composition[] = [
     blurb:
       "Three short movements, each built from the same four-note descent heard at a different speed.",
     image: null,
+    purchaseUrl: "https://www.google.com",
+    featured: true,
   },
   {
     slug: "the-still-hour",
     title: "The Still Hour",
     subtitle: "for SATB chorus",
     year: 2023,
-    // ⚠️ VERIFY: was "choral" before the union narrowed. Chamber is the nearest
-    // survivor for an unaccompanied vocal ensemble, not an exact description.
     type: "chamber",
     duration: "6'20\"",
     blurb:
       "An unaccompanied setting for mixed chorus, written to sit in the resonance of a large room.",
     image: null,
+    purchaseUrl: "https://www.google.com",
+    featured: true,
   },
   {
     slug: "nocturne-for-solo-piano",
@@ -105,37 +98,74 @@ export const compositions: Composition[] = [
     blurb:
       "A quiet piece in one breath, with the pedal held far longer than is comfortable.",
     image: null,
+    purchaseUrl: "https://www.google.com",
+    featured: true,
   },
   {
     slug: "ascent",
     title: "Ascent",
     subtitle: "for wind ensemble",
     year: 2022,
-    // ⚠️ VERIFY: was "band". A wind ensemble is not an orchestra; this is a
-    // forced fit to the narrowed union, kept because the subtitle carries the
-    // real scoring.
     type: "orchestra",
     duration: "11'00\"",
     blurb:
       "Written for wind ensemble, a continuous climb through six key areas without a single full cadence.",
     image: null,
+    purchaseUrl: "https://www.google.com",
+    featured: true,
+  },
+  //----------
+
+  {
+    slug: "test1",
+    title: "test",
+    subtitle: "test",
+    year: 2022,
+    type: "solo",
+    duration: "11'00\"",
+    blurb:
+      "Written for wind ensemble, a continuous climb through six key areas without a single full cadence.",
+    image: null,
+  },
+  {
+    slug: "test",
+    title: "test",
+    subtitle: "test",
+    year: 2022,
+    type: "solo",
+    duration: "11'00\"",
+    blurb:
+      "Written for wind ensemble, a continuous climb through six key areas without a single full cadence.",
+    image: null,
+  },
+  {
+    slug: "test2",
+    title: "test",
+    subtitle: "test",
+    year: 2022,
+    type: "solo",
+    duration: "11'00\"",
+    blurb:
+      "Written for wind ensemble, a continuous climb through six key areas without a single full cadence.",
+    image: null,
+  },
+  {
+    slug: "test3",
+    title: "test",
+    subtitle: "test",
+    year: 2022,
+    type: "solo",
+    duration: "11'00\"",
+    blurb:
+      "Written for wind ensemble, a continuous climb through six key areas without a single full cadence.",
+    image: "/images/MarchingSS.png",
+    featured: true,
   },
 ];
 
 //------- Achievements -------
 
-/**
- * Awards and performances.
- *
- * ⚠️ VERIFY: this is the largest guess in the project. The real contents of
- * "Achievements" were never specified — see PLAN.md STEP 3 question 12. The
- * `type` field is the hedge: the same data survives whether this turns out to be
- * six career highlights or forty mixed entries, and only the presentation changes.
- */
-
 export type AchievementType = "award" | "performance";
-
-/** Display labels for the filter row. Keys must stay in sync with AchievementType. */
 export const achievementTypeLabels: Record<AchievementType, string> = {
   award: "Awards",
   performance: "Performances",
@@ -148,7 +178,6 @@ export type Achievement = {
   title: string;
   organization?: string;
   detail?: string;
-  /** External link. Rendered with rel="noopener noreferrer" and a new-tab hint. */
   href?: string;
 };
 
@@ -164,8 +193,6 @@ export const achievements: Achievement[] = [
   {
     id: "commission-tidewater",
     year: 2024,
-    // ⚠️ VERIFY: was "commission". Neither survivor fits a commission; "award"
-    // is the closer of the two because both are conferred rather than performed.
     type: "award",
     title: "Orchestral commission",
     organization: "Placeholder Symphony Orchestra",
@@ -181,8 +208,6 @@ export const achievements: Achievement[] = [
   {
     id: "residency-2024",
     year: 2024,
-    // ⚠️ VERIFY: was "residency". Forced fit — a residency is conferred, so it
-    // lands under "award" rather than "performance".
     type: "award",
     title: "Composer in residence",
     organization: "Placeholder Arts Center",
@@ -212,8 +237,6 @@ export const achievements: Achievement[] = [
   {
     id: "press-review-2022",
     year: 2022,
-    // ⚠️ VERIFY: was "press". The worst fit of the five — a review is neither an
-    // award nor a performance. Filed under the event it reviews.
     type: "performance",
     title: "Featured in a review of new orchestral writing",
     organization: "Placeholder Review",
@@ -222,17 +245,8 @@ export const achievements: Achievement[] = [
 
 //------- Featured images -------
 
-/**
- * Rotating images for the landing page hero. Unrelated to
- * `Composition.featured` (the single spotlighted work in the catalogue) and
- * to FeaturedCarousel (the compositions coverflow) — three separate
- * "featured" concepts that happen to share a name.
- */
-
 export type FeaturedImage = {
-  /** Hand-written, kebab-case, never reused. */
   id: string;
-  /** Local path under /public, or null for a generated placeholder. */
   src: string | null;
   alt: string;
 };

@@ -1,12 +1,12 @@
 import { FeaturedCarousel } from "@/app/components/FeaturedCarousel";
 import { Hero } from "@/app/components/Hero";
 import { Flourish } from "@/components/ui/Flourish";
-import { carouselOrder, getFeatured } from "@/lib/compositions";
+import { carouselOrder, getLandingComp } from "@/lib/compositions";
 import subpageStyles from "@/app/subpage.module.css";
 import styles from "@/app/components/Home.module.css";
 
 export function Home() {
-  const featured = getFeatured();
+  const landingComp = getLandingComp();
   const carousel = carouselOrder();
 
   return (
@@ -27,7 +27,7 @@ export function Home() {
         <div className={styles.carouselColumn}>
           <FeaturedCarousel
             compositions={carousel}
-            initialSlug={featured.slug}
+            initialSlug={landingComp.slug}
           />
         </div>
       </div>

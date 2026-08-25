@@ -2,6 +2,9 @@
   position: sticky;
   top: 0;
   z-index: 30;
+  /* Cancels layout.module.css .content's padding-inline so the band reaches
+     the true viewport edges instead of stopping at the gold frame's inset. */
+  margin-inline: calc(var(--space-3) * -1);
   padding-top: var(--space-3);
 }
 
@@ -27,7 +30,9 @@
   display: flex;
   align-items: center;
   gap: var(--space-4);
-  padding-inline: var(--space-5);
+  /* Base padding plus the header's own negative margin-inline above, so the
+     row's content still lines up where it did before the band went full-bleed. */
+  padding-inline: calc(var(--space-5) + var(--space-3));
   padding-block: var(--space-4);
 }
 
@@ -112,19 +117,6 @@
   gap: var(--space-1);
 }
 
-.phoneLink {
-  display: inline-flex;
-  width: 2.25rem;
-  height: 2.25rem;
-  align-items: center;
-  justify-content: center;
-  color: var(--ink-muted);
-  transition-property: color, background-color, border-color, outline-color,
-    text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .mailLink {
   display: inline-flex;
   align-items: center;
@@ -138,7 +130,6 @@
 }
 
 @media (hover: hover) {
-  .phoneLink:hover,
   .mailLink:hover {
     color: var(--gold);
   }
@@ -151,7 +142,7 @@
 }
 
 .mobileRow {
-  padding-inline: var(--space-5);
+  padding-inline: calc(var(--space-5) + var(--space-3));
   padding-bottom: var(--space-4);
   text-align: center;
 }
@@ -180,11 +171,13 @@
 
 @media (min-width: 40rem) {
   .header {
+    /* .content's padding-inline switches to var(--space-5) at this breakpoint. */
+    margin-inline: calc(var(--space-5) * -1);
     padding-top: var(--space-5);
   }
 
   .row {
-    padding-inline: var(--space-8);
+    padding-inline: calc(var(--space-8) + var(--space-5));
   }
 
   .controls {
@@ -197,6 +190,10 @@
 
   .mailText {
     display: inline;
+  }
+
+  .mobileRow {
+    padding-inline: calc(var(--space-5) + var(--space-5));
   }
 
   .mobileName {

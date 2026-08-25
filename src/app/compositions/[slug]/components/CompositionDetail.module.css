@@ -43,6 +43,30 @@
   margin-top: var(--space-8);
 }
 
+.purchaseButton {
+  margin-top: var(--space-4);
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+  padding-block: var(--space-2);
+  padding-inline: var(--space-6);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold-hairline);
+  transition-property: color, border-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+@media (hover: hover) {
+  .purchaseButton:hover {
+    color: var(--ink);
+    border-color: var(--gold);
+  }
+}
+
 /* leading-tight overrides the size's default line-height at both breakpoints. */
 .title {
   font-family: var(--font-display);
@@ -126,6 +150,16 @@
 }
 
 .scoreLink {
+  font-size: var(--text-sm);
+  line-height: calc(1.25 / 0.875);
+  color: var(--ink-muted);
+}
+
+.watchParagraph {
+  margin-top: var(--space-4);
+}
+
+.watchLink {
   font-size: var(--text-sm);
   line-height: calc(1.25 / 0.875);
   color: var(--ink-muted);

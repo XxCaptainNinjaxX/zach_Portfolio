@@ -70,6 +70,27 @@
   opacity: 0.55;
 }
 
+/*
+  Hover lift composes translateY into each position's existing transform
+  chain rather than overwriting it — replacing the whole `transform` value
+  would snap a flanking card flat, cancelling its rotateY/scale.
+*/
+@media (hover: hover) {
+  .cardCenter:hover {
+    transform: translate(-50%, -50%) translateY(-5px) scale(1) rotateY(0deg);
+  }
+
+  .cardLeft:hover {
+    transform: translate(-50%, -50%) translateY(-5px)
+      translateX(calc(var(--card-width) * -0.55)) scale(0.82) rotateY(40deg);
+  }
+
+  .cardRight:hover {
+    transform: translate(-50%, -50%) translateY(-5px)
+      translateX(calc(var(--card-width) * 0.55)) scale(0.82) rotateY(-40deg);
+  }
+}
+
 .cardLink {
   position: relative;
   display: block;

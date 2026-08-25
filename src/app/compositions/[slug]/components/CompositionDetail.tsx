@@ -9,6 +9,7 @@ import { Divider } from "@/components/ui/Divider";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { compositionTypeLabels, type Composition } from "@/components/data/data";
 import { getRelated } from "@/lib/compositions";
+import { EscapeToCompositions } from "@/app/compositions/[slug]/components/EscapeToCompositions";
 import subpageStyles from "@/app/subpage.module.css";
 import styles from "@/app/compositions/[slug]/components/CompositionDetail.module.css";
 
@@ -34,6 +35,7 @@ export function CompositionDetail({ composition }: CompositionDetailProps) {
 
   return (
     <div className={subpageStyles.pageShell}>
+      <EscapeToCompositions />
       <div className={styles.column}>
         <Link
           href="/compositions"
@@ -50,6 +52,15 @@ export function CompositionDetail({ composition }: CompositionDetailProps) {
                 sizes="(max-width: 1024px) 80vw, 22rem"
               />
             </div>
+
+            {composition.purchaseUrl ? (
+              <ExternalLink
+                href={composition.purchaseUrl}
+                className={styles.purchaseButton}
+              >
+                Purchase
+              </ExternalLink>
+            ) : null}
 
             <MetaRow entries={meta} className={styles.meta} />
           </div>
@@ -99,6 +110,22 @@ export function CompositionDetail({ composition }: CompositionDetailProps) {
                     </li>
                   ))}
                 </ul>
+              </section>
+            ) : null}
+
+            {composition.youtube ? (
+              <section className={styles.section}>
+                <h2 className={`tracked-caps ${styles.sectionHeading}`}>
+                  Watch
+                </h2>
+                <p className={styles.watchParagraph}>
+                  <ExternalLink
+                    href={composition.youtube.src}
+                    className={styles.watchLink}
+                  >
+                    {composition.youtube.label}
+                  </ExternalLink>
+                </p>
               </section>
             ) : null}
 
