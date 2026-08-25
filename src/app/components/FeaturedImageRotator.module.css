@@ -1,24 +1,57 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
 .frame {
   position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
   aspect-ratio: 1;
-  width: 100%;
   overflow: hidden;
+}
+
+.navButton {
+  display: inline-flex;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  transition-property: opacity;
+  transition-timing-function: var(--ease-standard);
+  transition-duration: 150ms;
+}
+
+@media (hover: hover) {
+  .navButton:hover {
+    opacity: 0.7;
+  }
 }
 
 .layer {
   position: absolute;
   inset: 0;
-  transition-property: opacity;
+  transition-property: opacity, filter;
   transition-timing-function: var(--ease-standard);
-  transition-duration: 400ms;
+  /* !important deliberately overrides globals.css's site-wide
+     prefers-reduced-motion clamp: this crossfade always plays, unlike the
+     rest of the site, per explicit decision to keep rotation animated
+     regardless of the OS motion setting. */
+  transition-duration: 400ms !important;
 }
 
 .layerActive {
   opacity: 1;
+  filter: blur(0);
 }
 
 .layerInactive {
   opacity: 0;
+  filter: blur(12px);
 }
 
 .image {
