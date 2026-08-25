@@ -5,16 +5,36 @@ export const images = {
   marchingSS: "/images/MarchingSS.png",
   jazzEnsTitles: "/images/jazzEnsTitles.jpg",
   zach: "/images/zach.png",
+
+  s1: "/images/comps/s1.jpg",
+  s2: "/images/comps/s2.jpg",
+  s3: "/images/comps/s3.jpg",
+  s4: "/images/comps/s4.jpg",
+  s5: "/images/comps/s5.jpg",
+  s6: "/images/comps/s6.jpg",
+  s7: "/images/comps/s7.jpg",
+  s8: "/images/comps/s8.jpg",
+  s9: "/images/comps/s9.jpg",
+  s10: "/images/comps/s10.jpg",
+  s11: "/images/comps/s11.jpg",
+  s12: "/images/comps/s12.jpg",
+  s13: "/images/comps/s13.jpg",
+  s14: "/images/comps/s14.jpg",
+  s15: "/images/comps/s15.jpg",
+  s16: "/images/comps/s16.jpg",
+  s17: "/images/comps/s17.jpg",
+  s18: "/images/comps/s18.jpg",
 } as const;
 
 //------- Compositions -------
 
-export type CompositionType = "orchestra" | "chamber" | "solo";
+export type CompositionType = "orchestra" | "chamber" | "solo" | "symphony";
 
 export const compositionTypeLabels: Record<CompositionType, string> = {
   orchestra: "Orchestra",
   chamber: "Chamber",
   solo: "Solo",
+  symphony: "Symphony",
 };
 
 export type Composition = {
@@ -183,6 +203,197 @@ export const compositions: Composition[] = [
       "Written for wind ensemble, a continuous climb through six key areas without a single full cadence.",
     image: images.marchingSS,
     featured: true,
+  },
+  //-------------------------------------------------------------------
+
+  {
+    slug: "EMinor",
+    title: "E-Minor",
+    subtitle: "for full orchestra",
+    year: 2021,
+    type: "symphony",
+    duration: "1:03:51",
+    scoring:
+      "Piccolo\n" +
+      "Flute 1" +
+      "\n" +
+      "Flute 2" +
+      "\n" +
+      "Oboe 1" +
+      "\n" +
+      "Oboe 2" +
+      "\n" +
+      "Clarinet 1" +
+      "\n" +
+      "Clarinet 2" +
+      "\n" +
+      "Bassoon 1" +
+      "\n" +
+      "Bassoon 2" +
+      "\n" +
+      "Horn 1" +
+      "\n" +
+      "Horn 2" +
+      "\n" +
+      "Horn 3" +
+      "\n" +
+      "Horn 4" +
+      "\n" +
+      "Trumpet in C 1" +
+      "\n" +
+      "Trumpet in C 2" +
+      "\n" +
+      "Trombone 1" +
+      "\n" +
+      "Trombone 2" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Violin 1" +
+      "\n" +
+      "Violin 2" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
+    blurb: "[PLACEHOLDER]",
+    description: [
+      "Crawford’s First Symphony was the first piece he ever made officially. After being inspired by seeing his trombone private teacher make music for him to play, he wanted to do the same. At the time, the only classical pieces he knew of were Holst’s “The Planets” and Berlioz’s “Symphonie Fantastique”. He took what he learned and in one year completed his First Symphony not even knowing all of his major or minor scales.",
+      "This piece has Amazing Low Brass, Flute, Piccolo, Clarinet, English Horn, Violin, Low Strings, and Trumpet Excerpts.",
+      "Fun Fact: He completed the symphony on his birthday just minutes before he went to see his private teacher conduct Dvořák’s “New World Symphony”. It would be the first time he’d ever listen to the piece and would inspire his later works exponentially. The Scherzo Finale of this work also used to be originally in D Major.",
+    ],
+    image: images.s1,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=X5vxtj-Clwc",
+      label: " Symphony 1 in E Minor, Full Score + Audio",
+    },
+    purchaseUrl: "https://www.google.com",
+    featured: true,
+  },
+  {
+    slug: "one",
+    title: "[PLACEHOLDER]",
+    subtitle: "for full orchestra",
+    year: 0,
+    type: "symphony",
+    duration: "[PLACEHOLDER]",
+    scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
+    blurb: "[PLACEHOLDER]",
+    description: ["[PLACEHOLDER]"],
+    image: images.s1,
+    youtube: {
+      src: "[PLACEHOLDER]",
+      label: "[PLACEHOLDER]",
+    },
+    purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "two",
+    title: "[PLACEHOLDER]",
+    subtitle: "for full orchestra",
+    year: 0,
+    type: "symphony",
+    duration: "[PLACEHOLDER]",
+    scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
+    blurb: "[PLACEHOLDER]",
+    description: ["[PLACEHOLDER]"],
+    image: images.s1,
+    youtube: {
+      src: "[PLACEHOLDER]",
+      label: "[PLACEHOLDER]",
+    },
+    purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "three",
+    title: "[PLACEHOLDER]",
+    subtitle: "for full orchestra",
+    year: 0,
+    type: "symphony",
+    duration: "[PLACEHOLDER]",
+    scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
+    blurb: "[PLACEHOLDER]",
+    description: ["[PLACEHOLDER]"],
+    image: images.s1,
+    youtube: {
+      src: "[PLACEHOLDER]",
+      label: "[PLACEHOLDER]",
+    },
+    purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "four",
+    title: "[PLACEHOLDER]",
+    subtitle: "for full orchestra",
+    year: 0,
+    type: "symphony",
+    duration: "[PLACEHOLDER]",
+    scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
+    blurb: "[PLACEHOLDER]",
+    description: ["[PLACEHOLDER]"],
+    image: images.s1,
+    youtube: {
+      src: "[PLACEHOLDER]",
+      label: "[PLACEHOLDER]",
+    },
+    purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "five",
+    title: "[PLACEHOLDER]",
+    subtitle: "for full orchestra",
+    year: 0,
+    type: "symphony",
+    duration: "[PLACEHOLDER]",
+    scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
+    blurb: "[PLACEHOLDER]",
+    description: ["[PLACEHOLDER]"],
+    image: images.s1,
+    youtube: {
+      src: "[PLACEHOLDER]",
+      label: "[PLACEHOLDER]",
+    },
+    purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "six",
+    title: "[PLACEHOLDER]",
+    subtitle: "for full orchestra",
+    year: 0,
+    type: "symphony",
+    duration: "[PLACEHOLDER]",
+    scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
+    blurb: "[PLACEHOLDER]",
+    description: ["[PLACEHOLDER]"],
+    image: images.s1,
+    youtube: {
+      src: "[PLACEHOLDER]",
+      label: "[PLACEHOLDER]",
+    },
+    purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "seven",
+    title: "[PLACEHOLDER]",
+    subtitle: "for full orchestra",
+    year: 0,
+    type: "symphony",
+    duration: "[PLACEHOLDER]",
+    scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
+    blurb: "[PLACEHOLDER]",
+    description: ["[PLACEHOLDER]"],
+    image: images.s1,
+    youtube: {
+      src: "[PLACEHOLDER]",
+      label: "[PLACEHOLDER]",
+    },
+    purchaseUrl: "https://www.google.com",
   },
 ];
 
