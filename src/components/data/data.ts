@@ -34,8 +34,8 @@ export type Composition = {
   blurb: string;
   /** Long-form note, one string per paragraph. `blurb` is the short form. */
   description?: string[];
-  /** When absent, a typographic placeholder cover is generated from the title. */
-  cover?: { src: string; alt: string; credit?: string };
+  /** Local path under /public, or null for a generated typographic placeholder. */
+  image: string | null;
   audio?: { src: string; label: string }[];
   score?: { src: string; label: string };
   /** Exactly one compositio may set this. getFeatured() enforces it at build time. */
@@ -56,6 +56,7 @@ export const compositions: Composition[] = [
     description: [
       "akwndwakjdawdjbawdkjbwadkjbwfjbafkjbawdkjBWJRlawjndjnkjawdjnwjkaw djawkndiaowdnwoawdnwkaldnwaidowadnsawldksnawkldsawndlksnalwndsknawlkdnsanwlkdnslkanwlkdnslkanwdnslknawkndskjrbgjkbriugbriuviusbuibuenmlsudnfwdiwnueaoanfneaoaenfuutjnlkaenvljnefnaowiufneujknkjnkjawnkjawnckjawnckajwcnkajcnkajwcnkajcwnnoiseofijefoijtuikjna, a,xncaiwflamcklai dont knwow aht ia ma writing this is a really long blueb or somethinglawndlkawdlknlkn",
     ],
+    image: null,
     featured: true,
   },
   {
@@ -68,6 +69,7 @@ export const compositions: Composition[] = [
     scoring: "str",
     blurb:
       "Written for string orchestra, a study in cold, high sonority and the slow warming beneath it.",
+    image: null,
   },
   {
     slug: "three-elegies",
@@ -78,6 +80,7 @@ export const compositions: Composition[] = [
     duration: "16'45\"",
     blurb:
       "Three short movements, each built from the same four-note descent heard at a different speed.",
+    image: null,
   },
   {
     slug: "the-still-hour",
@@ -90,6 +93,7 @@ export const compositions: Composition[] = [
     duration: "6'20\"",
     blurb:
       "An unaccompanied setting for mixed chorus, written to sit in the resonance of a large room.",
+    image: null,
   },
   {
     slug: "nocturne-for-solo-piano",
@@ -100,6 +104,7 @@ export const compositions: Composition[] = [
     duration: "5'10\"",
     blurb:
       "A quiet piece in one breath, with the pedal held far longer than is comfortable.",
+    image: null,
   },
   {
     slug: "ascent",
@@ -113,6 +118,7 @@ export const compositions: Composition[] = [
     duration: "11'00\"",
     blurb:
       "Written for wind ensemble, a continuous climb through six key areas without a single full cadence.",
+    image: null,
   },
 ];
 
@@ -211,5 +217,40 @@ export const achievements: Achievement[] = [
     type: "performance",
     title: "Featured in a review of new orchestral writing",
     organization: "Placeholder Review",
+  },
+];
+
+//------- Featured images -------
+
+/**
+ * Rotating images for the landing page hero. Unrelated to
+ * `Composition.featured` (the single spotlighted work in the catalogue) and
+ * to FeaturedCarousel (the compositions coverflow) — three separate
+ * "featured" concepts that happen to share a name.
+ */
+
+export type FeaturedImage = {
+  /** Hand-written, kebab-case, never reused. */
+  id: string;
+  /** Local path under /public, or null for a generated placeholder. */
+  src: string | null;
+  alt: string;
+};
+
+export const featuredImages: FeaturedImage[] = [
+  {
+    id: "hero-rotation-1",
+    src: "/images/MarchingSS.png",
+    alt: "Zachary Crawford, photograph one",
+  },
+  {
+    id: "hero-rotation-2",
+    src: "/images/jazzEnsTitles.jpg",
+    alt: "Zachary Crawford, photograph two",
+  },
+  {
+    id: "hero-rotation-3",
+    src: "/images/zach.png",
+    alt: "Zachary Crawford, photograph three",
   },
 ];

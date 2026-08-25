@@ -18,8 +18,8 @@ type CompositionCoverProps = {
  *
  * ⚠️ VERIFY: no cover art has been supplied for any composition, so every work
  * currently renders the generated typographic placeholder below. Dropping a file
- * at public/compositions/<slug>.jpg and adding a `cover` field switches an entry
- * to the real image with no code change.
+ * at public/compositions/<slug>.jpg and setting the `image` field switches an
+ * entry to the real image with no code change.
  *
  * The parent must establish the box; this fills it.
  */
@@ -28,11 +28,11 @@ export function CompositionCover({
   sizes = "(max-width: 640px) 80vw, 320px",
   className,
 }: CompositionCoverProps) {
-  if (composition.cover) {
+  if (composition.image) {
     return (
       <Image
-        src={composition.cover.src}
-        alt={composition.cover.alt}
+        src={composition.image}
+        alt={`${composition.title} cover art`}
         fill
         sizes={sizes}
         className={`${styles.image} ${className ?? ""}`}

@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { Portrait } from "@/components/ui/Portrait";
+import { FeaturedImageRotator } from "@/app/components/FeaturedImageRotator";
 import { site } from "@/components/data/site";
+import { getFeaturedImages } from "@/lib/featuredImages";
 import styles from "@/app/components/Hero.module.css";
 
 /**
- * Portrait plus a short introduction.
+ * Rotating photos plus a short introduction.
  *
  * The intro paragraph comes from the original hand sketch, which shows a block
  * of body copy beside the photo. The AI mockup dropped it and captioned the
@@ -12,9 +13,15 @@ import styles from "@/app/components/Hero.module.css";
  * sketch as the intent here.
  */
 export function Hero() {
+  const images = getFeaturedImages();
+
   return (
     <div className={styles.hero}>
-      <Portrait priority className={styles.portrait} />
+      <FeaturedImageRotator
+        images={images}
+        priority
+        className={styles.portrait}
+      />
 
       <p className={styles.bio}>{site.bioShort}</p>
 
