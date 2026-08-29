@@ -1,11 +1,11 @@
 import { CompositionBrowser } from "@/app/compositions/components/CompositionBrowser";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { byYearDesc, usedCompositionTypes } from "@/lib/compositions";
+import { catalogueOrder, usedCompositionTypes } from "@/lib/compositions";
 import subpageStyles from "@/app/subpage.module.css";
 import styles from "@/app/compositions/components/Compositions.module.css";
 
 export function Compositions() {
-  const catalogue = byYearDesc();
+  const catalogue = catalogueOrder();
 
   return (
     <div className={subpageStyles.pageShell}>

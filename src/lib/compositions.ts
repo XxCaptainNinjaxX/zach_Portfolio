@@ -29,6 +29,18 @@ export function getLandingComp(): Composition {
   return flagged[0];
 }
 
+/**
+ * Catalogue order: exactly the order entries are written in data.ts.
+ *
+ * The array order is the curated running order — reordering the file reorders
+ * the page, and works with no firm year (`year: 0`) sit where they are placed
+ * rather than being flung to the bottom by a year sort. Copied so callers can't
+ * mutate the store.
+ */
+export function catalogueOrder(): Composition[] {
+  return [...compositions];
+}
+
 /** Newest first, ties broken alphabetically so the order is stable across builds. */
 export function byYearDesc(): Composition[] {
   return [...compositions].sort((first, second) => {
@@ -49,7 +61,8 @@ export function byYearDesc(): Composition[] {
 export function carouselOrder(): Composition[] {
   const landingComp = getLandingComp();
   const rest = byYearDesc().filter(
-    (composition) => composition.featured && composition.slug !== landingComp.slug,
+    (composition) =>
+      composition.featured && composition.slug !== landingComp.slug,
   );
 
   // Split the remainder around the landing composition so it sits mid-track.
@@ -60,7 +73,7 @@ export function carouselOrder(): Composition[] {
 /** Only the types actually present in the catalogue, in catalogue order. */
 export function usedCompositionTypes(): CompositionType[] {
   const seen = new Set<CompositionType>();
-  for (const composition of byYearDesc()) {
+  for (const composition of catalogueOrder()) {
     seen.add(composition.type);
   }
   return [...seen];
@@ -95,14 +108,6 @@ export const allSlugs: string[] = compositions.map(
   (composition) => composition.slug,
 );
 
-/*
-  Runs at import time, same reasoning as getLandingComp(): a repeated slug is a
-  content bug that otherwise fails silently and looks like a rendering bug. Two
-  entries sharing a slug render as two cards pointing at the same detail page,
-  getBySlug() quietly returns only the first, and generateStaticParams() emits a
-  duplicate route. Copy-pasting an entry as a template is the normal way to add a
-  work, so forgetting to change the slug is the expected mistake.
-*/
 const repeatedSlugs = allSlugs.filter(
   (slug, index) => allSlugs.indexOf(slug) !== index,
 );

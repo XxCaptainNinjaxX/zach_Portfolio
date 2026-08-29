@@ -41,7 +41,7 @@ export type Composition = {
   slug: string;
   title: string;
   subtitle?: string;
-  year: number;
+  year: string;
   type: CompositionType;
   duration?: string;
   scoring?: string;
@@ -51,7 +51,7 @@ export type Composition = {
   audio?: { src: string; label: string }[];
   score?: { src: string; label: string };
   youtube?: { src: string; label: string };
-  purchaseUrl?: string;
+  // purchaseUrl?: string;
   landingComp?: true;
   featured?: true;
 };
@@ -61,7 +61,7 @@ export const compositions: Composition[] = [
     slug: "tidewater",
     title: "Tidewater",
     subtitle: "for full orchestra",
-    year: 2025,
+    year: "2025",
     type: "orchestra",
     duration: "14 minutes",
     scoring: "3.2.2.2 / 4.3.3.1 / timp / 2 perc / hp / str",
@@ -77,7 +77,7 @@ export const compositions: Composition[] = [
       src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
       label: "Placeholder video",
     },
-    purchaseUrl: "https://www.google.com",
+    // purchaseUrl: "https://www.google.com",
     landingComp: true,
     featured: true,
   },
@@ -85,7 +85,7 @@ export const compositions: Composition[] = [
     slug: "north-light",
     title: "North Light",
     subtitle: "for string orchestra",
-    year: 2024,
+    year: "2024",
     type: "orchestra",
     duration: "9'30\"",
     scoring: "str",
@@ -95,14 +95,14 @@ export const compositions: Composition[] = [
     audio: [{ src: "/audio/north-light.mp3", label: "Placeholder recording" }],
     score: { src: "https://www.google.com", label: "Placeholder score (PDF)" },
     youtube: { src: "https://www.google.com", label: "Placeholder video" },
-    purchaseUrl: "https://www.google.com",
+    // purchaseUrl: "https://www.google.com",
     featured: true,
   },
   {
     slug: "three-elegies",
     title: "Three Elegies",
     subtitle: "for string quartet",
-    year: 2024,
+    year: "2024",
     type: "chamber",
     duration: "16'45\"",
     blurb:
@@ -115,46 +115,46 @@ export const compositions: Composition[] = [
     ],
     score: { src: "https://www.google.com", label: "Placeholder score (PDF)" },
     youtube: { src: "https://www.google.com", label: "Placeholder video" },
-    purchaseUrl: "https://www.google.com",
+    // purchaseUrl: "https://www.google.com",
     featured: true,
   },
   {
     slug: "the-still-hour",
     title: "The Still Hour",
     subtitle: "for SATB chorus",
-    year: 2023,
+    year: "2023",
     type: "chamber",
     duration: "6'20\"",
     blurb:
       "An unaccompanied setting for mixed chorus, written to sit in the resonance of a large room.",
     image: null,
-    purchaseUrl: "https://www.google.com",
+    // purchaseUrl: "https://www.google.com",
     featured: true,
   },
   {
     slug: "nocturne-for-solo-piano",
     title: "Nocturne",
     subtitle: "for solo piano",
-    year: 2023,
+    year: "2023",
     type: "solo",
     duration: "5'10\"",
     blurb:
       "A quiet piece in one breath, with the pedal held far longer than is comfortable.",
     image: null,
-    purchaseUrl: "https://www.google.com",
+    // purchaseUrl: "https://www.google.com",
     featured: true,
   },
   {
     slug: "ascent",
     title: "Ascent",
     subtitle: "for wind ensemble",
-    year: 2022,
+    year: "2022",
     type: "orchestra",
     duration: "11'00\"",
     blurb:
       "Written for wind ensemble, a continuous climb through six key areas without a single full cadence.",
     image: null,
-    purchaseUrl: "https://www.google.com",
+    // purchaseUrl: "https://www.google.com",
     featured: true,
   },
   //----------
@@ -163,7 +163,7 @@ export const compositions: Composition[] = [
     slug: "test1",
     title: "test",
     subtitle: "test",
-    year: 2022,
+    year: "2022",
     type: "solo",
     duration: "11'00\"",
     blurb:
@@ -174,7 +174,7 @@ export const compositions: Composition[] = [
     slug: "test",
     title: "test",
     subtitle: "test",
-    year: 2022,
+    year: "2022",
     type: "solo",
     duration: "11'00\"",
     blurb:
@@ -185,7 +185,7 @@ export const compositions: Composition[] = [
     slug: "test2",
     title: "test",
     subtitle: "test",
-    year: 2022,
+    year: "2022",
     type: "solo",
     duration: "11'00\"",
     blurb:
@@ -196,7 +196,7 @@ export const compositions: Composition[] = [
     slug: "test3",
     title: "test",
     subtitle: "test",
-    year: 2022,
+    year: "2022",
     type: "solo",
     duration: "11'00\"",
     blurb:
@@ -210,7 +210,7 @@ export const compositions: Composition[] = [
     slug: "EMinor",
     title: "E-Minor",
     subtitle: "for full orchestra",
-    year: 2021,
+    year: "2021",
     type: "symphony",
     duration: "1:03:51",
     scoring:
@@ -273,31 +273,94 @@ export const compositions: Composition[] = [
       src: "https://www.youtube.com/watch?v=X5vxtj-Clwc",
       label: " Symphony 1 in E Minor, Full Score + Audio",
     },
-    purchaseUrl: "https://www.google.com",
+    // purchaseUrl: "https://www.google.com",
     featured: true,
   },
   {
-    slug: "one",
-    title: "[PLACEHOLDER]",
+    slug: "caroling-hummingbirds",
+    title: 'F# Minor "The Caroling Hummingbirds"',
     subtitle: "for full orchestra",
-    year: 0,
+    year: "2021-2023",
     type: "symphony",
-    duration: "[PLACEHOLDER]",
-    scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
+    duration: "43:42",
+    scoring:
+      "Flute 1" +
+      "\n" +
+      "Flute 2" +
+      "\n" +
+      "Oboe 1" +
+      "\n" +
+      "Oboe 2" +
+      "\n" +
+      "Clarinet 1" +
+      "\n" +
+      "Clarinet 2" +
+      "\n" +
+      "Bassoon 1" +
+      "\n" +
+      "Bassoon 2" +
+      "\n" +
+      "Horn in E 1" +
+      "\n" +
+      "Horn in E 2" +
+      "\n" +
+      "Horn in E 3" +
+      "\n" +
+      "Horn in E 4" +
+      "\n" +
+      "Trumpet in A 1" +
+      "\n" +
+      "Trumpet in A 2" +
+      "\n" +
+      "Trombone 1" +
+      "\n" +
+      "Trombone 2" +
+      "\n" +
+      "Bass trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Triangle" +
+      "\n" +
+      "Cymbals" +
+      "\n" +
+      "Harp" +
+      "\n" +
+      "Violin 1" +
+      "\n" +
+      "Violin 2" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
     blurb: "[PLACEHOLDER]",
-    description: ["[PLACEHOLDER]"],
-    image: images.s1,
+    //     description: ["Crawford’s Second Symphony is about encouragement and taking
+    // on obstacles that aren’t easy to overcome. He unconsciously wrote
+    // this piece to build up his confidence whilst trying to be accepted
+    // by school while his domestic issues began to increasingly pile up.
+    // The third movement, which he considers to be the heart of this
+    // work, is all about encouragement which he even presented when
+    // he was in a mental Rehabilitation Facility in 2023. His music
+    // inspired others in the Facility to keep pushing and helped them
+    // get out of the facility. This piece has amazing low brass, Bass,
+    // Violin, Flute, Harp and Horn Excerpts. Fun Fact, the original
+    // manuscript never had a first movement."],
+    image: images.s2,
     youtube: {
-      src: "[PLACEHOLDER]",
-      label: "[PLACEHOLDER]",
+      src: "https://www.youtube.com/watch?v=jlepY6NmUUQ",
+      label: 'F# Minor "The Caroling Hummingbirds" V.2 Full Score + Audio',
     },
-    purchaseUrl: "https://www.google.com",
+    // purchaseUrl: "https://www.google.com",
   },
   {
     slug: "two",
     title: "[PLACEHOLDER]",
     subtitle: "for full orchestra",
-    year: 0,
+    year: "o",
     type: "symphony",
     duration: "[PLACEHOLDER]",
     scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
@@ -308,13 +371,13 @@ export const compositions: Composition[] = [
       src: "[PLACEHOLDER]",
       label: "[PLACEHOLDER]",
     },
-    purchaseUrl: "https://www.google.com",
+    // purchaseUrl: "https://www.google.com",
   },
   {
     slug: "three",
     title: "[PLACEHOLDER]",
     subtitle: "for full orchestra",
-    year: 0,
+    year: "o",
     type: "symphony",
     duration: "[PLACEHOLDER]",
     scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
@@ -325,13 +388,13 @@ export const compositions: Composition[] = [
       src: "[PLACEHOLDER]",
       label: "[PLACEHOLDER]",
     },
-    purchaseUrl: "https://www.google.com",
+    // purchaseUrl: "https://www.google.com",
   },
   {
     slug: "four",
     title: "[PLACEHOLDER]",
     subtitle: "for full orchestra",
-    year: 0,
+    year: "o",
     type: "symphony",
     duration: "[PLACEHOLDER]",
     scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
@@ -342,13 +405,13 @@ export const compositions: Composition[] = [
       src: "[PLACEHOLDER]",
       label: "[PLACEHOLDER]",
     },
-    purchaseUrl: "https://www.google.com",
+    // purchaseUrl: "https://www.google.com",
   },
   {
     slug: "five",
     title: "[PLACEHOLDER]",
     subtitle: "for full orchestra",
-    year: 0,
+    year: "o",
     type: "symphony",
     duration: "[PLACEHOLDER]",
     scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
@@ -359,13 +422,13 @@ export const compositions: Composition[] = [
       src: "[PLACEHOLDER]",
       label: "[PLACEHOLDER]",
     },
-    purchaseUrl: "https://www.google.com",
+    // purchaseUrl: "https://www.google.com",
   },
   {
     slug: "six",
     title: "[PLACEHOLDER]",
     subtitle: "for full orchestra",
-    year: 0,
+    year: "o",
     type: "symphony",
     duration: "[PLACEHOLDER]",
     scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
@@ -376,13 +439,13 @@ export const compositions: Composition[] = [
       src: "[PLACEHOLDER]",
       label: "[PLACEHOLDER]",
     },
-    purchaseUrl: "https://www.google.com",
+    // purchaseUrl: "https://www.google.com",
   },
   {
     slug: "seven",
     title: "[PLACEHOLDER]",
     subtitle: "for full orchestra",
-    year: 0,
+    year: "o",
     type: "symphony",
     duration: "[PLACEHOLDER]",
     scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
@@ -393,7 +456,7 @@ export const compositions: Composition[] = [
       src: "[PLACEHOLDER]",
       label: "[PLACEHOLDER]",
     },
-    purchaseUrl: "https://www.google.com",
+    // purchaseUrl: "https://www.google.com",
   },
 ];
 
@@ -407,7 +470,7 @@ export const achievementTypeLabels: Record<AchievementType, string> = {
 
 export type Achievement = {
   id: string;
-  year: number;
+  year: string;
   type: AchievementType;
   title: string;
   organization?: string;
@@ -418,7 +481,7 @@ export type Achievement = {
 export const achievements: Achievement[] = [
   {
     id: "premiere-tidewater",
-    year: 2025,
+    year: "2025",
     type: "performance",
     title: "Premiere of Tidewater",
     organization: "Placeholder Symphony Orchestra",
@@ -426,7 +489,7 @@ export const achievements: Achievement[] = [
   },
   {
     id: "commission-tidewater",
-    year: 2024,
+    year: "2024",
     type: "award",
     title: "Orchestral commission",
     organization: "Placeholder Symphony Orchestra",
@@ -434,14 +497,14 @@ export const achievements: Achievement[] = [
   },
   {
     id: "award-emerging-composer",
-    year: 2024,
+    year: "2024",
     type: "award",
     title: "Emerging Composer Prize",
     organization: "Placeholder Foundation",
   },
   {
     id: "residency-2024",
-    year: 2024,
+    year: "2024",
     type: "award",
     title: "Composer in residence",
     organization: "Placeholder Arts Center",
@@ -449,28 +512,28 @@ export const achievements: Achievement[] = [
   },
   {
     id: "premiere-three-elegies",
-    year: 2024,
+    year: "2024",
     type: "performance",
     title: "Premiere of Three Elegies",
     organization: "Placeholder Quartet",
   },
   {
     id: "performance-still-hour",
-    year: 2023,
+    year: "2023",
     type: "performance",
     title: "The Still Hour performed on tour",
     organization: "Placeholder Chamber Choir",
   },
   {
     id: "award-choral-competition",
-    year: 2023,
+    year: "2023",
     type: "award",
     title: "First prize, choral composition competition",
     organization: "Placeholder Choral Society",
   },
   {
     id: "press-review-2022",
-    year: 2022,
+    year: "2022",
     type: "performance",
     title: "Featured in a review of new orchestral writing",
     organization: "Placeholder Review",
