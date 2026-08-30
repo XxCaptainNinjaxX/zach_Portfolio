@@ -60,7 +60,7 @@ export const compositions: Composition[] = [
   {
     slug: "tidewater",
     title: "Tidewater",
-    subtitle: "for full orchestra",
+    subtitle: "For Full Orchestra",
     year: "2025",
     type: "orchestra",
     duration: "14 minutes",
@@ -209,7 +209,7 @@ export const compositions: Composition[] = [
   {
     slug: "EMinor",
     title: "E-Minor",
-    subtitle: "for full orchestra",
+    subtitle: "For Full Orchestra",
     year: "2021",
     type: "symphony",
     duration: "1:03:51",
@@ -279,7 +279,7 @@ export const compositions: Composition[] = [
   {
     slug: "caroling-hummingbirds",
     title: 'F# Minor "The Caroling Hummingbirds"',
-    subtitle: "for full orchestra",
+    subtitle: "For Full Orchestra",
     year: "2021-2023",
     type: "symphony",
     duration: "43:42",
@@ -357,26 +357,92 @@ export const compositions: Composition[] = [
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "two",
-    title: "[PLACEHOLDER]",
-    subtitle: "for full orchestra",
-    year: "o",
+    slug: "grad-symph",
+    title: "Graduation Symphony in A Major",
+    subtitle: "For Full Orchestra",
+    year: "2021-2024",
     type: "symphony",
-    duration: "[PLACEHOLDER]",
-    scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
+    duration: "40:07",
+    scoring:
+      "Piccolo/Alto Flute" +
+      "\n" +
+      "Flute 1" +
+      "\n" +
+      "Flute 2" +
+      "\n" +
+      "Oboe 1" +
+      "\n" +
+      "Oboe 2" +
+      "\n" +
+      "Clarinet 1" +
+      "\n" +
+      "Clarinet 2" +
+      "\n" +
+      "Bassoon 1" +
+      "\n" +
+      "Bassoon 2" +
+      "\n" +
+      "Horn 1" +
+      "\n" +
+      "Horn 2" +
+      "\n" +
+      "Horn 3" +
+      "\n" +
+      "Horn 4" +
+      "\n" +
+      "Trumpet 1" +
+      "\n" +
+      "Trumpet 2" +
+      "\n" +
+      "Euphonium (Movement 2 only)" +
+      "\n" +
+      "Trombone 1" +
+      "\n" +
+      "Trombone 2" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Crash Cymbal" +
+      "\n" +
+      "Glockenspiel/Xylophone/Vibraophone" +
+      "\n" +
+      "Violin 1" +
+      "\n" +
+      "Violin 2" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
     blurb: "[PLACEHOLDER]",
-    description: ["[PLACEHOLDER]"],
-    image: images.s1,
+    //     description: ["Crawford Wrote his symphony to congratulate his fellow seniors
+    // in high school of his freshman year. That senior class also included
+    // his sister, Zoë Crawford. He dedicated this piece to them because
+    // they were a majority of the only friends he had in high school at
+    // the time and didn’t know how to move on without them. The
+    // motif melody is what he likes to call his “Graduation Melody” and
+    // plays it whenever graduation comes to his mind. This piece has
+    // fantastic Viola, Alto Flute, Euphonium, Low Strings, Violin,
+    // Trumpet, Horn, Mallets, and Oboe excerpts. Fun Facts: Crawford
+    // rewrote almost the entire Finale in the second version of this
+    // symphony and added the Mallets."],
+    image: images.s3,
     youtube: {
-      src: "[PLACEHOLDER]",
-      label: "[PLACEHOLDER]",
+      src: "https://www.youtube.com/watch?v=eVimTf49lnk",
+      label:
+        'Crawford Symphony 3 in A Major "Graduation Symphony" Ver. 2 Full Score + Audio',
     },
     // purchaseUrl: "https://www.google.com",
   },
   {
     slug: "three",
     title: "[PLACEHOLDER]",
-    subtitle: "for full orchestra",
+    subtitle: "For Full Orchestra",
     year: "o",
     type: "symphony",
     duration: "[PLACEHOLDER]",
@@ -393,7 +459,7 @@ export const compositions: Composition[] = [
   {
     slug: "four",
     title: "[PLACEHOLDER]",
-    subtitle: "for full orchestra",
+    subtitle: "For Full Orchestra",
     year: "o",
     type: "symphony",
     duration: "[PLACEHOLDER]",
@@ -410,7 +476,7 @@ export const compositions: Composition[] = [
   {
     slug: "five",
     title: "[PLACEHOLDER]",
-    subtitle: "for full orchestra",
+    subtitle: "For Full Orchestra",
     year: "o",
     type: "symphony",
     duration: "[PLACEHOLDER]",
@@ -427,7 +493,7 @@ export const compositions: Composition[] = [
   {
     slug: "six",
     title: "[PLACEHOLDER]",
-    subtitle: "for full orchestra",
+    subtitle: "For Full Orchestra",
     year: "o",
     type: "symphony",
     duration: "[PLACEHOLDER]",
@@ -444,7 +510,7 @@ export const compositions: Composition[] = [
   {
     slug: "seven",
     title: "[PLACEHOLDER]",
-    subtitle: "for full orchestra",
+    subtitle: "For Full Orchestra",
     year: "o",
     type: "symphony",
     duration: "[PLACEHOLDER]",
