@@ -6,6 +6,14 @@ export const images = {
   jazzEnsTitles: "/images/jazzEnsTitles.jpg",
   zach: "/images/zach.png",
 
+  orch2: "/images/orch2.jpg",
+  all: "/images/all.jpg",
+  bandRoom: "/images/bandRoom.png",
+  car: "/images/car.jpg",
+  comp: "/images/comp.jpg",
+  orch: "/images/orch.png",
+  solo: "/images/solo.jpg",
+
   s1: "/images/comps/s1.jpg",
   s2: "/images/comps/s2.jpg",
   s3: "/images/comps/s3.jpg",
@@ -627,17 +635,37 @@ export type FeaturedImage = {
 export const featuredImages: FeaturedImage[] = [
   {
     id: "hero-rotation-1",
-    src: images.marchingSS,
+    src: images.orch2,
     alt: "Zachary Crawford, photograph one",
   },
   {
     id: "hero-rotation-2",
-    src: images.jazzEnsTitles,
+    src: images.comp,
     alt: "Zachary Crawford, photograph two",
   },
   {
     id: "hero-rotation-3",
-    src: images.zach,
+    src: images.car,
     alt: "Zachary Crawford, photograph three",
+  },
+  {
+    id: "hero-rotation-4",
+    src: images.solo,
+    alt: "Zachary Crawford, photograph four",
+  },
+  {
+    id: "hero-rotation-5",
+    src: images.orch,
+    alt: "Zachary Crawford, photograph five",
+  },
+  {
+    id: "hero-rotation-6",
+    src: images.bandRoom,
+    alt: "Zachary Crawford, photograph six",
+  },
+  {
+    id: "hero-rotation-7",
+    src: images.all,
+    alt: "Zachary Crawford, photograph seven",
   },
 ];
