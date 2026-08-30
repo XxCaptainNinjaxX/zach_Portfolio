@@ -53,15 +53,6 @@ export function CompositionDetail({ composition }: CompositionDetailProps) {
               />
             </div>
 
-            {composition.purchaseUrl ? (
-              <ExternalLink
-                href={composition.purchaseUrl}
-                className={styles.purchaseButton}
-              >
-                Purchase
-              </ExternalLink>
-            ) : null}
-
             <MetaRow entries={meta} className={styles.meta} />
           </div>
 

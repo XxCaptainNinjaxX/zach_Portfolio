@@ -11,7 +11,7 @@ import styles from "@/app/compositions/components/CompositionBrowser.module.css"
 
 type CompositionBrowserProps = {
   compositions: Composition[];
-  /** Only the types present in the catalogue, so no facet is ever empty. */
+  /** Every declared type, in data.ts order. A facet with no works filters to an empty grid. */
   facets: CompositionType[];
 };
 
@@ -36,6 +36,9 @@ export function CompositionBrowser({
     return compositions.filter((composition) => composition.type === filter);
   }, [compositions, filter]);
 
+  // "All" is a filter option like any other, so the row is a single map.
+  const options: Filter[] = ["all", ...facets];
+
   // Only worth a filter row when there is more than one thing to filter by.
   const showFilters = facets.length > 1;
 
@@ -47,17 +50,12 @@ export function CompositionBrowser({
           aria-label="Filter by type"
           className={styles.filters}
         >
-          <FilterButton
-            label="All"
-            isActive={filter === "all"}
-            onSelect={() => setFilter("all")}
-          />
-          {facets.map((facet) => (
+          {options.map((option) => (
             <FilterButton
-              key={facet}
-              label={compositionTypeLabels[facet]}
-              isActive={filter === facet}
-              onSelect={() => setFilter(facet)}
+              key={option}
+              label={option === "all" ? "All" : compositionTypeLabels[option]}
+              isActive={filter === option}
+              onSelect={() => setFilter(option)}
             />
           ))}
         </div>

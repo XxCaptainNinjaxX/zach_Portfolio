@@ -6,22 +6,17 @@ import {
 
 /** Derived views over the achievements list. See lib/compositions.ts for the same pattern. */
 
-/** Newest first, ties broken alphabetically so the order is stable across builds. */
-export function byYearDesc(): Achievement[] {
-  return [...achievements].sort((first, second) => {
-    if (first.year !== second.year) return second.year - first.year;
-    return first.title.localeCompare(second.title);
-  });
-}
-
 /**
  * Grouped for the timeline: one year marker, then that year's entries.
- * A Map preserves insertion order, so iterating it yields years newest-first.
+ *
+ * A Map preserves insertion order, so the timeline reads in the order entries
+ * are written in data.ts. There is no year sort: `year` is free text that can
+ * hold a range, so the running order is curated by hand in the file.
  */
-export function groupedByYear(): Map<number, Achievement[]> {
-  const groups = new Map<number, Achievement[]>();
+export function groupedByYear(): Map<string, Achievement[]> {
+  const groups = new Map<string, Achievement[]>();
 
-  for (const achievement of byYearDesc()) {
+  for (const achievement of achievements) {
     const existing = groups.get(achievement.year);
     if (existing) {
       existing.push(achievement);
@@ -36,7 +31,7 @@ export function groupedByYear(): Map<number, Achievement[]> {
 /** Only the types actually present, so the filter row never offers an empty facet. */
 export function usedAchievementTypes(): AchievementType[] {
   const seen = new Set<AchievementType>();
-  for (const achievement of byYearDesc()) {
+  for (const achievement of achievements) {
     seen.add(achievement.type);
   }
   return [...seen];

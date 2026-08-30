@@ -28,14 +28,24 @@ export const images = {
 
 //------- Compositions -------
 
-export type CompositionType = "orchestra" | "chamber" | "solo" | "symphony";
-
-export const compositionTypeLabels: Record<CompositionType, string> = {
-  orchestra: "Orchestra",
-  chamber: "Chamber",
-  solo: "Solo",
+/**
+ * Source of truth for composition types: the union is derived from these keys,
+ * so adding a type is one edit here. The order written here is the order the
+ * filter row renders on /compositions.
+ */
+export const compositionTypeLabels = {
   symphony: "Symphony",
-};
+  suite: "Suite",
+  overture: "Overture",
+  concertos: "Concertos",
+  solo: "Solo",
+  chamber: "Chamber",
+  other: "Other",
+  writing: "Writing",
+  // future-> ballet
+} as const satisfies Record<string, string>;
+
+export type CompositionType = keyof typeof compositionTypeLabels;
 
 export type Composition = {
   slug: string;
@@ -62,7 +72,7 @@ export const compositions: Composition[] = [
     title: "Tidewater",
     subtitle: "For Full Orchestra",
     year: "2025",
-    type: "orchestra",
+    type: "solo",
     duration: "14 minutes",
     scoring: "3.2.2.2 / 4.3.3.1 / timp / 2 perc / hp / str",
     blurb:
@@ -86,7 +96,7 @@ export const compositions: Composition[] = [
     title: "North Light",
     subtitle: "for string orchestra",
     year: "2024",
-    type: "orchestra",
+    type: "solo",
     duration: "9'30\"",
     scoring: "str",
     blurb:
@@ -149,7 +159,7 @@ export const compositions: Composition[] = [
     title: "Ascent",
     subtitle: "for wind ensemble",
     year: "2022",
-    type: "orchestra",
+    type: "solo",
     duration: "11'00\"",
     blurb:
       "Written for wind ensemble, a continuous climb through six key areas without a single full cadence.",

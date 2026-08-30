@@ -1,5 +1,6 @@
 import {
   compositions,
+  compositionTypeLabels,
   type Composition,
   type CompositionType,
 } from "@/components/data/data";
@@ -33,25 +34,18 @@ export function getLandingComp(): Composition {
  * Catalogue order: exactly the order entries are written in data.ts.
  *
  * The array order is the curated running order — reordering the file reorders
- * the page, and works with no firm year (`year: 0`) sit where they are placed
- * rather than being flung to the bottom by a year sort. Copied so callers can't
- * mutate the store.
+ * the page. It is the only order in the catalogue: `year` is free text holding
+ * ranges like "2021-2023", so there is nothing to sort on, and works are placed
+ * by hand rather than flung around by a date. Copied so callers can't mutate
+ * the store.
  */
 export function catalogueOrder(): Composition[] {
   return [...compositions];
 }
 
-/** Newest first, ties broken alphabetically so the order is stable across builds. */
-export function byYearDesc(): Composition[] {
-  return [...compositions].sort((first, second) => {
-    if (first.year !== second.year) return second.year - first.year;
-    return first.title.localeCompare(second.title);
-  });
-}
-
 /**
- * Carousel order: the landing composition first, then the rest newest-first.
- * Puts the highlighted work at the centre of the track without duplicating it.
+ * Carousel order: the rest of the featured works in catalogue order, split so
+ * the landing composition sits at the centre of the track without duplicating it.
  *
  * Membership is `featured`, separate from `landingComp` — `landingComp` only
  * decides which single work is the landing-page hero (getLandingComp() above
@@ -60,7 +54,7 @@ export function byYearDesc(): Composition[] {
  */
 export function carouselOrder(): Composition[] {
   const landingComp = getLandingComp();
-  const rest = byYearDesc().filter(
+  const rest = catalogueOrder().filter(
     (composition) =>
       composition.featured && composition.slug !== landingComp.slug,
   );
@@ -70,14 +64,15 @@ export function carouselOrder(): Composition[] {
   return [...rest.slice(0, half), landingComp, ...rest.slice(half)];
 }
 
-/** Only the types actually present in the catalogue, in catalogue order. */
-export function usedCompositionTypes(): CompositionType[] {
-  const seen = new Set<CompositionType>();
-  for (const composition of catalogueOrder()) {
-    seen.add(composition.type);
-  }
-  return [...seen];
-}
+/**
+ * Every declared type, in the order written in data.ts. Derived from the label
+ * map rather than a second list, so a new type reaches the filter row without
+ * an edit here. Object.keys widens to string[]; the keys are statically known,
+ * so the cast is safe.
+ */
+export const compositionTypeOrder = Object.keys(
+  compositionTypeLabels,
+) as CompositionType[];
 
 export function getBySlug(slug: string): Composition | undefined {
   return compositions.find((composition) => composition.slug === slug);
@@ -91,7 +86,7 @@ export function getRelated(slug: string, limit = 3): Composition[] {
   const current = getBySlug(slug);
   if (!current) return [];
 
-  const others = byYearDesc().filter(
+  const others = catalogueOrder().filter(
     (composition) => composition.slug !== slug,
   );
   const sameFamily = others.filter(
@@ -119,7 +114,7 @@ if (repeatedSlugs.length > 0) {
   );
 }
 
-/** Catalogue filtered to a single type, newest-first. */
+/** Catalogue filtered to a single type, in catalogue order. */
 export function byType(family: CompositionType): Composition[] {
-  return byYearDesc().filter((composition) => composition.type === family);
+  return catalogueOrder().filter((composition) => composition.type === family);
 }
