@@ -7,7 +7,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@/components/ui/icons";
 import type { FeaturedImage } from "@/components/data/data";
 import styles from "@/app/components/FeaturedImageRotator.module.css";
 
-const ROTATION_INTERVAL_MS = 3000;
+const ROTATION_INTERVAL_MS = 4000;
 
 type FeaturedImageRotatorProps = {
   images: FeaturedImage[];
