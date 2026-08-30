@@ -7,7 +7,11 @@
   position: relative;
   display: block;
   aspect-ratio: 1;
-  width: 100%;
+  /* Callers may shrink the square without shrinking the text below it; every
+     surface but the catalogue grid falls through to the 100% default. A shrunk
+     cover needs --cover-align to say where it sits in the full-width card. */
+  width: var(--cover-width, 100%);
+  align-self: var(--cover-align, stretch);
   overflow: hidden;
 }
 

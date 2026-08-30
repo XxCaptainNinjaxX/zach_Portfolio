@@ -16,12 +16,20 @@
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   column-gap: var(--space-8);
-  row-gap: var(--space-12);
+  /* Mobile single-column only: a smaller cover (read by CompositionCard's
+     .cover) and a tighter gap put a second work and the top of a third on
+     screen. Both revert at the 2-up breakpoint below. */
+  --cover-width: 55%;
+  --cover-align: center;
+  row-gap: var(--space-8);
 }
 
 @media (min-width: 40rem) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    --cover-width: 100%;
+    --cover-align: stretch;
+    row-gap: var(--space-12);
   }
 }
 
