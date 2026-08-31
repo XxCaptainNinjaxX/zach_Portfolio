@@ -225,7 +225,7 @@ export const compositions: Composition[] = [
   //-------------------------------------------------------------------
 
   {
-    slug: "EMinor",
+    slug: "syph-1",
     title: "E-Minor",
     subtitle: "For Full Orchestra",
     year: "2021",
@@ -289,14 +289,14 @@ export const compositions: Composition[] = [
     image: images.s1,
     youtube: {
       src: "https://www.youtube.com/watch?v=X5vxtj-Clwc",
-      label: " Symphony 1 in E Minor, Full Score + Audio",
+      label: "Symphony 1 in E Minor, Full Score + Audio",
     },
     // purchaseUrl: "https://www.google.com",
     featured: true,
   },
   {
-    slug: "caroling-hummingbirds",
-    title: 'F# Minor "The Caroling Hummingbirds"',
+    slug: "syph-2",
+    title: "The Caroling Hummingbirds in F# Major ",
     subtitle: "For Full Orchestra",
     year: "2021-2023",
     type: "symphony",
@@ -370,12 +370,12 @@ export const compositions: Composition[] = [
     image: images.s2,
     youtube: {
       src: "https://www.youtube.com/watch?v=jlepY6NmUUQ",
-      label: 'F# Minor "The Caroling Hummingbirds" V.2 Full Score + Audio',
+      label: 'F# Minor "The Caroling Hummingbirds" (Ver.2) Full Score + Audio',
     },
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "grad-symph",
+    slug: "syph-3",
     title: "Graduation Symphony in A Major",
     subtitle: "For Full Orchestra",
     year: "2021-2024",
@@ -453,92 +453,913 @@ export const compositions: Composition[] = [
     youtube: {
       src: "https://www.youtube.com/watch?v=eVimTf49lnk",
       label:
-        'Crawford Symphony 3 in A Major "Graduation Symphony" Ver. 2 Full Score + Audio',
+        'Crawford Symphony 3 in A Major "Graduation Symphony" (Ver. 2) Full Score + Audio',
     },
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "three",
-    title: "[PLACEHOLDER]",
+    slug: "syph-4",
+    title: "Travel",
     subtitle: "For Full Orchestra",
-    year: "o",
+    year: "2021-2025",
     type: "symphony",
-    duration: "[PLACEHOLDER]",
-    scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
+    duration: "43:58",
+    scoring:
+      "Piccolo" +
+      "\n" +
+      "Flute I" +
+      "\n" +
+      "Flute II" +
+      "\n" +
+      "Alto Flute (Only in a section of movement IV.)" +
+      "\n" +
+      "Clarinet I" +
+      "\n" +
+      "Clarinet II" +
+      "\n" +
+      "Oboe I" +
+      "\n" +
+      "Oboe II" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Bassoon III" +
+      "\n" +
+      "Horn in F I" +
+      "\n" +
+      "Horn in F III" +
+      "\n" +
+      "Horn in F II" +
+      "\n" +
+      "Horn in F IV" +
+      "\n" +
+      "Trumpet in C I" +
+      "\n" +
+      "Trumpet in C II" +
+      "\n" +
+      "Trombone I" +
+      "\n" +
+      "Trombone II" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Crash Cymbal/Tam-Tam" +
+      "\n" +
+      "Triangle" +
+      "\n" +
+      "Woodblocks" +
+      "\n" +
+      "Harp (Movement I only)" +
+      "\n" +
+      "Violin I" +
+      "\n" +
+      "Violin II" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
     blurb: "[PLACEHOLDER]",
-    description: ["[PLACEHOLDER]"],
-    image: images.s1,
+    //     description: ["Crawford’s Fourth Symphony was a turning point in his musical
+    // works. This was his first emotional symphony he wrote, however,
+    // he was unconscious of his true purpose for this symphony until
+    // years later. This symphony is dedicated to the time he ran away at
+    // 12 years old. He was beaten up one time for running to class
+    // everyday, trying to make it on time and still being late. A group of
+    // kids didn’t appreciate him running to classes even though he never
+    // bumped into anyone. After they beat him up, he told his principal
+    // about it and they suspended the bullies which made them furious.
+    // In retaliation, they beat him up a second time for “snitching” on
+    // them. After returning home with marks, his mom reported to the
+    // school despite Crawford telling her not to. This caused him to be
+    // beaten up one final time, and it was merciless. He was being
+    // constantly beaten up, the whole school creating rumors about
+    // him, he lost trust and faith in his mom and all of this was going on
+    // while domestic violence in his house grew worse and worse. In the
+    // end, he felt like he didn’t belong anywhere so he decided to run
+    // away. He walked all over town for 3 days until he decided that
+    // what he was doing was wrong. He ran back to the school,
+    // remembering the area and eventually came home to an angry
+    // family. This symphony has amazing Violin, Low Brass, Piccolo,
+    // Trumpet, Horn, Timpani, Clarinet, Flute, Bassoon, Low Strings,
+    // and Oboe excerpts in this symphony. Fun Facts: This work was
+    // originally a 6 minute overture still titled “Travel” until 2024. From
+    // 2024 through 2026, Crawford has rewritten this symphony over 50
+    // times whilst writing his other works that came out during those
+    // years."],
+    image: images.s4,
     youtube: {
-      src: "[PLACEHOLDER]",
-      label: "[PLACEHOLDER]",
+      src: "https://www.youtube.com/watch?v=0Msu_I4f3zs",
+      label: 'Crawford Symphony 4 "Travel" Full Score + Audio',
     },
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "four",
-    title: "[PLACEHOLDER]",
+    slug: "syph-5",
+    title: "5 in B Minor",
     subtitle: "For Full Orchestra",
-    year: "o",
+    year: "2024",
     type: "symphony",
-    duration: "[PLACEHOLDER]",
-    scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
+    duration: "44:51",
+    scoring:
+      "Piccolo" +
+      "\n" +
+      "Flute 1" +
+      "\n" +
+      "Flute 2" +
+      "\n" +
+      "Oboe 1" +
+      "\n" +
+      "Oboe 2" +
+      "\n" +
+      "Clarinet 1" +
+      "\n" +
+      "Clarinet 2" +
+      "\n" +
+      "Bassoon 1" +
+      "\n" +
+      "Bassoon 2" +
+      "\n" +
+      "Horn 1" +
+      "\n" +
+      "Horn 2" +
+      "\n" +
+      "Horn 3" +
+      "\n" +
+      "Horn 4" +
+      "\n" +
+      "Trumpet in C 1" +
+      "\n" +
+      "Trumpet in C 2" +
+      "\n" +
+      "Harpsichord (Movement III only)" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Violin 1" +
+      "\n" +
+      "Violin 2" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
     blurb: "[PLACEHOLDER]",
-    description: ["[PLACEHOLDER]"],
-    image: images.s1,
+    //     description: ["Crawford wrote this symphony after watching a horror movie.
+    // After writing down the first two movements, he learned about the
+    // Harpsichord so he decided to add the instrument to the third
+    // symphony. He likes to nickname this symphony his “Mysterious
+    // Symphony” for how mysterious it sounds. The finale is like a
+    // combination of every movement to summarize or ‘finalize’ the
+    // symphony. This symphony is considered one of his favorite works
+    // he’s made. This Symphony has fantastic Violin, Low Strings, Flute,
+    // Piccolo, Oboe, Bassoon, and Harpsichord excerpts. Fun Facts:
+    // After he wrote this symphony, he listened to Tchaikovsky for the
+    // first time after he wrote this symphony and had extraordinary
+    // results on his later works."],
+    image: images.s5,
     youtube: {
-      src: "[PLACEHOLDER]",
-      label: "[PLACEHOLDER]",
+      src: "Crawford Symphony 5 in B Minor Full Score + Audio",
+      label: "https://www.youtube.com/watch?v=OOl3m8evO8c",
     },
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "five",
-    title: "[PLACEHOLDER]",
+    slug: "syph-6",
+    title: "World of Dreams in Eb Major",
     subtitle: "For Full Orchestra",
-    year: "o",
+    year: "2022-2024",
     type: "symphony",
-    duration: "[PLACEHOLDER]",
-    scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
+    duration: "52:45",
+    scoring:
+      "Piccolo" +
+      "\n" +
+      "Flute 1" +
+      "\n" +
+      "Flute 2" +
+      "\n" +
+      "Oboe 1" +
+      "\n" +
+      "Oboe 2" +
+      "\n" +
+      "English horn" +
+      "\n" +
+      "Eb Clarinet" +
+      "\n" +
+      "Bb Clarinet 1" +
+      "\n" +
+      "Bb Clarinet 2" +
+      "\n" +
+      "Bassoon 1" +
+      "\n" +
+      "Bassoon 2" +
+      "\n" +
+      "Bassoon 3" +
+      "\n" +
+      "Bassoon 4" +
+      "\n" +
+      "Horn 1" +
+      "\n" +
+      "Horn 2" +
+      "\n" +
+      "Horn 3" +
+      "\n" +
+      "Horn 4" +
+      "\n" +
+      "Trumpet in Bb 1" +
+      "\n" +
+      "Trumpet in Bb 2" +
+      "\n" +
+      "Trumpet in Bb 3" +
+      "\n" +
+      "Trombone 1" +
+      "\n" +
+      "Trombone 2" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Snare drum" +
+      "\n" +
+      "Bass drum" +
+      "\n" +
+      "Suspended Cymbal" +
+      "\n" +
+      "Crash Cymbal" +
+      "\n" +
+      "Tam-Tam" +
+      "\n" +
+      "Triangle" +
+      "\n" +
+      "Violin 1" +
+      "\n" +
+      "Violin 2" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
     blurb: "[PLACEHOLDER]",
-    description: ["[PLACEHOLDER]"],
-    image: images.s1,
+    //     description: ["This Symphony is the work that Crawford put the most time and
+    // effort into composing. This work, made in 2022, originally was a
+    // concert band piece for grade 2-3 still titled “World of Dreams”.
+    // This was one of the works that was a candidate to be Crawford's
+    // first premiere, but instead, the final decision was a piece called
+    // “Melody of the River”
+    // , which was a combination of concert band
+    // and chamber orchestra. About a year later, he wrote an overture
+    // titled “Tubular Bells of Light”. The title was ironic since the pieces
+    // didn’t have Tubular Bells (Chimes) in the instrumentation. When
+    // Crawford ran out of ideas and wanted to write a new symphony in
+    // Eb Major, and a year later, he decided to combine the two pieces
+    // he wrote in that key. From there, he wrote the rest of the
+    // movements. The climax of the fourth movement is what Crawford
+    // considers to be his most beautiful piece of music. This piece
+    // contains remarkably beautiful English Horn, Harp, Violin,
+    // Trumpet, Horn, Low Strings, Clarinet, Piccolo and Oboe excerpts.
+    // Fun Fact: this was the first piece of his others considered to have a
+    // ‘modern’ style."],
+    image: images.s6,
     youtube: {
-      src: "[PLACEHOLDER]",
-      label: "[PLACEHOLDER]",
+      src: "https://www.youtube.com/watch?v=AFnC9JjtmLk",
+      label:
+        'Crawford Symphony 6 in Eb Major "World of Dreams" (Ver. 2.5) Full Score + Audio',
     },
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "six",
-    title: "[PLACEHOLDER]",
+    slug: "syph-7",
+    title: "Symph 7 in D minor",
     subtitle: "For Full Orchestra",
-    year: "o",
+    year: "2024",
     type: "symphony",
-    duration: "[PLACEHOLDER]",
-    scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
+    duration: "48:32",
+    scoring:
+      "Piccolo" +
+      "\n" +
+      "Flute I" +
+      "\n" +
+      "Flute II" +
+      "\n" +
+      "Clarinet I" +
+      "\n" +
+      "Clarinet II" +
+      "\n" +
+      "Oboe I" +
+      "\n" +
+      "Oboe II" +
+      "\n" +
+      "English Horn" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Horn in F I" +
+      "\n" +
+      "Horn in F III" +
+      "\n" +
+      "Horn in F II" +
+      "\n" +
+      "Horn in F IV" +
+      "\n" +
+      "Trumpet in Bb I" +
+      "\n" +
+      "Trumpet in Bb II" +
+      "\n" +
+      "Trombone I" +
+      "\n" +
+      "Trombone II" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Bass Drum (changes to Tambourine movement III. and back to Bass Drum in the Finale)" +
+      "\n" +
+      "Crash Cymbal" +
+      "\n" +
+      "Violin I" +
+      "\n" +
+      "Violin II" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Viola [divisi (movement II. Only)]" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
     blurb: "[PLACEHOLDER]",
-    description: ["[PLACEHOLDER]"],
-    image: images.s1,
+    //     description: ["Crawford wrote this symphony after discovering his new favorite
+    // composer and finding two girls he loved. He was already
+    // permanently heartbroken by one of them and still loved her. The
+    // other girl spent the whole summer with her and her family. He
+    // always loved hanging out with her although didn’t want to admit
+    // his feelings for her. He unconsciously put out all of his romantic
+    // frustrations and personal feelings into this symphony, making his
+    // first truly romantic symphony. This symphony has fabulous
+    // Strings, Clarinet, Bassoon, English Horn, Trumpet, Horn, Flute,
+    // Piccolo, Crash Cymbal, and Timpani excerpts. Fun Fact: Crawford
+    // likes to nickname this symphony his “P. Tchaikovsky Symphony”
+    // due to the similarities this symphony has with Tchaikovsky’s
+    // works."],
+    image: images.s7,
     youtube: {
-      src: "[PLACEHOLDER]",
-      label: "[PLACEHOLDER]",
+      src: "https://www.youtube.com/watch?v=E_5fbrpAbn8",
+      label: "Crawford Symphony 7 in D Minor (Ver. 2) Full Score + Audio",
     },
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "seven",
-    title: "[PLACEHOLDER]",
+    slug: "syph-8",
+    title: "Classical Symphony in C Major",
     subtitle: "For Full Orchestra",
-    year: "o",
+    year: "2024",
     type: "symphony",
-    duration: "[PLACEHOLDER]",
-    scoring: "[PLACEHOLDER]\n" + "[PLACEHOLDER]",
+    duration: "42:04",
+    scoring:
+      "Flute 1" +
+      "\n" +
+      "Flute 2" +
+      "\n" +
+      "Oboe 1" +
+      "\n" +
+      "Oboe 2" +
+      "\n" +
+      "Clarinet 1" +
+      "\n" +
+      "Clarinet 2" +
+      "\n" +
+      "Bassoon 1" +
+      "\n" +
+      "Bassoon 2" +
+      "\n" +
+      "Horn 1" +
+      "\n" +
+      "Horn 2" +
+      "\n" +
+      "Horn 3" +
+      "\n" +
+      "Horn 4" +
+      "\n" +
+      "Trumpet in C 1" +
+      "\n" +
+      "Trumpet in C 2" +
+      "\n" +
+      "Trombone 1" +
+      "\n" +
+      "Trombone 2" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Violin 1" +
+      "\n" +
+      "Violin 2" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
     blurb: "[PLACEHOLDER]",
-    description: ["[PLACEHOLDER]"],
-    image: images.s1,
+    //     description: ["Crawford dedicated this symphony to Mozart, Hadyn and
+    // Beethoven after discovering the classical era of and Beethoven's
+    // time of music. He grew to especially love Beethoven's symphonies
+    // and Mozart's style in his orchestration. He wanted to write a piece
+    // mixing up the styles of Mozart, Haydn, Beethoven and
+    // Tchaikovsky when he wrote this symphony. This symphony has
+    // amazing Violin, Bassoon, Clarinet, Trombone, Tuba, Trumpet,
+    // Horn, Flute, Oboe, and Low Strings Excerpts. Fun Fact: Crawford
+    // chose the key C Major because while it is his least favorite key, he
+    // considers it to be the most common key of the classical era."],
+    image: images.s8,
     youtube: {
-      src: "[PLACEHOLDER]",
-      label: "[PLACEHOLDER]",
+      src: "https://www.youtube.com/watch?v=BGxFkHx6FZo",
+      label:
+        'Crawford Symphony 8 in C Major "Classical Symphony" (Ver. 2) Full Score + Audio',
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "syph-9",
+    title: "World of an Emotions in E Major",
+    subtitle: "For Full Orchestra",
+    year: "2024-2025",
+    type: "symphony",
+    duration: "1:05:57",
+    scoring:
+      "Piccolo" +
+      "\n" +
+      "Flute 1" +
+      "\n" +
+      "Flute 2" +
+      "\n" +
+      "Oboe 1" +
+      "\n" +
+      "Oboe 2" +
+      "\n" +
+      "Clarinet 1" +
+      "\n" +
+      "Clarinet 2" +
+      "\n" +
+      "Bassoon 1" +
+      "\n" +
+      "Bassoon 2" +
+      "\n" +
+      "Horn in E 1" +
+      "\n" +
+      "Horn in E 2" +
+      "\n" +
+      "Horn in E 3" +
+      "\n" +
+      "Horn in E 4" +
+      "\n" +
+      "Trumpet in E 1" +
+      "\n" +
+      "Trumpet in E 2" +
+      "\n" +
+      "Trombone 1" +
+      "\n" +
+      "Trombone 2" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Crash Cymbal" +
+      "\n" +
+      "Violin 1" +
+      "\n" +
+      "Violin 2" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
+    blurb: "[PLACEHOLDER]",
+    //     description: [" Crawford’s Ninth Symphony was the first of his symphonies to
+    // begin his “Depression Era” of his music. He wrote this after
+    // accepting that his second love wouldn’t love him back and wrote
+    // the finale about him realizing what he wanted to do with his love
+    // life. He talked to himself while writing this symphony. He decided
+    // to go for his first High School love, Elianny. While writing the
+    // finale, he also wrote to himself musically and verbally how his
+    // high school life has been so far. He vented how he felt about how
+    // his life in general felt using Chorus throughout movements 1
+    // through 3. He felt like his high school life was going to feel like a
+    // Millennium, so he decided to make his longest movement yet (27,
+    // almost 28 minute long movement). He dreams of the main melody
+    // of the finale to be played at a Millennial celebration when the year
+    // 3000 comes which would mark nine years before his 1000th
+    // birthday. He calls it his “1000th birthday wish”.
+    // This Symphony has miraculous Choral, Trumpet, Low Brass,
+    // Violin, Flute, Piccolo, Oboe, Clarinet, Low Strings, and Timpani
+    // Excerpts. Fun Fact: Crawford never wanted to listen to
+    // Beethoven’s Ninth because it was a choral symphony. At the time
+    // he never liked vocal music due to past events, which even involved
+    // classical vocals. His mindset changed after he watched the movie
+    // “Immortal Beloved”. He now puts Beethoven’s Ninth in his top
+    // five favorite pieces and it had inspiration for the form of
+    // Crawford’s Ninth.
+    //  "],
+    image: images.s9,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=5ks79QPl71I",
+      label:
+        'Crawford Symphony 9 in E Major "World of Emotions"(Ver. 2) Score + Audio',
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "syph-10",
+    title: "Excelsior in Bb major",
+    subtitle: "For Full Orchestra",
+    year: "2023-2025",
+    type: "symphony",
+    duration: "52:10",
+    scoring:
+      "Piccolo" +
+      "\n" +
+      "Flute I" +
+      "\n" +
+      "Flute II" +
+      "\n" +
+      "Clarinet I" +
+      "\n" +
+      "Clarinet II" +
+      "\n" +
+      "Oboe I" +
+      "\n" +
+      "Oboe II" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Horn in F I" +
+      "\n" +
+      "Horn in F III" +
+      "\n" +
+      "Horn in F II" +
+      "\n" +
+      "Horn in F IV" +
+      "\n" +
+      "Trumpet in Bb I" +
+      "\n" +
+      "Trumpet in Bb II" +
+      "\n" +
+      "Trombone I" +
+      "\n" +
+      "Trombone II" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Bass Drum" +
+      "\n" +
+      "Crash Cymbal" +
+      "\n" +
+      "Violin I" +
+      "\n" +
+      "Violin II" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
+    blurb: "[PLACEHOLDER]",
+    //     description: [" This Symphony is full of complete irony due to the purpose of the
+    // piece and the outcome. Crawford wanted this piece to be the
+    // happiest piece he wrote and he thought it wasn’t going to be hard
+    // for him. It turns out making happy music wasn’t the easiest for a
+    // depressed man. It took him 2 years to even make the first version
+    // since he was never in a good enough mood to write more than 10
+    // measures in a month. Despite this symphony supposedly being
+    // Crawford's happiest work, it turned out to have one of his saddest
+    // background stories to his music ever. This piece has Incredible
+    // Oboe, Clarinet, Trumpet, Horn, Violin, Viola, Timpani, Low
+    // Strings, Bassoon, Bass Trombone, and Tuba excerpts. Fun Fact: He
+    // handwrote the first 2 movements and the manuscript book is
+    // saved for a placement in a museum after he passes "],
+    image: images.s10,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=eGgRRBQHeoM",
+      label:
+        'Crawford Symphony 10 in Bb Major "Excelsior" (Ver. 2) Full Score + Audio',
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "syph-11",
+    title: "F-Minor",
+    subtitle: "For Full Orchestra",
+    year: "2025",
+    type: "symphony",
+    duration: "1:04:33",
+    scoring:
+      "Piccolo (Flute III)" +
+      "\n" +
+      "Flute I" +
+      "\n" +
+      "Flute II" +
+      "\n" +
+      "Clarinet I" +
+      "\n" +
+      "Clarinet II" +
+      "\n" +
+      "Oboe I" +
+      "\n" +
+      "Oboe II" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Horn in F I" +
+      "\n" +
+      "Horn in F III" +
+      "\n" +
+      "Horn in F II" +
+      "\n" +
+      "Horn in F IV" +
+      "\n" +
+      "Trumpet in F I" +
+      "\n" +
+      "Trumpet in F II" +
+      "\n" +
+      "Trombone I" +
+      "\n" +
+      "Trombone II" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Violin I" +
+      "\n" +
+      "Violin II" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
+    blurb: "[PLACEHOLDER]",
+    //     description: [" Crawford’s eleventh Symphony holds a dear place in Crawford's
+    // heart. He considers this symphony to be one of his most emotional
+    // symphonies he ever wrote, especially the first movement. This
+    // movement is the first work to have his “Heartbroken Melody” in
+    // it. He would unconsciously rewrite the same melody in different
+    // keys in different pieces until he became conscious of it, giving the
+    // melody the name it now has. This symphony would turn out to be
+    // one of Crawford’s favorite symphonies of his. This Symphony has
+    // beautiful Oboe, Flute, Bassoon, Low Brass, Trumpet, Violin, Viola,
+    // Horns, Clarinet, and Piccolo Excerpts. Fun Fact: He wrote the
+    // opening Idea of this symphony the same day he wrote the opening
+    // idea to his tenth symphony and didn’t actually see it through until
+    // 4 months later, finishing this symphony before he even finished his
+    // tenth. This symphony is considered emotion since he wrote it
+    // during his most heartbreaking moment in his life. "],
+    image: images.s11,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=xpG9zcUhZnc",
+      label: "Crawford Symphony 11 in F Minor (Ver. 2) Full Score + Audio",
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "syph-12",
+    title: "Ballader og Marsjer in Eb Minor",
+    subtitle: "For Full Orchestra",
+    year: "2025",
+    type: "symphony",
+    duration: "59:40",
+    scoring:
+      "Piccolo" +
+      "\n" +
+      "Flute I" +
+      "\n" +
+      "Flute II" +
+      "\n" +
+      "Oboe I" +
+      "\n" +
+      "Oboe II" +
+      "\n" +
+      "Clarinet I" +
+      "\n" +
+      "Clarinet II" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Bassoon III" +
+      "\n" +
+      "Horn in Eb I" +
+      "\n" +
+      "Horn in Eb III" +
+      "\n" +
+      "Horn in Eb II" +
+      "\n" +
+      "Horn in Eb IV" +
+      "\n" +
+      "Trumpet in Eb I" +
+      "\n" +
+      "Trumpet in Eb II" +
+      "\n" +
+      "Trombone I" +
+      "\n" +
+      "Trombone II" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Crash Cymbal" +
+      "\n" +
+      "Snare Drum" +
+      "\n" +
+      "Violin I" +
+      "\n" +
+      "Violin II" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
+    blurb: "[PLACEHOLDER]",
+    //     description: [" Crawford wrote this symphony when he had enough of all of the
+    // obstacles he was going through in life and was ready to quit it all.
+    // The catalyst was when he made a new friend. Making friends was
+    // one of the few things he desired outside of his musical life.
+    // Someone who liked her was jealous that he was going to steal her
+    // away and personally came to him to threaten him. He told
+    // Crawford to never hang with her again or he’ll be beaten up. He
+    // was triggered by PTSD at that moment which prevented him from
+    // telling him that the girl he liked wasn’t her, but her best friend.
+    // He was already heartbroken from that previous heartbreak which
+    // made him write the piece. The second movement is considered one
+    // of Crawford’s most personal works. This piece has fabulous Oboe,
+    // Flute, Bassoon, Clarinet, Piccolo, Strings, Trumpet, Horn, Low
+    // Brass, and Snare Drum excerpts. Fun Fact: Even Crawford feels
+    // ridiculous and sorry for string players for the string parts he
+    // wrote, but he keeps it because it's what he wrote in that moment. "],
+    image: images.s12,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=EzpXrnZLbG8",
+      label:
+        'Crawford Symphony 12 in Eb Minor "Ballader og Marsjer" (Ver 2) Full Score + Audio',
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "syph-13",
+    title: "Symphony 13 in G Minor",
+    subtitle: "For Full Orchestra",
+    year: "2025",
+    type: "symphony",
+    duration: "35:08",
+    scoring:
+      "Piccolo" +
+      "\n" +
+      "Flute 1" +
+      "\n" +
+      "Flute 2" +
+      "\n" +
+      "Clarinet 1" +
+      "\n" +
+      "Clarinet 2" +
+      "\n" +
+      "Oboe 1" +
+      "\n" +
+      "Oboe 2" +
+      "\n" +
+      "Clarinet 1" +
+      "\n" +
+      "Clarinet 2" +
+      "\n" +
+      "Bassoon 1" +
+      "\n" +
+      "Bassoon 2" +
+      "\n" +
+      "Horn 1" +
+      "\n" +
+      "Horn 2" +
+      "\n" +
+      "Horn 3" +
+      "\n" +
+      "Horn 4" +
+      "\n" +
+      "Trumpet in C 1" +
+      "\n" +
+      "Trumpet in C 2" +
+      "\n" +
+      "Trombone 1" +
+      "\n" +
+      "Trombone 2" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Violin 1" +
+      "\n" +
+      "Violin 2" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
+    blurb: "[PLACEHOLDER]",
+    //     description: [" "],
+    image: images.s13,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=Z-wRkqke_8k",
+      label: "Crawford Symphony 13 in G Minor (Ver. 2) Full Score + Audio",
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "syph-14",
+    title: "Classical Symphony in C Major",
+    subtitle: "For Full Orchestra",
+    year: "2024",
+    type: "symphony",
+    duration: "42:04",
+    scoring: "[]",
+    blurb: "[PLACEHOLDER]",
+    //     description: [" "],
+    image: images.s14,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=BGxFkHx6FZo",
+      label:
+        'Crawford Symphony 8 in C Major "Classical Symphony" Ver. 2 Full Score + Audio',
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "syph-15",
+    title: "Classical Symphony in C Major",
+    subtitle: "For Full Orchestra",
+    year: "2024",
+    type: "symphony",
+    duration: "42:04",
+    scoring: "[]",
+    blurb: "[PLACEHOLDER]",
+    //     description: [" "],
+    image: images.s15,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=BGxFkHx6FZo",
+      label:
+        'Crawford Symphony 8 in C Major "Classical Symphony" Ver. 2 Full Score + Audio',
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "syph-16",
+    title: "Classical Symphony in C Major",
+    subtitle: "For Full Orchestra",
+    year: "2024",
+    type: "symphony",
+    duration: "42:04",
+    scoring: "[]",
+    blurb: "[PLACEHOLDER]",
+    //     description: [" "],
+    image: images.s16,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=BGxFkHx6FZo",
+      label:
+        'Crawford Symphony 8 in C Major "Classical Symphony" Ver. 2 Full Score + Audio',
     },
     // purchaseUrl: "https://www.google.com",
   },

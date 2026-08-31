@@ -70,7 +70,7 @@ export function CompositionDetail({ composition }: CompositionDetailProps) {
             {composition.description ? (
               <section className={styles.section}>
                 <h2 className={`tracked-caps ${styles.sectionHeading}`}>
-                  Program note
+                  Description
                 </h2>
                 <div className={styles.descriptionBody}>
                   {composition.description.map((paragraph) => (
