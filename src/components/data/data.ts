@@ -1301,7 +1301,21 @@ export const compositions: Composition[] = [
       "\n" +
       "Contrabass",
     blurb: "[PLACEHOLDER]",
-    //     description: [" "],
+    //     description: [" Crawford’s Thirteenth Symphony is Crawford's shortest
+    // symphony. He wrote that symphony with the same influence he
+    // used to write his eighth symphony after taking time to go back to
+    // the classical era. This symphony is one of Crawford's ‘angry’
+    // symphonies. He actually came up with this symphony when he
+    // went fishing and it had gone wrong. He and his dad were there for
+    // more than twelve hours and they caught no fish however others
+    // around them including a four year old caught more than five fish.
+    // This triggered him into writing his thirteenth symphony. This
+    // symphony has amazing Violin, Bass, Cello, Bass Trombone,
+    // Trumpet, Horn, Piccolo, Crash Cymbal, Snare Drum, Timpani,
+    // Clarinet, and Bassoon excerpts. Fun Fact: The Finale was
+    // originally going to be a Christmas Original that he was going to
+    // make a one-man band performance of.
+    //  "],
     image: images.s13,
     youtube: {
       src: "https://www.youtube.com/watch?v=Z-wRkqke_8k",
@@ -1311,43 +1325,193 @@ export const compositions: Composition[] = [
   },
   {
     slug: "syph-14",
-    title: "Classical Symphony in C Major",
+    title: "Crawford Symphony 14 in E minor",
     subtitle: "For Full Orchestra",
-    year: "2024",
+    year: "2025",
     type: "symphony",
-    duration: "42:04",
-    scoring: "[]",
+    duration: "44:41",
+    scoring:
+      "Piccolo (Movement III & IV Only)" +
+      "\n" +
+      "Flute I" +
+      "\n" +
+      "Flute II" +
+      "\n" +
+      "Clarinet I" +
+      "\n" +
+      "Clarinet II" +
+      "\n" +
+      "Oboe I" +
+      "\n" +
+      "Oboe II" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Bassoon III (Movement II, III & IV Only)" +
+      "\n" +
+      "Horn in E I" +
+      "\n" +
+      "Horn in E III" +
+      "\n" +
+      "Horn in E II" +
+      "\n" +
+      "Horn in E IV" +
+      "\n" +
+      "Trumpet in E I" +
+      "\n" +
+      "Trumpet in E II" +
+      "\n" +
+      "Trombone I" +
+      "\n" +
+      "Trombone II" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba (Movement I, II & IV Only)" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Violin I" +
+      "\n" +
+      "Violin II" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
     blurb: "[PLACEHOLDER]",
-    //     description: [" "],
+    //     description: ["Crawford’s fourteenth symphony is all about releasing stress and
+    // anger. From enduring all of the pain and suffering to releasing it
+    // all and destroying much more than a room. This form of this
+    // symphony was inspired by Brahms Symphony 4. He never
+    // considered adding hemiolas to his music. Since then he uses
+    // hemiolas a lot in his compositions to define struggle, confusion
+    // and stress. He also uses a ton of ‘key switches’ in the finale to
+    // demonstrate the emotions he feels. This symphony was full of
+    // emotions he was feeling at the moment. This symphony also
+    // features his “Heartbroken Melody”. This Symphony has fantastic
+    // Oboe, Violin, Flute, Bass, Cello, Viola, Bass Trombone, Tuba,
+    // Clarinet, Horn, Bassoon, and Piccolo Excerpts. Fun Fact: This
+    // symphony was Crawford's first popular work he’s made since
+    // putting his music on social media."],
     image: images.s14,
     youtube: {
-      src: "https://www.youtube.com/watch?v=BGxFkHx6FZo",
-      label:
-        'Crawford Symphony 8 in C Major "Classical Symphony" Ver. 2 Full Score + Audio',
+      src: "https://www.youtube.com/watch?v=57pcuw2A7BU&t",
+      label: "Crawford Symphony 14 in E Minor (Ver. 2) Full Score + Audio",
     },
     // purchaseUrl: "https://www.google.com",
   },
   {
     slug: "syph-15",
-    title: "Classical Symphony in C Major",
+    title: "Anger Symphony in A minor",
     subtitle: "For Full Orchestra",
-    year: "2024",
+    year: "2025",
     type: "symphony",
-    duration: "42:04",
-    scoring: "[]",
+    duration: "56:29",
+    scoring:
+      "Piccolo" +
+      "\n" +
+      "Flute I" +
+      "\n" +
+      "Flute II" +
+      "\n" +
+      "Clarinet in A I" +
+      "\n" +
+      "Clarinet in A II" +
+      "\n" +
+      "Oboe I" +
+      "\n" +
+      "Oboe II" +
+      "\n" +
+      "English Horn (Oboe III)" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Bassoon III" +
+      "\n" +
+      "Horn in D I" +
+      "\n" +
+      "Horn in D III" +
+      "\n" +
+      "Horn in D II" +
+      "\n" +
+      "Horn in D IV" +
+      "\n" +
+      "Horn in D V" +
+      "\n" +
+      "Horn in D VI" +
+      "\n" +
+      "Trumpet in A I" +
+      "\n" +
+      "Trumpet in A II" +
+      "\n" +
+      "Trumpet in A III" +
+      "\n" +
+      "Trumpet in A IV" +
+      "\n" +
+      "Trombone I" +
+      "\n" +
+      "Trombone II" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani (Second Part in Movement III & IV)" +
+      "\n" +
+      "Bass Drum" +
+      "\n" +
+      "Crash Cymbal" +
+      "\n" +
+      "Triangle (Movement I Only)" +
+      "\n" +
+      "Snare Drum (Movement I Only)" +
+      "\n" +
+      "Chimes (Movement IV Only)" +
+      "\n" +
+      "Suspended Cymbal (Movement I, III & IV Only)" +
+      "\n" +
+      "Tam-Tam (Movement I Only Shared with Sus. Cymbal)" +
+      "\n" +
+      "Violin I" +
+      "\n" +
+      "Violin II" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
     blurb: "[PLACEHOLDER]",
-    //     description: [" "],
+    //     description: [" Crawford’s fifteenth symphony holds a personal place in his heart.
+    // This symphony is one of his works where almost every part of it
+    // was full of original ideas. When he had the chance to finish
+    // writing this symphony after writing down the opening idea, he
+    // finished the symphony in 7 days. At the time when he wrote this
+    // symphony, he was approaching the worst moments of his
+    // childhood life. The first movement is full of emotional mood
+    // swings that he was feeling at the moment. Crawford Symphony 15
+    // is considered to be one of his most emotional symphonies. This
+    // symphony has amazing Oboe, English horn, Low Brass, Cello,
+    // Horn, Viola, Piccolo Violin, and trumpet excerpts. Fun Fact: This
+    // symphony is in the key of A Minor because to Crawford, that key
+    // defines Anger "],
     image: images.s15,
     youtube: {
-      src: "https://www.youtube.com/watch?v=BGxFkHx6FZo",
+      src: "https://www.youtube.com/watch?v=AoBOWbSS0vM",
       label:
-        'Crawford Symphony 8 in C Major "Classical Symphony" Ver. 2 Full Score + Audio',
+        'Crawford Symphony 15 in A Minor "Anger Symphony" (Ver. 2) Full Score + Audio',
     },
     // purchaseUrl: "https://www.google.com",
   },
   {
     slug: "syph-16",
-    title: "Classical Symphony in C Major",
+    title: "Funeral in C# Minor",
     subtitle: "For Full Orchestra",
     year: "2024",
     type: "symphony",
@@ -1356,6 +1520,42 @@ export const compositions: Composition[] = [
     blurb: "[PLACEHOLDER]",
     //     description: [" "],
     image: images.s16,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=BGxFkHx6FZo",
+      label:
+        'Crawford Symphony 8 in C Major "Classical Symphony" Ver. 2 Full Score + Audio',
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "syph-17",
+    title: "Classical Symphony in C Major",
+    subtitle: "For Full Orchestra",
+    year: "2024",
+    type: "symphony",
+    duration: "42:04",
+    scoring: "[]",
+    blurb: "[PLACEHOLDER]",
+    //     description: [" "],
+    image: images.s17,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=BGxFkHx6FZo",
+      label:
+        'Crawford Symphony 8 in C Major "Classical Symphony" Ver. 2 Full Score + Audio',
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "syph-18",
+    title: "Classical Symphony in C Major",
+    subtitle: "For Full Orchestra",
+    year: "2024",
+    type: "symphony",
+    duration: "42:04",
+    scoring: "[]",
+    blurb: "[PLACEHOLDER]",
+    //     description: [" "],
+    image: images.s18,
     youtube: {
       src: "https://www.youtube.com/watch?v=BGxFkHx6FZo",
       label:
