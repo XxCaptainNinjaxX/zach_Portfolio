@@ -1513,53 +1513,333 @@ export const compositions: Composition[] = [
     slug: "syph-16",
     title: "Funeral in C# Minor",
     subtitle: "For Full Orchestra",
-    year: "2024",
+    year: "2025",
     type: "symphony",
-    duration: "42:04",
-    scoring: "[]",
+    duration: "55:32",
+    scoring:
+      "Piccolo" +
+      "\n" +
+      "Flute I" +
+      "\n" +
+      "Flute II" +
+      "\n" +
+      "Clarinet I" +
+      "\n" +
+      "Clarinet II" +
+      "\n" +
+      "Oboe I" +
+      "\n" +
+      "Oboe II" +
+      "\n" +
+      "English Horn (Oboe III)" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Bassoon III" +
+      "\n" +
+      "Horn in E I" +
+      "\n" +
+      "Horn in E III" +
+      "\n" +
+      "Horn in E II" +
+      "\n" +
+      "Horn in E IV" +
+      "\n" +
+      "Trumpet in E I" +
+      "\n" +
+      "Trumpet in E II" +
+      "\n" +
+      "Trombone I" +
+      "\n" +
+      "Trombone II" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Bass Drum" +
+      "\n" +
+      "Crash Cymbal" +
+      "\n" +
+      "Triangle (Movement I, IV & V Only)" +
+      "\n" +
+      "Snare Drum (Movement IV Only)" +
+      "\n" +
+      "Chimes (Movement II & III Only)" +
+      "\n" +
+      "Vibraphone (Movement I & V Only)" +
+      "\n" +
+      "Marimba (Movement V Only)" +
+      "\n" +
+      "Soprano Vocal (Movement II & III Only)" +
+      "\n" +
+      "Alto Vocal (Movement II & III Only)" +
+      "\n" +
+      "Tenor Vocal (Movement II & III Only)" +
+      "\n" +
+      "Bass Vocal (Movement II & III Only)" +
+      "\n" +
+      "Violin I" +
+      "\n" +
+      "Violin I [divisi (movement V Only)]" +
+      "\n" +
+      "Violin II" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
     blurb: "[PLACEHOLDER]",
-    //     description: [" "],
+    //     description: [" Crawford’s Sixteenth Symphony is a piece full of features. It
+    // features all kinds of emotional forms of classical music including
+    // ‘Dies Irae’
+    // ,
+    // ‘Funeral March’ and more. This symphony also features
+    // Crawford’s “Heartbroken Melody” in the finale. The finale of this
+    // piece has a personal meaning to Crawford since this was his first
+    // symphony after one of his most heartbreaking moments in his life.
+    // At the time, all he wanted to do was just die, but of course he
+    // never could do what it took to do so. In place, he wrote a
+    // symphony of what he dreamt of in those days. This symphony has
+    // beautiful Oboe, Flute, Cello, Viola, Trombone, trumpet, Bass
+    // trombone, Violin, English horn, Piccolo, and Chorus excerpts. Fun
+    // Fact: This symphony was finished before Symphony No. 15 was
+    // born.
+    //  "],
     image: images.s16,
     youtube: {
-      src: "https://www.youtube.com/watch?v=BGxFkHx6FZo",
+      src: "https://www.youtube.com/watch?v=w8M1T_ZyW6Y",
       label:
-        'Crawford Symphony 8 in C Major "Classical Symphony" Ver. 2 Full Score + Audio',
+        'Crawford Symphony 16 in C# Minor "Funeral" (Ver. 2) Full Score + Audio',
     },
     // purchaseUrl: "https://www.google.com",
   },
   {
     slug: "syph-17",
-    title: "Classical Symphony in C Major",
+    title: "Rebellion",
     subtitle: "For Full Orchestra",
-    year: "2024",
+    year: "2025-2026",
     type: "symphony",
-    duration: "42:04",
-    scoring: "[]",
+    duration: "51:00",
+    scoring:
+      "Piccolo" +
+      "\n" +
+      "Flute I" +
+      "\n" +
+      "Flute II" +
+      "\n" +
+      "Oboe I" +
+      "\n" +
+      "Oboe II" +
+      "\n" +
+      "Oboe III" +
+      "\n" +
+      "Clarinet in A I" +
+      "\n" +
+      "Clarinet in A II" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Bassoon III" +
+      "\n" +
+      "Contrabassoon" +
+      "\n" +
+      "Horn in F I" +
+      "\n" +
+      "Horn in F III" +
+      "\n" +
+      "Horn in F II" +
+      "\n" +
+      "Horn in F IV" +
+      "\n" +
+      "Horn in F V" +
+      "\n" +
+      "Horn in F VI" +
+      "\n" +
+      "Trumpet in F I" +
+      "\n" +
+      "Trumpet in F II" +
+      "\n" +
+      "Trumpet in C III" +
+      "\n" +
+      "Trumpet in C IV" +
+      "\n" +
+      "Trombone I" +
+      "\n" +
+      "Trombone II" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani I" +
+      "\n" +
+      "Timpani II" +
+      "\n" +
+      "Chimes" +
+      "\n" +
+      "Bass Drum" +
+      "\n" +
+      "Snare Drum" +
+      "\n" +
+      "Crash Cymbal" +
+      "\n" +
+      "Suspended Cymbal" +
+      "\n" +
+      "Tam-Tam" +
+      "\n" +
+      "Triangle" +
+      "\n" +
+      "Harp" +
+      "\n" +
+      "Violin I" +
+      "\n" +
+      "Violin II" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
     blurb: "[PLACEHOLDER]",
-    //     description: [" "],
+    //     description: [" Crawford’s Seventeenth Symphony is another personal symphony
+    // featuring Crawford's “Heartbroken Melody”. This symphony is
+    // about the rebellion His friends went through for several months.
+    // His school band was falling apart and he was the only one fighting
+    // for justice without causing war within the band. It got so bad that
+    // in the end almost 20 of his peers quit the band. This ‘war’ in the
+    // band went on for more than a whole year. This symphony has
+    // extreme Violin, Flute, Bass, Cello, Trumpet, Viola, Low Brass,
+    // Clarinet, Horn, Snare Drum, and English Horn, Harp, and
+    // Bassoon excerpts. Fun Fact: This symphony was finished months
+    // after the next symphony in line was finished "],
     image: images.s17,
     youtube: {
-      src: "https://www.youtube.com/watch?v=BGxFkHx6FZo",
-      label:
-        'Crawford Symphony 8 in C Major "Classical Symphony" Ver. 2 Full Score + Audio',
+      src: "https://www.youtube.com/watch?v=iVKpdfAzy4Q",
+      label: 'Crawford Symphony 17 "Rebellion" Full Score + Audio',
     },
     // purchaseUrl: "https://www.google.com",
   },
   {
     slug: "syph-18",
-    title: "Classical Symphony in C Major",
+    title: "Sinfonia Enfurecida in C Minor ",
     subtitle: "For Full Orchestra",
-    year: "2024",
+    year: "2025-2026",
     type: "symphony",
-    duration: "42:04",
-    scoring: "[]",
+    duration: "1:04:58",
+    scoring:
+      "Piccolo I" +
+      "\n" +
+      "Piccolo II" +
+      "\n" +
+      "Flute I" +
+      "\n" +
+      "Flute II" +
+      "\n" +
+      "Oboe I" +
+      "\n" +
+      "Oboe II" +
+      "\n" +
+      "English Horn I" +
+      "\n" +
+      "English Horn II" +
+      "\n" +
+      "Clarinet in Bb I" +
+      "\n" +
+      "Clarinet in Bb II" +
+      "\n" +
+      "Clarinet in Eb I" +
+      "\n" +
+      "Clarinet in Eb II" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Bassoon III (Contrabassoon Mvt IV)" +
+      "\n" +
+      "Horn in Eb I" +
+      "\n" +
+      "Horn in Eb III" +
+      "\n" +
+      "Horn in Eb II" +
+      "\n" +
+      "Horn in Eb IV" +
+      "\n" +
+      "Horn in Eb V" +
+      "\n" +
+      "Horn in Eb VI" +
+      "\n" +
+      "Trumpet in Eb I" +
+      "\n" +
+      "Trumpet in Eb II" +
+      "\n" +
+      "Trumpet in Bb I" +
+      "\n" +
+      "Trumpet in Bb II" +
+      "\n" +
+      "Trombone I" +
+      "\n" +
+      "Trombone II" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani I" +
+      "\n" +
+      "Timpani II" +
+      "\n" +
+      "Chimes" +
+      "\n" +
+      "Snare Drum" +
+      "\n" +
+      "Bass Drum" +
+      "\n" +
+      "Crash/Suspended Cymbal" +
+      "\n" +
+      "Triangle" +
+      "\n" +
+      "Tambourine/Tam-Tam" +
+      "\n" +
+      "Harp" +
+      "\n" +
+      "Violin I" +
+      "\n" +
+      "Violin II" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
     blurb: "[PLACEHOLDER]",
-    //     description: [" "],
+    //     description: [" Crawford made this symphony specifically for a Juilliard
+    // Pre-college audition, although it didn’t help him get in. While this
+    // symphony was made for college reasons, this symphony still has
+    // personal things to him. The first movement is full of released
+    // anger that Crawford held on for months. This was the first
+    // symphony he made after the worst moment of his childhood life.
+    // The last 6 minutes of this symphony is Crawford finally destroying
+    // his room letting out all of his enraged fury. This Symphony has
+    // remarkably miraculous Oboe, Flute, Piccolo, Low Brass, Snare
+    // Drum, Low Strings, Horn, Contrabassoon, Timpani, Trumpet,
+    // English Horn, Viola, Bassoon, and Violin excerpts. Fun Fact:
+    // Crawford chose the key of C Minor because it represents “Cruel”
+    // ,
+    // “Crazy” and “Chaotic”. "],
     image: images.s18,
     youtube: {
-      src: "https://www.youtube.com/watch?v=BGxFkHx6FZo",
+      src: "https://www.youtube.com/watch?v=QbuGfllpqqI",
       label:
-        'Crawford Symphony 8 in C Major "Classical Symphony" Ver. 2 Full Score + Audio',
+        'Crawford Symphony 18 in C Minor "Sinfonia Enfurecida" Full Score + Audio',
     },
     // purchaseUrl: "https://www.google.com",
   },
