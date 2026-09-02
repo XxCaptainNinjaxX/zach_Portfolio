@@ -75,6 +75,7 @@ export type Composition = {
 };
 
 export const compositions: Composition[] = [
+  /*
   {
     slug: "tidewater",
     title: "Tidewater",
@@ -99,131 +100,7 @@ export const compositions: Composition[] = [
     landingComp: true,
     featured: true,
   },
-  {
-    slug: "north-light",
-    title: "North Light",
-    subtitle: "for string orchestra",
-    year: "2024",
-    type: "solo",
-    duration: "9'30\"",
-    scoring: "str",
-    blurb:
-      "Written for string orchestra, a study in cold, high sonority and the slow warming beneath it.",
-    image: null,
-    audio: [{ src: "/audio/north-light.mp3", label: "Placeholder recording" }],
-    score: { src: "https://www.google.com", label: "Placeholder score (PDF)" },
-    youtube: { src: "https://www.google.com", label: "Placeholder video" },
-    // purchaseUrl: "https://www.google.com",
-    featured: true,
-  },
-  {
-    slug: "three-elegies",
-    title: "Three Elegies",
-    subtitle: "for string quartet",
-    year: "2024",
-    type: "chamber",
-    duration: "16'45\"",
-    blurb:
-      "Three short movements, each built from the same four-note descent heard at a different speed.",
-    image: null,
-    audio: [
-      { src: "/audio/three-elegies-i.mp3", label: "I. Placeholder" },
-      { src: "/audio/three-elegies-ii.mp3", label: "II. Placeholder" },
-      { src: "/audio/three-elegies-iii.mp3", label: "III. Placeholder" },
-    ],
-    score: { src: "https://www.google.com", label: "Placeholder score (PDF)" },
-    youtube: { src: "https://www.google.com", label: "Placeholder video" },
-    // purchaseUrl: "https://www.google.com",
-    featured: true,
-  },
-  {
-    slug: "the-still-hour",
-    title: "The Still Hour",
-    subtitle: "for SATB chorus",
-    year: "2023",
-    type: "chamber",
-    duration: "6'20\"",
-    blurb:
-      "An unaccompanied setting for mixed chorus, written to sit in the resonance of a large room.",
-    image: null,
-    // purchaseUrl: "https://www.google.com",
-    featured: true,
-  },
-  {
-    slug: "nocturne-for-solo-piano",
-    title: "Nocturne",
-    subtitle: "for solo piano",
-    year: "2023",
-    type: "solo",
-    duration: "5'10\"",
-    blurb:
-      "A quiet piece in one breath, with the pedal held far longer than is comfortable.",
-    image: null,
-    // purchaseUrl: "https://www.google.com",
-    featured: true,
-  },
-  {
-    slug: "ascent",
-    title: "Ascent",
-    subtitle: "for wind ensemble",
-    year: "2022",
-    type: "solo",
-    duration: "11'00\"",
-    blurb:
-      "Written for wind ensemble, a continuous climb through six key areas without a single full cadence.",
-    image: null,
-    // purchaseUrl: "https://www.google.com",
-    featured: true,
-  },
-  //----------
-
-  {
-    slug: "test1",
-    title: "test",
-    subtitle: "test",
-    year: "2022",
-    type: "solo",
-    duration: "11'00\"",
-    blurb:
-      "Written for wind ensemble, a continuous climb through six key areas without a single full cadence.",
-    image: null,
-  },
-  {
-    slug: "test",
-    title: "test",
-    subtitle: "test",
-    year: "2022",
-    type: "solo",
-    duration: "11'00\"",
-    blurb:
-      "Written for wind ensemble, a continuous climb through six key areas without a single full cadence.",
-    image: null,
-  },
-  {
-    slug: "test2",
-    title: "test",
-    subtitle: "test",
-    year: "2022",
-    type: "solo",
-    duration: "11'00\"",
-    blurb:
-      "Written for wind ensemble, a continuous climb through six key areas without a single full cadence.",
-    image: null,
-  },
-  {
-    slug: "test3",
-    title: "test",
-    subtitle: "test",
-    year: "2022",
-    type: "solo",
-    duration: "11'00\"",
-    blurb:
-      "Written for wind ensemble, a continuous climb through six key areas without a single full cadence.",
-    image: images.marchingSS,
-    featured: true,
-  },
-  //-------------------------------------------------------------------
-
+  */
   {
     slug: "syph-1",
     title: "E-Minor",
@@ -590,6 +467,7 @@ export const compositions: Composition[] = [
       src: "Crawford Symphony 5 in B Minor Full Score + Audio",
       label: "https://www.youtube.com/watch?v=OOl3m8evO8c",
     },
+    featured: true,
     // purchaseUrl: "https://www.google.com",
   },
   {
@@ -683,6 +561,7 @@ export const compositions: Composition[] = [
       label:
         'Crawford Symphony 6 in Eb Major "World of Dreams" (Ver. 2.5) Full Score + Audio',
     },
+    featured: true,
     // purchaseUrl: "https://www.google.com",
   },
   {
@@ -1047,6 +926,7 @@ export const compositions: Composition[] = [
       src: "https://www.youtube.com/watch?v=xpG9zcUhZnc",
       label: "Crawford Symphony 11 in F Minor (Ver. 2) Full Score + Audio",
     },
+    featured: true,
     // purchaseUrl: "https://www.google.com",
   },
   {
@@ -1673,6 +1553,8 @@ export const compositions: Composition[] = [
       label:
         'Crawford Symphony 18 in C Minor "Sinfonia Enfurecida" Full Score + Audio',
     },
+    featured: true,
+    landingComp: true,
     // purchaseUrl: "https://www.google.com",
   },
 ];
