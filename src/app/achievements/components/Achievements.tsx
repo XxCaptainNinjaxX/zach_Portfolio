@@ -5,12 +5,6 @@ import { groupedByYear } from "@/lib/achievements";
 import subpageStyles from "@/app/subpage.module.css";
 import styles from "@/app/achievements/components/Achievements.module.css";
 
-/**
- * ⚠️ VERIFY: the contents of this page were never specified — see PLAN.md
- * question 12. A reverse-chronological timeline is the hedge that works whether
- * this list stays at eight entries or grows to forty. If it turns out to be six
- * career highlights, a plain honours list would read better than a spine.
- */
 export function Achievements() {
   const years = groupedByYear();
 
@@ -38,7 +32,8 @@ export function Achievements() {
                     <span aria-hidden="true" className={styles.marker} />
 
                     <p className={`tracked-caps-tight ${styles.type}`}>
-                      {achievementTypeLabels[achievement.type]}
+                      {achievementTypeLabels[achievement.type]} ·{" "}
+                      {achievement.month}
                     </p>
 
                     <h3 className={styles.title}>

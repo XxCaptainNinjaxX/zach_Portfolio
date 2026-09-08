@@ -1577,14 +1577,18 @@ export const compositions: Composition[] = [
 
 //------- Achievements -------
 
-export type AchievementType = "award" | "performance";
+export type AchievementType = "award" | "performance" | "milestone";
+/** Singular: the only consumer is the per-entry eyebrow, not a filter facet. */
 export const achievementTypeLabels: Record<AchievementType, string> = {
-  award: "Awards",
-  performance: "Performances",
+  award: "Award",
+  performance: "Performance",
+  milestone: "Milestone",
 };
 
 export type Achievement = {
   id: string;
+  /** Rendered on the entry eyebrow; `year` alone is the timeline group key. */
+  month: string;
   year: string;
   type: AchievementType;
   title: string;
@@ -1593,65 +1597,162 @@ export type Achievement = {
   href?: string;
 };
 
+/**
+ * Newest first — the timeline renders in this written order (see
+ * lib/achievements.ts). Titles are the client's wording verbatim; only the
+ * "Month Year:" prefix is split out into `month` and `year`.
+ */
 export const achievements: Achievement[] = [
   {
-    id: "premiere-tidewater",
+    id: "first-pupil-2026",
+    month: "September",
+    year: "2026",
+    type: "milestone",
+    title: "Began teaching his first pupil with outstanding potential",
+  },
+  {
+    id: "low-brass-ensemble-2026",
+    month: "May",
+    year: "2026",
+    type: "milestone",
+    title:
+      "Founded his high school's Low Brass Ensemble premiering a short Low Brass Quartet with friends to showcase the ensemble.",
+  },
+  {
+    id: "dear-mother-premiere-2026",
+    month: "May",
+    year: "2026",
+    type: "performance",
+    title:
+      'Premiered his string quartet with bass he wrote for his mother "Dear Mother" playing contrabass on it.',
+  },
+  {
+    id: "edison-overture-premiere-2025",
+    month: "December",
     year: "2025",
     type: "performance",
-    title: "Premiere of Tidewater",
-    organization: "Placeholder Symphony Orchestra",
-    detail: "Placeholder Hall — first performance of the complete work.",
+    title:
+      'Conducted his premiere of his compositions "Edison Overture" with his High School',
   },
   {
-    id: "commission-tidewater",
+    id: "contrabass-32nd-instrument-2025",
+    month: "October",
+    year: "2025",
+    type: "milestone",
+    title:
+      "Picked up the Contrabass, marking the 32nd instrument he could play",
+  },
+  {
+    id: "marching-band-solo-parts-2025",
+    month: "September",
+    year: "2025",
+    type: "award",
+    title:
+      "Received Ballad Solo and Trombone Trio Lead parts for Marching Band",
+  },
+  {
+    id: "rutgers-summer-jazz-2025",
+    month: "July",
+    year: "2025",
+    type: "milestone",
+    title:
+      "Studied Jazz at Rutgers Summer Jazz institute and made lifelong friends there",
+  },
+  {
+    id: "private-composition-teacher-2025",
+    month: "May",
+    year: "2025",
+    type: "milestone",
+    title: "Began studying with a private teacher for composition",
+  },
+  {
+    id: "best-soloist-state-finals-2025",
+    month: "April",
+    year: "2025",
+    type: "award",
+    title:
+      "Received best soloist award at a local competition and State finals",
+  },
+  {
+    id: "music-on-social-media-2025",
+    month: "April",
+    year: "2025",
+    type: "milestone",
+    title: "Began putting music out on social media to have his music heard",
+  },
+  {
+    id: "heartbroken-melody-2025",
+    month: "February",
+    year: "2025",
+    type: "milestone",
+    title: 'wrote his "heartbroken Melody" for the first time.',
+  },
+  {
+    id: "tenth-symphony-begun-2025",
+    month: "January",
+    year: "2025",
+    type: "milestone",
+    title: "began writing his Tenth Symphony in Bb Major",
+  },
+  {
+    id: "heartbreak-2024",
+    month: "December",
+    year: "2024",
+    type: "milestone",
+    title:
+      "Crawford went through a heartbreak, causing his purpose of composition to change and making his compositions more emotional",
+  },
+  {
+    id: "principal-trombone-2024",
+    month: "September",
     year: "2024",
     type: "award",
-    title: "Orchestral commission",
-    organization: "Placeholder Symphony Orchestra",
-    detail: "Commissioned to write a large-scale work for the 2025 season.",
+    title:
+      "Received principal trombone in his High School wind ensemble, jazz, and marching band",
   },
   {
-    id: "award-emerging-composer",
+    id: "twenty-instruments-2024",
+    month: "June",
+    year: "2024",
+    type: "milestone",
+    title: "Was able to play 20 instruments",
+  },
+  {
+    id: "emotional-purpose-2024",
+    month: "April",
+    year: "2024",
+    type: "milestone",
+    title: "Began truly writing music for emotional purpose.",
+  },
+  {
+    id: "first-jazz-award-2024",
+    month: "March",
     year: "2024",
     type: "award",
-    title: "Emerging Composer Prize",
-    organization: "Placeholder Foundation",
+    title: "Received his first ever Jazz Award for best soloist.",
   },
   {
-    id: "residency-2024",
-    year: "2024",
-    type: "award",
-    title: "Composer in residence",
-    organization: "Placeholder Arts Center",
-    detail: "A season-long residency including two new commissions.",
-  },
-  {
-    id: "premiere-three-elegies",
-    year: "2024",
-    type: "performance",
-    title: "Premiere of Three Elegies",
-    organization: "Placeholder Quartet",
-  },
-  {
-    id: "performance-still-hour",
+    id: "first-world-premiere-2023",
+    month: "June",
     year: "2023",
     type: "performance",
-    title: "The Still Hour performed on tour",
-    organization: "Placeholder Chamber Choir",
+    title:
+      'Had his first world premiere performing the first movement of his "Melody of the river" miniature symphony with his middle school band and orchestra for graduation',
   },
   {
-    id: "award-choral-competition",
-    year: "2023",
-    type: "award",
-    title: "First prize, choral composition competition",
-    organization: "Placeholder Choral Society",
+    id: "first-piece-finished-2021",
+    month: "March",
+    year: "2021",
+    type: "milestone",
+    title: "finished his first piece of music ever written",
   },
   {
-    id: "press-review-2022",
-    year: "2022",
-    type: "performance",
-    title: "Featured in a review of new orchestral writing",
-    organization: "Placeholder Review",
+    id: "first-piece-begun-2021",
+    month: "January",
+    year: "2021",
+    type: "milestone",
+    title:
+      "began writing his first piece of music every which is now his first symphony",
   },
 ];
 
