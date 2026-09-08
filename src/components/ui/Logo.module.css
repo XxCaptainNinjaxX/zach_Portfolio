@@ -1,30 +1,41 @@
 .badge {
   position: relative;
-  display: inline-flex;
+  display: inline-block;
   flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
-  border-radius: var(--radius-full);
-  border-width: 1px;
-  border-style: solid;
-  border-color: var(--gold);
-  background-color: var(--surface-sunken);
 }
 
-.flourish {
+/*
+  The source PNGs are a 453px circular mark inside a 960x720 transparent canvas,
+  top-left at (252, 30). Blowing the canvas up to 960/453 of the badge and
+  shifting it back by 252/453 and 30/453 crops exactly to the mark, so the badge
+  box is the visible circle with no dead space. Both dimensions are set so
+  next/image does not warn about a one-sided CSS size override.
+
+  max-width must be cleared: the img reset in globals.css caps every image at
+  100% of its container, and max-width outranks width no matter the specificity.
+  Left in place it clamps this deliberately oversized canvas back to the badge
+  width while the height above still applies, squashing the circle into an
+  ellipse. Cleared here rather than in the reset, which every other image wants.
+*/
+.mark {
   position: absolute;
-  inset-block: 0;
-  left: 50%;
-  height: 100%;
-  translate: -50% 0;
-  color: var(--gold);
-  opacity: 0.4;
+  max-width: none;
+  width: calc(960 / 453 * 100%);
+  height: calc(720 / 453 * 100%);
+  left: calc(-252 / 453 * 100%);
+  top: calc(-30 / 453 * 100%);
 }
 
-.monogram {
-  position: relative;
-  font-family: var(--font-display);
-  line-height: 1;
-  color: var(--gold);
+/* Dark is the default theme; light wins only under the attribute. */
+.lightMark {
+  display: none;
+}
+
+:global([data-theme="light"]) .darkMark {
+  display: none;
+}
+
+:global([data-theme="light"]) .lightMark {
+  display: block;
 }

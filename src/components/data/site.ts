@@ -35,6 +35,12 @@ export const site = {
     "His most known works is his music he wrote emotionally through personal struggles in his childhood life. Since he was only twelve years old, Crawford is a dedicated composer and conductor aiming for a spot as a maestro in his generation of musicians.",
   ],
 
+  // header mark; the CSS module picks one per data-theme
+  logo: {
+    dark: "/images/dark.logo.png",
+    light: "/images/light.logo.png",
+  },
+
   // default pic
   portrait: {
     src: null as string | null,

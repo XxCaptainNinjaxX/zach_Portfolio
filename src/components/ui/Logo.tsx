@@ -1,13 +1,15 @@
-import { Flourish } from "@/components/ui/Flourish";
+import Image from "next/image";
+import { site } from "@/components/data/site";
 import styles from "@/components/ui/Logo.module.css";
 
 /**
- * The circular ZC badge.
+ * The circular "Crawford's Symphonies" mark.
  *
- * ⚠️ VERIFY: placeholder. No confirmed logo asset exists. This is a CSS-drawn
- * monogram with the flourish motif behind it, matching the mockup's composition.
- * When a real vector mark arrives, this component's internals are replaced and
- * nothing that consumes it changes.
+ * Both theme variants are rendered and one is hidden in CSS keyed off
+ * [data-theme], rather than picking in JS. The attribute is set pre-paint by
+ * ThemeScript, so the CSS swap is correct on first paint; reading the theme in
+ * JS would force this to be a client component and hydrate as dark before
+ * correcting, popping the wrong mark in light mode.
  */
 
 type LogoProps = {
@@ -23,13 +25,30 @@ export function Logo({ size = 56, className }: LogoProps) {
       style={{ width: size, height: size }}
       aria-hidden="true"
     >
-      <Flourish className={styles.flourish} />
-      <span
-        className={styles.monogram}
-        style={{ fontSize: size * 0.42, letterSpacing: "-0.04em" }}
-      >
-        ZC
-      </span>
+      {/*
+        priority on both: the header is above the fold, and next/image's default
+        lazy loading waits on hydration, which would pop the mark in late. The
+        hidden variant is fetched either way — the accepted cost of the
+        flash-free CSS swap, and the optimised output is a few KB.
+      */}
+      <Image
+        src={site.logo.dark}
+        alt=""
+        width={960}
+        height={720}
+        sizes="128px"
+        priority
+        className={`${styles.mark} ${styles.darkMark}`}
+      />
+      <Image
+        src={site.logo.light}
+        alt=""
+        width={960}
+        height={720}
+        sizes="128px"
+        priority
+        className={`${styles.mark} ${styles.lightMark}`}
+      />
     </span>
   );
 }
