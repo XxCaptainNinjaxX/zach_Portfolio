@@ -5,6 +5,10 @@ export const alt = `${site.name} — ${site.role}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+// ImageResponse is a route handler under the hood; a static export needs it
+// pinned so the PNG is rendered once at build time.
+export const dynamic = "force-static";
+
 /**
  * Social share card, rendered at build time.
  *

@@ -19,8 +19,12 @@ export const navItems: NavItem[] = [
 export const site = {
   name: "Zachary Crawford",
   role: "Orchestral Composer",
-  /** Used for absolute URLs in metadata, OG images, and the sitemap. */
-  url: "https://zacharycrawford.com",
+  /**
+   * Used for absolute URLs in metadata, OG images, and the sitemap.
+   * ⚠️ The "/projects/zach" segment must stay in sync with `basePath` in
+   * next.config.ts.
+   */
+  url: "https://robriguez.com/projects/zach",
   email: "zachsmusicalwork@gmail.com",
 
   //featured pic bio

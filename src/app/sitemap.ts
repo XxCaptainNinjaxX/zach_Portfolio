@@ -2,6 +2,10 @@ import type { MetadataRoute } from "next";
 import { navItems, site } from "@/components/data/site";
 import { allSlugs } from "@/lib/compositions";
 
+// `new Date()` below reads as a dynamic API to the builder, which a static
+// export cannot resolve. Pinning it makes lastModified the build time.
+export const dynamic = "force-static";
+
 /**
  * Built from the same sources the nav and catalogue read, so a new page or a new
  * composition appears here without a second edit.

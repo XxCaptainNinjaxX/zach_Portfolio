@@ -1,0 +1,13 @@
+# Served from a subfolder of a domain whose root is a single-page app. Apache does
+# not inherit mod_rewrite rules into subdirectories, so declaring RewriteEngine here
+# detaches this folder from the parent's catch-all regardless of what it contains.
+RewriteEngine On
+RewriteBase /projects/zach/
+
+# Next exports every route as a real directory with an index.html (trailingSlash),
+# so nothing needs rewriting. This no-op rule exists only to claim the rewrite
+# context away from the parent.
+RewriteRule ^ - [L]
+
+DirectoryIndex index.html
+ErrorDocument 404 /projects/zach/404.html
