@@ -25,13 +25,14 @@ export const site = {
 
   //featured pic bio
   bioShort:
-    "Zachary Crawford writes orchestral music that moves between the intimate and the immense. " +
-    "His work has been performed by ensembles across the country and draws on landscape, weather, and the sea.",
+    "Zachary Crawford (2009 - Present) is an inspiring young composer, conductor, " +
+    "and multi-instrumentalist who has composed more than 60 works by the age of 17, " +
+    "including more than twenty symphonies.",
   //about me bio
   bioLong: [
-    "Zachary Crawford is a composer and conductor whose orchestral writing moves between the intimate and the immense. His music has been described as patient and weather-driven, built from long lines that accumulate rather than announce themselves.",
-    "He studied composition and orchestral conducting, and has since written for symphony orchestra, chamber ensemble, and voice. His catalogue includes several large-scale works alongside a growing body of chamber music.",
-    "Alongside composition, he conducts and prepares new work for performance, and has collaborated with ensembles on premieres of his own music and that of other living composers.",
+    "Zachary Crawford (2009 - Present) is an inspiring young composer, conductor, and multi-instrumentalist. He has composed more than 60 works by the age of 17 including more than twenty symphonies, some reaching over an hour long.",
+    "Crawford can play over 30 instruments, his main being the trombone since he was 7 years old. He dreams of standing on the podium of a fantastic orchestra with a baton premiering his music live.",
+    "His most known works is his music he wrote emotionally through personal struggles in his childhood life. Since he was only twelve years old, Crawford is a dedicated composer and conductor aiming for a spot as a maestro in his generation of musicians.",
   ],
 
   // default pic

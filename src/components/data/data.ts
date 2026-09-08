@@ -157,7 +157,8 @@ export const compositions: Composition[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "[PLACEHOLDER]",
+    blurb:
+      "A fantastic symphony with a 2 minute Violin Solo, 5/4 movement, 15-minute Scherzo and more",
     description: [
       "Crawford’s First Symphony was the first piece he ever made officially. After being inspired by seeing his trombone private teacher make music for him to play, he wanted to do the same. At the time, the only classical pieces he knew of were Holst’s “The Planets” and Berlioz’s “Symphonie Fantastique”. He took what he learned and in one year completed his First Symphony not even knowing all of his major or minor scales.",
       "This piece has Amazing Low Brass, Flute, Piccolo, Clarinet, English Horn, Violin, Low Strings, and Trumpet Excerpts.",
@@ -232,7 +233,8 @@ export const compositions: Composition[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "[PLACEHOLDER]",
+    blurb:
+      "A symphony symbolizing encouragement, reassurance and inspiration with fantastic excerpts.",
     description: [
       "Crawford’s Second Symphony is about encouragement and taking on obstacles that aren’t easy to overcome. He unconsciously wrote this piece to build up his confidence whilst trying to be accepted by school while his domestic issues began to increasingly pile up. The third movement, which he considers to be the heart of this work, is all about encouragement which he even presented when he was in a mental Rehabilitation Facility in 2023. His music inspired others in the Facility to keep pushing and helped them get out of the facility.",
       "This piece has amazing low brass, Bass, Violin, Flute, Harp and Horn Excerpts.",
@@ -308,7 +310,8 @@ export const compositions: Composition[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "[PLACEHOLDER]",
+    blurb:
+      "A Symphony for the celebration of achieving long-awaited goals that were worked hard for and entering a new chapter",
     description: [
       "Crawford Wrote his symphony to congratulate his fellow seniors in high school of his freshman year. That senior class also included his sister, Zoë Crawford. He dedicated this piece to them because they were a majority of the only friends he had in high school at the time and didn’t know how to move on without them. The motif melody is what he likes to call his “Graduation Melody” and plays it whenever graduation comes to his mind.",
       "This piece has fantastic Viola, Alto Flute, Euphonium, Low Strings, Violin, Trumpet, Horn, Mallets, and Oboe excerpts.",
@@ -391,7 +394,8 @@ export const compositions: Composition[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "[PLACEHOLDER]",
+    blurb:
+      "The first of Crawford's emotional symphony written after experiencing trauma making him run from home",
     description: [
       "Crawford’s Fourth Symphony was a turning point in his musical works. This was his first emotional symphony he wrote, however, he was unconscious of his true purpose for this symphony until years later. This symphony is dedicated to the time he ran away at 12 years old. He was beaten up one time for running to class everyday, trying to make it on time and still being late. A group of kids didn’t appreciate him running to classes even though he never bumped into anyone. After they beat him up, he told his principal about it and they suspended the bullies which made them furious. In retaliation, they beat him up a second time for “snitching” on them. After returning home with marks, his mom reported to the school despite Crawford telling her not to. This caused him to be beaten up one final time, and it was merciless.",
       "He was being constantly beaten up, the whole school creating rumors about him, he lost trust and faith in his mom and all of this was going on while domestic violence in his house grew worse and worse. In the end, he felt like he didn’t belong anywhere so he decided to run away. He walked all over town for 3 days until he decided that what he was doing was wrong. He ran back to the school, remembering the area and eventually came home to an angry family.",
@@ -456,7 +460,8 @@ export const compositions: Composition[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "[PLACEHOLDER]",
+    blurb:
+      "A symphony with a mysterious theme for exploring the abandoned territories",
     description: [
       "Crawford wrote this symphony after watching a horror movie. After writing down the first two movements, he learned about the Harpsichord so he decided to add the instrument to the third symphony. He likes to nickname this symphony his “Mysterious Symphony” for how mysterious it sounds. The finale is like a combination of every movement to summarize or ‘finalize’ the symphony. This symphony is considered one of his favorite works he’s made.",
       "This Symphony has fantastic Violin, Low Strings, Flute, Piccolo, Oboe, Bassoon, and Harpsichord excerpts.",
@@ -549,7 +554,7 @@ export const compositions: Composition[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "[PLACEHOLDER]",
+    blurb: "A Universe full of dreams of every soul in existence with glory",
     description: [
       "This Symphony is the work that Crawford put the most time and effort into composing. This work, made in 2022, originally was a concert band piece for grade 2-3 still titled “World of Dreams”. This was one of the works that was a candidate to be Crawford's first premiere, but instead, the final decision was a piece called “Melody of the River”, which was a combination of concert band and chamber orchestra. About a year later, he wrote an overture titled “Tubular Bells of Light”. The title was ironic since the pieces didn’t have Tubular Bells (Chimes) in the instrumentation. When Crawford ran out of ideas and wanted to write a new symphony in Eb Major, and a year later, he decided to combine the two pieces he wrote in that key. From there, he wrote the rest of the movements. The climax of the fourth movement is what Crawford considers to be his most beautiful piece of music.",
       "This piece contains remarkably beautiful English Horn, Harp, Violin, Trumpet, Horn, Low Strings, Clarinet, Piccolo and Oboe excerpts.",
@@ -629,7 +634,8 @@ export const compositions: Composition[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "[PLACEHOLDER]",
+    blurb:
+      "A symphony symbolizing love and excitement two turtle doves bring to each other.",
     description: [
       "Crawford wrote this symphony after discovering his new favorite composer and finding two girls he loved. He was already permanently heartbroken by one of them and still loved her. The other girl spent the whole summer with her and her family. He always loved hanging out with her although didn’t want to admit his feelings for her. He unconsciously put out all of his romantic frustrations and personal feelings into this symphony, making his first truly romantic symphony.",
       "This symphony has fabulous Strings, Clarinet, Bassoon, English Horn, Trumpet, Horn, Flute, Piccolo, Crash Cymbal, and Timpani excerpts.",
@@ -695,7 +701,8 @@ export const compositions: Composition[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "[PLACEHOLDER]",
+    blurb:
+      "The Symphony dedicated to Wolfgang Amedeus Mozart, Joseph Franz Hadyn, and Ludwig Van Beethoven.",
     description: [
       "Crawford dedicated this symphony to Mozart, Hadyn and Beethoven after discovering the classical era of and Beethoven's time of music. He grew to especially love Beethoven's symphonies and Mozart's style in his orchestration. He wanted to write a piece mixing up the styles of Mozart, Haydn, Beethoven and Tchaikovsky when he wrote this symphony.",
       "This symphony has amazing Violin, Bassoon, Clarinet, Trombone, Tuba, Trumpet, Horn, Flute, Oboe, and Low Strings Excerpts.",
@@ -768,7 +775,8 @@ export const compositions: Composition[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "[PLACEHOLDER]",
+    blurb:
+      "A universe holding every emotion possible as confusion ruins one mind",
     description: [
       "Crawford’s Ninth Symphony was the first of his symphonies to begin his “Depression Era” of his music. He wrote this after accepting that his second love wouldn’t love him back and wrote the finale about him realizing what he wanted to do with his love life. He talked to himself while writing this symphony. He decided to go for his first High School love, Elianny. While writing the finale, he also wrote to himself musically and verbally how his high school life has been so far. He vented how he felt about how his life in general felt using Chorus throughout movements 1 through 3.",
       "He felt like his high school life was going to feel like a Millennium, so he decided to make his longest movement yet (27, almost 28 minute long movement). He dreams of the main melody of the finale to be played at a Millennial celebration when the year 3000 comes which would mark nine years before his 1000th birthday. He calls it his “1000th birthday wish”.",
@@ -844,7 +852,8 @@ export const compositions: Composition[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "[PLACEHOLDER]",
+    blurb:
+      "A symphony meaning to represent happiness however represents the opposite.",
     description: [
       "This Symphony is full of complete irony due to the purpose of the piece and the outcome. Crawford wanted this piece to be the happiest piece he wrote and he thought it wasn’t going to be hard for him. It turns out making happy music wasn’t the easiest for a depressed man. It took him 2 years to even make the first version since he was never in a good enough mood to write more than 10 measures in a month. Despite this symphony supposedly being Crawford's happiest work, it turned out to have one of his saddest background stories to his music ever.",
       "This piece has Incredible Oboe, Clarinet, Trumpet, Horn, Violin, Viola, Timpani, Low Strings, Bassoon, Bass Trombone, and Tuba excerpts.",
@@ -915,7 +924,8 @@ export const compositions: Composition[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "[PLACEHOLDER]",
+    blurb:
+      'A symphony full of beautiful solos and the first of his works to feature his "Heartbroken Melody".',
     description: [
       "Crawford’s eleventh Symphony holds a dear place in Crawford's heart. He considers this symphony to be one of his most emotional symphonies he ever wrote, especially the first movement. This movement is the first work to have his “Heartbroken Melody” in it. He would unconsciously rewrite the same melody in different keys in different pieces until he became conscious of it, giving the melody the name it now has. This symphony would turn out to be one of Crawford’s favorite symphonies of his.",
       "This Symphony has beautiful Oboe, Flute, Bassoon, Low Brass, Trumpet, Violin, Viola, Horns, Clarinet, and Piccolo Excerpts.",
@@ -992,7 +1002,8 @@ export const compositions: Composition[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "[PLACEHOLDER]",
+    blurb:
+      'His "Trudge" Symphony as Crawford walks with a mind in a huge mess.',
     description: [
       "Crawford wrote this symphony when he had enough of all of the obstacles he was going through in life and was ready to quit it all. The catalyst was when he made a new friend. Making friends was one of the few things he desired outside of his musical life. Someone who liked her was jealous that he was going to steal her away and personally came to him to threaten him. He told Crawford to never hang with her again or he’ll be beaten up. He was triggered by PTSD at that moment which prevented him from telling him that the girl he liked wasn’t her, but her best friend. He was already heartbroken from that previous heartbreak which made him write the piece. The second movement is considered one of Crawford’s most personal works.",
       "This piece has fabulous Oboe, Flute, Bassoon, Clarinet, Piccolo, Strings, Trumpet, Horn, Low Brass, and Snare Drum excerpts.",
@@ -1065,7 +1076,8 @@ export const compositions: Composition[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "[PLACEHOLDER]",
+    blurb:
+      "A symphony representing anger with his happiest finale he ever wrote",
     description: [
       "Crawford’s Thirteenth Symphony is Crawford's shortest symphony. He wrote that symphony with the same influence he used to write his eighth symphony after taking time to go back to the classical era. This symphony is one of Crawford's ‘angry’ symphonies. He actually came up with this symphony when he went fishing and it had gone wrong. He and his dad were there for more than twelve hours and they caught no fish however others around them including a four year old caught more than five fish. This triggered him into writing his thirteenth symphony.",
       "This symphony has amazing Violin, Bass, Cello, Bass Trombone, Trumpet, Horn, Piccolo, Crash Cymbal, Snare Drum, Timpani, Clarinet, and Bassoon excerpts.",
@@ -1137,7 +1149,8 @@ export const compositions: Composition[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "[PLACEHOLDER]",
+    blurb:
+      "A symphony full of every negative emotion as Crawford is lost in them.",
     description: [
       "Crawford’s fourteenth symphony is all about releasing stress and anger. From enduring all of the pain and suffering to releasing it all and destroying much more than a room. This form of this symphony was inspired by Brahms Symphony 4. He never considered adding hemiolas to his music. Since then he uses hemiolas a lot in his compositions to define struggle, confusion and stress. He also uses a ton of ‘key switches’ in the finale to demonstrate the emotions he feels. This symphony was full of emotions he was feeling at the moment. This symphony also features his “Heartbroken Melody”.",
       "This Symphony has fantastic Oboe, Violin, Flute, Bass, Cello, Viola, Bass Trombone, Tuba, Clarinet, Horn, Bassoon, and Piccolo Excerpts.",
@@ -1233,7 +1246,8 @@ export const compositions: Composition[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "[PLACEHOLDER]",
+    blurb:
+      "The symphony with every fit of rage let out into a piece of music that could be written",
     description: [
       "Crawford’s fifteenth symphony holds a personal place in his heart. This symphony is one of his works where almost every part of it was full of original ideas. When he had the chance to finish writing this symphony after writing down the opening idea, he finished the symphony in 7 days. At the time when he wrote this symphony, he was approaching the worst moments of his childhood life. The first movement is full of emotional mood swings that he was feeling at the moment. Crawford Symphony 15 is considered to be one of his most emotional symphonies.",
       "This symphony has amazing Oboe, English horn, Low Brass, Cello, Horn, Viola, Piccolo Violin, and trumpet excerpts.",
@@ -1332,7 +1346,8 @@ export const compositions: Composition[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "[PLACEHOLDER]",
+    blurb:
+      "Crawford's second choral symphony featuring every dark type of classical piece including Dies Irae and a Funeral March.",
     description: [
       "Crawford’s Sixteenth Symphony is a piece full of features. It features all kinds of emotional forms of classical music including ‘Dies Irae’, ‘Funeral March’ and more. This symphony also features Crawford’s “Heartbroken Melody” in the finale. The finale of this piece has a personal meaning to Crawford since this was his first symphony after one of his most heartbreaking moments in his life. At the time, all he wanted to do was just die, but of course he never could do what it took to do so. In place, he wrote a symphony of what he dreamt of in those days.",
       "This symphony has beautiful Oboe, Flute, Cello, Viola, Trombone, trumpet, Bass trombone, Violin, English horn, Piccolo, and Chorus excerpts.",
@@ -1435,7 +1450,8 @@ export const compositions: Composition[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "[PLACEHOLDER]",
+    blurb:
+      "Crawford's symphony full of stress due to altercations between close peers and more",
     description: [
       "Crawford’s Seventeenth Symphony is another personal symphony featuring Crawford's “Heartbroken Melody”. This symphony is about the rebellion His friends went through for several months. His school band was falling apart and he was the only one fighting for justice without causing war within the band. It got so bad that in the end almost 20 of his peers quit the band. This ‘war’ in the band went on for more than a whole year.",
       "This symphony has extreme Violin, Flute, Bass, Cello, Trumpet, Viola, Low Brass, Clarinet, Horn, Snare Drum, and English Horn, Harp, and Bassoon excerpts.",
@@ -1541,7 +1557,7 @@ export const compositions: Composition[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "[PLACEHOLDER]",
+    blurb: "A symphony full of a final stress from knowing the end is coming",
     description: [
       "Crawford made this symphony specifically for a Juilliard Pre-college audition, although it didn’t help him get in. While this symphony was made for college reasons, this symphony still has personal things to him. The first movement is full of released anger that Crawford held on for months. This was the first symphony he made after the worst moment of his childhood life. The last 6 minutes of this symphony is Crawford finally destroying his room letting out all of his enraged fury.",
       "This Symphony has remarkably miraculous Oboe, Flute, Piccolo, Low Brass, Snare Drum, Low Strings, Horn, Contrabassoon, Timpani, Trumpet, English Horn, Viola, Bassoon, and Violin excerpts.",
