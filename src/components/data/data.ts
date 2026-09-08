@@ -78,17 +78,14 @@ export type CompositionEntry = Omit<Composition, "type">;
 
 /* template
   {
-    slug: "tidewater",
-    title: "Tidewater",
+    slug: "placeholder",
+    title: "placeholder",
     subtitle: "For Full Orchestra",
     year: "2025",
-    duration: "14 minutes",
-    scoring: "3.2.2.2 / 4.3.3.1 / timp / 2 perc / hp / str",
-    blurb:
-      "A single arc from stillness to full tide, built on a rising figure that never quite resolves until the final bar.",
-    description: [
-      "akwndwakjdawdjbawdkjbwadkjbwfjbafkjbawdkjBWJRlawjndjnkjawdjnwjkaw djawkndiaowdnwoawdnwkaldnwaidowadnsawldksnawkldsawndlksnalwndsknawlkdnsanwlkdnslkanwlkdnslkanwdnslknawkndskjrbgjkbriugbriuviusbuibuenmlsudnfwdiwnueaoanfneaoaenfuutjnlkaenvljnefnaowiufneujknkjnkjawnkjawnckjawnckajwcnkajcnkajwcnkajcwnnoiseofijefoijtuikjna, a,xncaiwflamcklai dont knwow aht ia ma writing this is a really long blueb or somethinglawndlkawdlknlkn",
-    ],
+    duration: "14 secs",
+    scoring: "placeholder",
+    blurb: "placeholder",
+    description: ["placeholder"],
     image: null,
     audio: [{ src: "/audio/tidewater.mp3", label: "Placeholder recording" }],
     score: { src: "https://www.google.com", label: "Placeholder score (PDF)" },
@@ -100,8 +97,9 @@ export type CompositionEntry = Omit<Composition, "type">;
     landingComp: true,
     featured: true,
   },
-*/
+  */
 
+// symphonies entry
 export const symphonies: CompositionEntry[] = [
   {
     slug: "syph-1",
@@ -1559,18 +1557,232 @@ export const symphonies: CompositionEntry[] = [
   },
 ];
 
-export const suites: CompositionEntry[] = [];
+//suite entry
+export const suites: CompositionEntry[] = [
+  {
+    slug: "Creation",
+    title: 'Crawford Suite No. 1 in E Major "Creation"',
+    subtitle: "For Full Orchestra",
+    year: "2022",
+    duration: "39:29",
+    scoring:
+      "Piccolo" +
+      "\n" +
+      "Flute I" +
+      "\n" +
+      "Flute II" +
+      "\n" +
+      "Clarinet in A I" +
+      "\n" +
+      "Clarinet in A II" +
+      "\n" +
+      "Oboe I" +
+      "\n" +
+      "Oboe II" +
+      "\n" +
+      "Oboe III" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Bassoon III" +
+      "\n" +
+      "Bassoon IV (Contrabassoon)" +
+      "\n" +
+      "Horn in F I" +
+      "\n" +
+      "Horn in F III" +
+      "\n" +
+      "Horn in F II" +
+      "\n" +
+      "Horn in F IV" +
+      "\n" +
+      "Horn in F V" +
+      "\n" +
+      "Horn in F VI" +
+      "\n" +
+      "Trumpet in C I" +
+      "\n" +
+      "Trumpet in C II" +
+      "\n" +
+      "Trombone I" +
+      "\n" +
+      "Trombone II" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Bass Drum" +
+      "\n" +
+      "Snare Drum" +
+      "\n" +
+      "Crash Cymbals" +
+      "\n" +
+      "Tam-Tam" +
+      "\n" +
+      "Triangle" +
+      "\n" +
+      "Harp" +
+      "\n" +
+      "Violin I" +
+      "\n" +
+      "Violin II" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
+    blurb: "placeholder",
+    description: ["placeholder"],
+    image: null,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=18B4UHji7e4&list=PLexiae-Ds-J8",
+      label: ' Crawford Suite No. 1 in E Major "Creation" Full Score + Audio',
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
+];
 
+//overtures entry
 export const overtures: CompositionEntry[] = [];
 
-export const concertos: CompositionEntry[] = [];
+//concertos entry
+export const concertos: CompositionEntry[] = [
+  {
+    slug: "placeholder",
+    title: "placeholder",
+    subtitle: "For Full Orchestra",
+    year: "2025",
+    duration: "14 secs",
+    scoring: "placeholder",
+    blurb: "placeholder",
+    description: ["placeholder"],
+    image: null,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
+      label: "Placeholder video",
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
+];
 
+//soloWorks entry
 export const soloWorks: CompositionEntry[] = [];
 
-export const chamberWorks: CompositionEntry[] = [];
+//chambers entry
+export const chamberWorks: CompositionEntry[] = [
+  {
+    slug: "dear-mother",
+    title: 'Crawford String Quintet with bass "Dear Mother"',
+    subtitle: "For Strings",
+    year: "2026",
+    duration: "3:17",
+    scoring:
+      "Violin I" +
+      "\n" +
+      "Violin II" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Cello" +
+      "\n" +
+      "Bass",
+    blurb: "placeholder",
+    description: ["placeholder"],
+    image: null,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=lELjhYYBwdk&list=PLWmjwk0cLJGo",
+      label:
+        'Crawford String Quintet with bass "Dear Mother" Full Score + Audio',
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "oboe-piano-sonata",
+    title: "Crawford Sonata for Oboe and Piano in B Minor",
+    subtitle: "For Oboe and Piano",
+    year: "2026",
+    duration: "9:21",
+    scoring: "Oboe" + "\n" + "Piano",
+    blurb: "placeholder",
+    description: ["placeholder"],
+    image: null,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=S7lJrWFMDTs&list=PLWmjwk0cLJGo&index=2",
+      label: "Crawford Sonata for Oboe and Piano in B Minor Full Score + Audio",
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "violin-piano-sonata",
+    title: "Crawford Sonata for Violin and Piano in E Minor",
+    subtitle: "Violin and Piano Duet",
+    year: "2025",
+    duration: "13:49",
+    scoring: "Violin" + "\n" + "Piano",
+    blurb: "placeholder",
+    description: ["placeholder"],
+    image: null,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=HDmxqCTzFS4&list=PLWmjwk0cLJGo&index=3",
+      label:
+        "Crawford Sonata for Violin and Piano in E Minor Full Score + Audio",
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "woodwind-quintet-d-minor",
+    title: "placeholder",
+    subtitle: "For Woodwind Quintet",
+    year: "2026",
+    duration: "14:16",
+    scoring:
+      "Flute" +
+      "\n" +
+      "Oboe" +
+      "\n" +
+      "Clarinet in Bb" +
+      "\n" +
+      "Horn in F" +
+      "\n" +
+      "Bassoon",
+    blurb: "placeholder",
+    description: ["placeholder"],
+    image: null,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=qxA2pdmSURY&list=PLWmjwk0cLJGo&index=4",
+      label: "Crawford Woodwind Quintet in D Minor Full Score and Audio",
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "contrabass-piano-d-minor",
+    title: "Contrabass and Piano duet in D Minor",
+    subtitle: "Contrabass and Piano duet",
+    year: "2026",
+    duration: "8:25",
+    scoring: "Contrabass" + "\n" + "Piano",
+    blurb: "placeholder",
+    description: ["placeholder"],
+    image: null,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=avyivImjfiw&list=PLWmjwk0cLJGo&index=5",
+      label:
+        "Crawford's Sonata for Bass and Piano in D Minor Full Score + Audio",
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
+];
 
+//otherWorks entry
 export const otherWorks: CompositionEntry[] = [];
 
+//writings entry
 export const writings: CompositionEntry[] = [];
 
 /**
