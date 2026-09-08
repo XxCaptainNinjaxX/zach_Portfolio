@@ -74,14 +74,14 @@ export type Composition = {
   featured?: true;
 };
 
-export const compositions: Composition[] = [
-  /*
+export type CompositionEntry = Omit<Composition, "type">;
+
+/* template
   {
     slug: "tidewater",
     title: "Tidewater",
     subtitle: "For Full Orchestra",
     year: "2025",
-    type: "solo",
     duration: "14 minutes",
     scoring: "3.2.2.2 / 4.3.3.1 / timp / 2 perc / hp / str",
     blurb:
@@ -100,13 +100,14 @@ export const compositions: Composition[] = [
     landingComp: true,
     featured: true,
   },
-  */
+*/
+
+export const symphonies: CompositionEntry[] = [
   {
     slug: "syph-1",
     title: "E-Minor",
     subtitle: "For Full Orchestra",
     year: "2021",
-    type: "symphony",
     duration: "1:03:51",
     scoring:
       "Piccolo\n" +
@@ -177,7 +178,6 @@ export const compositions: Composition[] = [
     title: "The Caroling Hummingbirds in F# Major ",
     subtitle: "For Full Orchestra",
     year: "2021-2023",
-    type: "symphony",
     duration: "43:42",
     scoring:
       "Flute 1" +
@@ -252,7 +252,6 @@ export const compositions: Composition[] = [
     title: "Graduation Symphony in A Major",
     subtitle: "For Full Orchestra",
     year: "2021-2024",
-    type: "symphony",
     duration: "40:07",
     scoring:
       "Piccolo/Alto Flute" +
@@ -330,7 +329,6 @@ export const compositions: Composition[] = [
     title: "Travel",
     subtitle: "For Full Orchestra",
     year: "2021-2025",
-    type: "symphony",
     duration: "43:58",
     scoring:
       "Piccolo" +
@@ -414,7 +412,6 @@ export const compositions: Composition[] = [
     title: "5 in B Minor",
     subtitle: "For Full Orchestra",
     year: "2024",
-    type: "symphony",
     duration: "44:51",
     scoring:
       "Piccolo" +
@@ -469,8 +466,8 @@ export const compositions: Composition[] = [
     ],
     image: images.s5,
     youtube: {
-      src: "Crawford Symphony 5 in B Minor Full Score + Audio",
-      label: "https://www.youtube.com/watch?v=OOl3m8evO8c",
+      label: "Crawford Symphony 5 in B Minor Full Score + Audio",
+      src: "https://www.youtube.com/watch?v=OOl3m8evO8c",
     },
     featured: true,
     // purchaseUrl: "https://www.google.com",
@@ -480,7 +477,6 @@ export const compositions: Composition[] = [
     title: "World of Dreams in Eb Major",
     subtitle: "For Full Orchestra",
     year: "2022-2024",
-    type: "symphony",
     duration: "52:45",
     scoring:
       "Piccolo" +
@@ -574,7 +570,6 @@ export const compositions: Composition[] = [
     title: "Symph 7 in D minor",
     subtitle: "For Full Orchestra",
     year: "2024",
-    type: "symphony",
     duration: "48:32",
     scoring:
       "Piccolo" +
@@ -653,7 +648,6 @@ export const compositions: Composition[] = [
     title: "Classical Symphony in C Major",
     subtitle: "For Full Orchestra",
     year: "2024",
-    type: "symphony",
     duration: "42:04",
     scoring:
       "Flute 1" +
@@ -721,7 +715,6 @@ export const compositions: Composition[] = [
     title: "World of an Emotions in E Major",
     subtitle: "For Full Orchestra",
     year: "2024-2025",
-    type: "symphony",
     duration: "1:05:57",
     scoring:
       "Piccolo" +
@@ -796,7 +789,6 @@ export const compositions: Composition[] = [
     title: "Excelsior in Bb major",
     subtitle: "For Full Orchestra",
     year: "2023-2025",
-    type: "symphony",
     duration: "52:10",
     scoring:
       "Piccolo" +
@@ -872,7 +864,6 @@ export const compositions: Composition[] = [
     title: "F-Minor",
     subtitle: "For Full Orchestra",
     year: "2025",
-    type: "symphony",
     duration: "1:04:33",
     scoring:
       "Piccolo (Flute III)" +
@@ -944,7 +935,6 @@ export const compositions: Composition[] = [
     title: "Ballader og Marsjer in Eb Minor",
     subtitle: "For Full Orchestra",
     year: "2025",
-    type: "symphony",
     duration: "59:40",
     scoring:
       "Piccolo" +
@@ -1022,7 +1012,6 @@ export const compositions: Composition[] = [
     title: "Symphony 13 in G Minor",
     subtitle: "For Full Orchestra",
     year: "2025",
-    type: "symphony",
     duration: "35:08",
     scoring:
       "Piccolo" +
@@ -1095,7 +1084,6 @@ export const compositions: Composition[] = [
     title: "Crawford Symphony 14 in E minor",
     subtitle: "For Full Orchestra",
     year: "2025",
-    type: "symphony",
     duration: "44:41",
     scoring:
       "Piccolo (Movement III & IV Only)" +
@@ -1168,7 +1156,6 @@ export const compositions: Composition[] = [
     title: "Anger Symphony in A minor",
     subtitle: "For Full Orchestra",
     year: "2025",
-    type: "symphony",
     duration: "56:29",
     scoring:
       "Piccolo" +
@@ -1266,7 +1253,6 @@ export const compositions: Composition[] = [
     title: "Funeral in C# Minor",
     subtitle: "For Full Orchestra",
     year: "2025",
-    type: "symphony",
     duration: "55:32",
     scoring:
       "Piccolo" +
@@ -1366,7 +1352,6 @@ export const compositions: Composition[] = [
     title: "Rebellion",
     subtitle: "For Full Orchestra",
     year: "2025-2026",
-    type: "symphony",
     duration: "51:00",
     scoring:
       "Piccolo" +
@@ -1469,7 +1454,6 @@ export const compositions: Composition[] = [
     title: "Sinfonia Enfurecida in C Minor ",
     subtitle: "For Full Orchestra",
     year: "2025-2026",
-    type: "symphony",
     duration: "1:04:58",
     scoring:
       "Piccolo I" +
@@ -1574,6 +1558,52 @@ export const compositions: Composition[] = [
     // purchaseUrl: "https://www.google.com",
   },
 ];
+
+export const suites: CompositionEntry[] = [];
+
+export const overtures: CompositionEntry[] = [];
+
+export const concertos: CompositionEntry[] = [];
+
+export const soloWorks: CompositionEntry[] = [];
+
+export const chamberWorks: CompositionEntry[] = [];
+
+export const otherWorks: CompositionEntry[] = [];
+
+export const writings: CompositionEntry[] = [];
+
+/**
+ * Registry of the per-type stores. The `satisfies` clause makes a new key in
+ * `compositionTypeLabels` a build error here until its array exists, so the
+ * label map and the stores cannot drift apart.
+ *
+ * Module-private on purpose: these hold unstamped entries, so exporting it
+ * would offer callers a second, worse-typed view of the same catalogue.
+ */
+const compositionsByType = {
+  symphony: symphonies,
+  suite: suites,
+  overture: overtures,
+  concertos: concertos,
+  solo: soloWorks,
+  chamber: chamberWorks,
+  other: otherWorks,
+  writing: writings,
+} satisfies Record<CompositionType, CompositionEntry[]>;
+
+/**
+ * The flat catalogue every read goes through (see lib/compositions.ts). Type
+ * order is taken from `compositionTypeLabels` rather than this file's own key
+ * order, so that label map stays the single place ordering is declared. Each
+ * entry is stamped with the type of the array it came from — that stamp is the
+ * only place `type` is ever set.
+ */
+export const compositions: Composition[] = (
+  Object.keys(compositionTypeLabels) as CompositionType[]
+).flatMap((type) =>
+  compositionsByType[type].map((entry) => ({ ...entry, type })),
+);
 
 //------- Achievements -------
 
