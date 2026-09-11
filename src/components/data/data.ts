@@ -103,7 +103,7 @@ export type CompositionEntry = Omit<Composition, "type">;
 export const symphonies: CompositionEntry[] = [
   {
     slug: "syph-1",
-    title: "E-Minor",
+    title: "Crawford Symphony I in E Minor",
     subtitle: "For Full Orchestra",
     year: "2021",
     duration: "1:03:51",
@@ -173,7 +173,7 @@ export const symphonies: CompositionEntry[] = [
   },
   {
     slug: "syph-2",
-    title: "The Caroling Hummingbirds in F# Major ",
+    title: 'Crawford Symphony II in F# Minor "The Caroling Hummingbirds"',
     subtitle: "For Full Orchestra",
     year: "2021-2023",
     duration: "43:42",
@@ -247,7 +247,7 @@ export const symphonies: CompositionEntry[] = [
   },
   {
     slug: "syph-3",
-    title: "Graduation Symphony in A Major",
+    title: 'Crawford Symphony III in A Major "Graduation Symphony"',
     subtitle: "For Full Orchestra",
     year: "2021-2024",
     duration: "40:07",
@@ -324,7 +324,7 @@ export const symphonies: CompositionEntry[] = [
   },
   {
     slug: "syph-4",
-    title: "Travel",
+    title: 'Crawford Symphony IV "Travel"',
     subtitle: "For Full Orchestra",
     year: "2021-2025",
     duration: "43:58",
@@ -407,7 +407,7 @@ export const symphonies: CompositionEntry[] = [
   },
   {
     slug: "syph-5",
-    title: "5 in B Minor",
+    title: "Crawford Symphony V in B Minor",
     subtitle: "For Full Orchestra",
     year: "2024",
     duration: "44:51",
@@ -472,7 +472,7 @@ export const symphonies: CompositionEntry[] = [
   },
   {
     slug: "syph-6",
-    title: "World of Dreams in Eb Major",
+    title: 'Crawford Symphony VI in Eb Major "World of Dreams"',
     subtitle: "For Full Orchestra",
     year: "2022-2024",
     duration: "52:45",
@@ -565,7 +565,7 @@ export const symphonies: CompositionEntry[] = [
   },
   {
     slug: "syph-7",
-    title: "Symph 7 in D minor",
+    title: "Crawford Symphony VII in D Minor",
     subtitle: "For Full Orchestra",
     year: "2024",
     duration: "48:32",
@@ -643,7 +643,7 @@ export const symphonies: CompositionEntry[] = [
   },
   {
     slug: "syph-8",
-    title: "Classical Symphony in C Major",
+    title: 'Crawford Symphony VIII in C Major "Classical Symphony"',
     subtitle: "For Full Orchestra",
     year: "2024",
     duration: "42:04",
@@ -710,7 +710,7 @@ export const symphonies: CompositionEntry[] = [
   },
   {
     slug: "syph-9",
-    title: "World of an Emotions in E Major",
+    title: 'Crawford Symphony IX in E Major "World of Emotions"',
     subtitle: "For Full Orchestra",
     year: "2024-2025",
     duration: "1:05:57",
@@ -784,7 +784,7 @@ export const symphonies: CompositionEntry[] = [
   },
   {
     slug: "syph-10",
-    title: "Excelsior in Bb major",
+    title: 'Crawford Symphony X in Bb Major "Excelsior"',
     subtitle: "For Full Orchestra",
     year: "2023-2025",
     duration: "52:10",
@@ -859,7 +859,7 @@ export const symphonies: CompositionEntry[] = [
   },
   {
     slug: "syph-11",
-    title: "F-Minor",
+    title: "Crawford Symphony XI in F Minor",
     subtitle: "For Full Orchestra",
     year: "2025",
     duration: "1:04:33",
@@ -930,7 +930,7 @@ export const symphonies: CompositionEntry[] = [
   },
   {
     slug: "syph-12",
-    title: "Ballader og Marsjer in Eb Minor",
+    title: 'Crawford Symphony XII in Eb Minor "Ballader og Marsjer"',
     subtitle: "For Full Orchestra",
     year: "2025",
     duration: "59:40",
@@ -1007,7 +1007,7 @@ export const symphonies: CompositionEntry[] = [
   },
   {
     slug: "syph-13",
-    title: "Symphony 13 in G Minor",
+    title: "Crawford Symphony XIII in G Minor",
     subtitle: "For Full Orchestra",
     year: "2025",
     duration: "35:08",
@@ -1079,7 +1079,7 @@ export const symphonies: CompositionEntry[] = [
   },
   {
     slug: "syph-14",
-    title: "Crawford Symphony 14 in E minor",
+    title: "Crawford Symphony XIV in E Minor",
     subtitle: "For Full Orchestra",
     year: "2025",
     duration: "44:41",
@@ -1151,7 +1151,7 @@ export const symphonies: CompositionEntry[] = [
   },
   {
     slug: "syph-15",
-    title: "Anger Symphony in A minor",
+    title: 'Crawford Symphony XV in A Minor "Anger Symphony"',
     subtitle: "For Full Orchestra",
     year: "2025",
     duration: "56:29",
@@ -1248,7 +1248,7 @@ export const symphonies: CompositionEntry[] = [
   },
   {
     slug: "syph-16",
-    title: "Funeral in C# Minor",
+    title: 'Crawford Symphony XVI in C# Minor "Funeral"',
     subtitle: "For Full Orchestra",
     year: "2025",
     duration: "55:32",
@@ -1347,7 +1347,7 @@ export const symphonies: CompositionEntry[] = [
   },
   {
     slug: "syph-17",
-    title: "Rebellion",
+    title: 'Crawford Symphony XVII "Rebellion"',
     subtitle: "For Full Orchestra",
     year: "2025-2026",
     duration: "51:00",
@@ -1449,7 +1449,7 @@ export const symphonies: CompositionEntry[] = [
   },
   {
     slug: "syph-18",
-    title: "Sinfonia Enfurecida in C Minor ",
+    title: 'Crawford Symphony XVIII in C Minor "Sinfonia Enfurecida"',
     subtitle: "For Full Orchestra",
     year: "2025-2026",
     duration: "1:04:58",
@@ -1657,15 +1657,16 @@ export const concertos: CompositionEntry[] = [
     slug: "placeholder",
     title: "placeholder",
     subtitle: "For Full Orchestra",
-    year: "2025",
-    duration: "14 secs",
+    year: "2026",
+    duration: "28:55",
     scoring: "placeholder",
     blurb: "placeholder",
     description: ["placeholder"],
     image: null,
     youtube: {
-      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
-      label: "Placeholder video",
+      src: "https://www.youtube.com/watch?v=N-O1pIxwoIs&list=PLFUPwKu4OiEw",
+      label:
+        'Crawford Violin Concerto No 3 in D Minor "The Despair Concerto" Full Score + Audio',
     },
     // purchaseUrl: "https://www.google.com",
   },
@@ -1737,7 +1738,7 @@ export const chamberWorks: CompositionEntry[] = [
   },
   {
     slug: "woodwind-quintet-d-minor",
-    title: "placeholder",
+    title: "Crawford Woodwind Quintet in D Minor",
     subtitle: "For Woodwind Quintet",
     year: "2026",
     duration: "14:16",
