@@ -102,7 +102,7 @@ export type CompositionEntry = Omit<Composition, "type">;
 // symphonies entry
 export const symphonies: CompositionEntry[] = [
   {
-    slug: "syph-1",
+    slug: "symphony-1",
     title: "Crawford Symphony I in E Minor",
     subtitle: "For Full Orchestra",
     year: "2021",
@@ -172,7 +172,7 @@ export const symphonies: CompositionEntry[] = [
     featured: true,
   },
   {
-    slug: "syph-2",
+    slug: "symphony-2-caroling-hummingbirds",
     title: 'Crawford Symphony II in F# Minor "The Caroling Hummingbirds"',
     subtitle: "For Full Orchestra",
     year: "2021-2023",
@@ -246,7 +246,7 @@ export const symphonies: CompositionEntry[] = [
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "syph-3",
+    slug: "symphony-3-graduation",
     title: 'Crawford Symphony III in A Major "Graduation Symphony"',
     subtitle: "For Full Orchestra",
     year: "2021-2024",
@@ -323,7 +323,7 @@ export const symphonies: CompositionEntry[] = [
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "syph-4",
+    slug: "symphony-4-travel",
     title: 'Crawford Symphony IV "Travel"',
     subtitle: "For Full Orchestra",
     year: "2021-2025",
@@ -406,7 +406,7 @@ export const symphonies: CompositionEntry[] = [
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "syph-5",
+    slug: "symphony-5",
     title: "Crawford Symphony V in B Minor",
     subtitle: "For Full Orchestra",
     year: "2024",
@@ -471,7 +471,7 @@ export const symphonies: CompositionEntry[] = [
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "syph-6",
+    slug: "symphony-6-world-of-dreams",
     title: 'Crawford Symphony VI in Eb Major "World of Dreams"',
     subtitle: "For Full Orchestra",
     year: "2022-2024",
@@ -564,7 +564,7 @@ export const symphonies: CompositionEntry[] = [
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "syph-7",
+    slug: "symphony-7",
     title: "Crawford Symphony VII in D Minor",
     subtitle: "For Full Orchestra",
     year: "2024",
@@ -642,7 +642,7 @@ export const symphonies: CompositionEntry[] = [
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "syph-8",
+    slug: "symphony-8-classical",
     title: 'Crawford Symphony VIII in C Major "Classical Symphony"',
     subtitle: "For Full Orchestra",
     year: "2024",
@@ -709,7 +709,7 @@ export const symphonies: CompositionEntry[] = [
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "syph-9",
+    slug: "symphony-9-world-of-emotions",
     title: 'Crawford Symphony IX in E Major "World of Emotions"',
     subtitle: "For Full Orchestra",
     year: "2024-2025",
@@ -783,7 +783,7 @@ export const symphonies: CompositionEntry[] = [
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "syph-10",
+    slug: "symphony-10-excelsior",
     title: 'Crawford Symphony X in Bb Major "Excelsior"',
     subtitle: "For Full Orchestra",
     year: "2023-2025",
@@ -858,7 +858,7 @@ export const symphonies: CompositionEntry[] = [
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "syph-11",
+    slug: "symphony-11",
     title: "Crawford Symphony XI in F Minor",
     subtitle: "For Full Orchestra",
     year: "2025",
@@ -929,7 +929,7 @@ export const symphonies: CompositionEntry[] = [
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "syph-12",
+    slug: "symphony-12-ballader-og-marsjer",
     title: 'Crawford Symphony XII in Eb Minor "Ballader og Marsjer"',
     subtitle: "For Full Orchestra",
     year: "2025",
@@ -1006,7 +1006,7 @@ export const symphonies: CompositionEntry[] = [
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "syph-13",
+    slug: "symphony-13",
     title: "Crawford Symphony XIII in G Minor",
     subtitle: "For Full Orchestra",
     year: "2025",
@@ -1078,7 +1078,7 @@ export const symphonies: CompositionEntry[] = [
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "syph-14",
+    slug: "symphony-14",
     title: "Crawford Symphony XIV in E Minor",
     subtitle: "For Full Orchestra",
     year: "2025",
@@ -1150,7 +1150,7 @@ export const symphonies: CompositionEntry[] = [
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "syph-15",
+    slug: "symphony-15-anger",
     title: 'Crawford Symphony XV in A Minor "Anger Symphony"',
     subtitle: "For Full Orchestra",
     year: "2025",
@@ -1247,7 +1247,7 @@ export const symphonies: CompositionEntry[] = [
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "syph-16",
+    slug: "symphony-16-funeral",
     title: 'Crawford Symphony XVI in C# Minor "Funeral"',
     subtitle: "For Full Orchestra",
     year: "2025",
@@ -1346,7 +1346,7 @@ export const symphonies: CompositionEntry[] = [
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "syph-17",
+    slug: "symphony-17-rebellion",
     title: 'Crawford Symphony XVII "Rebellion"',
     subtitle: "For Full Orchestra",
     year: "2025-2026",
@@ -1448,7 +1448,7 @@ export const symphonies: CompositionEntry[] = [
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "syph-18",
+    slug: "symphony-18-sinfonia-enfurecida",
     title: 'Crawford Symphony XVIII in C Minor "Sinfonia Enfurecida"',
     subtitle: "For Full Orchestra",
     year: "2025-2026",
