@@ -32,6 +32,28 @@ export const images = {
   s16: "/images/comps/s16.jpg",
   s17: "/images/comps/s17.jpg",
   s18: "/images/comps/s18.jpg",
+
+  su1: "/images/suite/s1.jpg",
+  su2: "/images/suite/s2.jpg",
+
+  o1: "/images/overture/o1.jpg",
+  o2: "/images/overture/o2.jpg",
+  o3: "/images/overture/o3.jpg",
+  o4: "/images/overture/o4.jpg",
+  o5: "/images/overture/o5.jpg",
+  o6: "/images/overture/o6.jpg",
+  o7: "/images/overture/o7.jpg",
+  //o8: "/images/overture/o8.jpg",
+
+  c1: "/images/concerto/c1.jpg",
+  c2: "/images/concerto/c2.jpg",
+  c3: "/images/concerto/c3.jpg",
+  c4: "/images/concerto/c4.jpg",
+
+  ch1: "/images/chamber/ch1.jpg",
+  ch2: "/images/chamber/ch2.jpg",
+  ch3: "/images/chamber/ch3.jpg",
+  ch4: "/images/chamber/ch4.jpg",
 } as const;
 
 //------- Compositions -------
@@ -1573,7 +1595,7 @@ export const suites: CompositionEntry[] = [
       "The finale is the store being rebuilt piece by piece and the store reopens again as customers line up for the grand reopening.",
       "This piece has challengingly fun Flute, Violin, Piccolo, Low Strings, Snare drum, Viola, Clarinet, Contrabassoon, Low Brass, Timpani, Oboe, French horn, Harp, and Trumpet excerpts.",
     ],
-    image: null,
+    image: images.su1,
     youtube: {
       src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
       label: "Placeholder video",
@@ -1664,7 +1686,7 @@ export const suites: CompositionEntry[] = [
       "He began working on it during the summer. He used instruments he never composed in his life so it was challenging. For the finale, he decided to make a tribute to himself by using the first One-Man band Christmas composition as the finale. That year of Christmas was his most favorite Christmas ever.",
       "This piece has jolly Oboe, English horn, Celesta, Handbell, Timpani, Low Strings, Flute, Low Brass, Piccolo, Viola, Mallet, Violin, Crash Cymbal, English Horn, Trumpet, Horn and more excerpts.",
     ],
-    image: null,
+    image: images.su2,
     youtube: {
       src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
       label: "Placeholder video",
@@ -1687,7 +1709,7 @@ export const overtures: CompositionEntry[] = [
       "This was Crawford's first overture. He was inspired by Beethoven's “Coriolan Overture”. He created one of the main melodies on his clarinet which he had less than a month of experience on and created the background using his trumpet. This piece is one of Crawford's favorite compositions to play.",
       "This Piece has challenging String, Flute, Oboe, and Bassoon Excerpts.",
     ],
-    image: null,
+    image: images.o1,
     youtube: {
       src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
       label: "Placeholder video",
@@ -1706,7 +1728,7 @@ export const overtures: CompositionEntry[] = [
       "This Overture was the first official piece of Crawford's to be Premiered. He was 17 years old and conducted it with his High School Orchestra. The Fact his high school (Edison High School) was the orchestra to premiere was complete irony. This piece was written to cope with the anger and distress this town of Edison made for him growing up.",
       "This Piece has Nice Oboe, Clarinet, Violin, and Flute Excerpts.",
     ],
-    image: null,
+    image: images.o2,
     youtube: {
       src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
       label: "Placeholder video",
@@ -1726,7 +1748,7 @@ export const overtures: CompositionEntry[] = [
       "This piece has outstanding Cello, Trumpet, French Horn, Viola, Violin, and Bassoon Excerpts.",
       "Fun Fact: Crawford discovered Tchaikovsky's 6th symphony “Pathétique” less than a week after he finished this piece and it had a huge impact on his later compositions.",
     ],
-    image: null,
+    image: images.o3,
     youtube: {
       src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
       label: "Placeholder video",
@@ -1745,7 +1767,7 @@ export const overtures: CompositionEntry[] = [
       "Crawford wrote this piece because he wanted to write a smaller format of Orchestra music. He wanted to try making a piece with one of the instrumentations of Mozart. Despite the name, this overture has nothing to do with William Shakespeare's “Macbeth” Tragedy. Crawford still has desires to write suites based off of William Shakespeare's famous writings such as “Othello” and “Romeo and Juliet”.",
       "This Overture has great Oboe, Bassoon, French Horn, Violin, and Low String excerpts.",
     ],
-    image: null,
+    image: images.o4,
     youtube: {
       src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
       label: "Placeholder video",
@@ -1764,7 +1786,7 @@ export const overtures: CompositionEntry[] = [
       "This Overture was written to premiere with his high school orchestra, although it was never premiered with them. He took one of his favorite melodies from one of his archived works and brought it onto this piece. He now regrets putting the melody in this piece and wished he put it on a more grand piece. Despite that, this overture's ending is one of his favorite endings of his.",
       "This piece has great Low Brass, Trumpet, Timpani, Contrabass, Flute, and oboe excerpts.",
     ],
-    image: null,
+    image: images.o5,
     youtube: {
       src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
       label: "Placeholder video",
@@ -1783,7 +1805,7 @@ export const overtures: CompositionEntry[] = [
       "This piece is complete Irony for its name. It took Crawford over a full year to complete this overture. He was never happy enough to finish the piece, and when forced his way to finish it so he could publish it. This Piece along with his Tenth Symphony, which was also forcefully finished.",
       "This Piece has amazing Trumpet, Trombone, Violin, Flute, French Horn, Viola, Oboe, Low Strings, Bassoon, and Timpani Excerpts.",
     ],
-    image: null,
+    image: images.o6,
     youtube: {
       src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
       label: "Placeholder video",
@@ -1802,7 +1824,7 @@ export const overtures: CompositionEntry[] = [
       "This piece was written for his dislike of republicanship in American Society. When Donald J Trump became president of the United States, he began his “mass deportation” project. Family of his friends were included and they were indeed born in the USA. He was already furious enough with the president, but now completely enraged with the president and wrote this piece.",
       "This Piece has challenging French Horn, Piccolo, Trumpet, Low Strings, Clarinet, Violin, Viola, Timpani, Low Brass, and Bassoon Excerpts.",
     ],
-    image: null,
+    image: images.o7,
     youtube: {
       src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
       label: "Placeholder video",
@@ -1821,6 +1843,7 @@ export const overtures: CompositionEntry[] = [
       "This overture was one of Crawford's lost works that were brought back to life. He wrote this piece in 2023 but after completing it, he forgot all about it as he went back to composing. He found this work of his in November of 2025 and decided to revive it as he loved listening to it again. Not even he believed that this was one of his earlier works.",
       "This piece has challengingly fun Clarinet, Trumpet, Violin, Timpani, Low Strings, Low Brass, and Crash Cymbal Excerpts.",
     ],
+    //image: images.o8,
     image: null,
     youtube: {
       src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
@@ -1845,7 +1868,7 @@ export const concertos: CompositionEntry[] = [
       "Thoughts on all around the planet. Worldwide thoughts. As he began writing the concerto, he imagined the Uranus spinning as time flies. By the time it was done, there weren't many thoughts on Uranus, but the dark view of earth as it rotated and all the city lights lit up.",
       "This work has fabulous violin, Low Strings, french horn, oboe, flute, piccolo, and even timpani excerpts.",
     ],
-    image: null,
+    image: images.ch1,
     youtube: {
       src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
       label: "Placeholder video",
@@ -1865,7 +1888,7 @@ export const concertos: CompositionEntry[] = [
       "He also wanted to make this concerto speak out more, so he added more instruments like the harp. He made sure to make the violin sing so it could catch its listener's attention, specifically his friend's attention. He repeatedly used the element of suspense in the finale and decided to add more challenging things to make it sound more impressive. In the end, the spectacular concerto made his friend want to give it a try and Crawford's mission was a success.",
       "This piece has fabulous Violin, Trumpet, Bassoon, Clarinet, Oboe, Timpani, Low Strings, and French Horn excerpts.",
     ],
-    image: null,
+    image: images.ch2,
     youtube: {
       src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
       label: "Placeholder video",
@@ -1884,7 +1907,7 @@ export const concertos: CompositionEntry[] = [
       "This concerto was intended to be a concerto, but in the end, it's considered a Concertante, not a concerto. This has no cadenza nor more than 1 movement. Crawford wanted to make the violin sob and weep after he lost a close friend over the summer. He made sure this Concertante let out every emotion he felt as he lost more control.",
       "This Concertante has expressive Violin, Viola, Bassoon, French Horn, Low Strings, Piccolo, Trumpet, Low brass, Clarinet, Oboe, English horn, and even timpani excerpts.",
     ],
-    image: null,
+    image: images.ch3,
     youtube: {
       src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
       label: "Placeholder video",
@@ -1892,7 +1915,7 @@ export const concertos: CompositionEntry[] = [
     // purchaseUrl: "https://www.google.com",
   },
   {
-    slug: "cello-concerto-pools-of-sorrow",
+    slug: "cello-concerto-4-pools-of-sorrow",
     title: 'Crawford Violoncello Concerto "Pools of Sorrow"',
     subtitle: "For Full Orchestra",
     year: "2025",
@@ -1904,7 +1927,7 @@ export const concertos: CompositionEntry[] = [
       "The melody of the cello in this piece sings to him and makes him cry even years later. As he discovered that he could cope with his compositions, almost every other piece he wrote was a story of pain and suffering he's endured for up to 8 years.",
       "This piece has expressive Cello, Oboe, Trumpet, Horn, Bass, Piano, Violin, Flute, Bassoon, and Viola Excerpts.",
     ],
-    image: null,
+    image: images.ch4,
     youtube: {
       src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
       label: "Placeholder video",
