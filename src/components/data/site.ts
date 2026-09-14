@@ -25,7 +25,7 @@ export const site = {
    * next.config.ts.
    */
   url: "https://robriguez.com/projects/zach",
-  email: "zachsmusicalwork@gmail.com",
+  email: "crawfordsymphonies@gmail.com",
 
   //featured pic bio
   bioShort:

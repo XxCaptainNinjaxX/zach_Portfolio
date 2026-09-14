@@ -32,6 +32,7 @@ export const images = {
   s16: "/images/comps/s16.jpg",
   s17: "/images/comps/s17.jpg",
   s18: "/images/comps/s18.jpg",
+  s19: "/images/comps/s19.jpg",
 
   su1: "/images/suite/s1.jpg",
   su2: "/images/suite/s2.jpg",
@@ -43,7 +44,7 @@ export const images = {
   o5: "/images/overture/o5.jpg",
   o6: "/images/overture/o6.jpg",
   o7: "/images/overture/o7.jpg",
-  //o8: "/images/overture/o8.jpg",
+  o8: "/images/overture/o8.jpg",
 
   c1: "/images/concerto/c1.jpg",
   c2: "/images/concerto/c2.jpg",
@@ -54,6 +55,7 @@ export const images = {
   ch2: "/images/chamber/ch2.jpg",
   ch3: "/images/chamber/ch3.jpg",
   ch4: "/images/chamber/ch4.jpg",
+  ch5: "/images/chamber/ch5.jpg",
 } as const;
 
 //------- Compositions -------
@@ -106,7 +108,7 @@ export type CompositionEntry = Omit<Composition, "type">;
     year: "2025",
     duration: "14 secs",
     scoring: "placeholder",
-    blurb: "placeholder",
+    blurb: " ",
     description: ["placeholder"],
     image: null,
     audio: [{ src: "/audio/tidewater.mp3", label: "Placeholder recording" }],
@@ -1577,6 +1579,25 @@ export const symphonies: CompositionEntry[] = [
     landingComp: true,
     // purchaseUrl: "https://www.google.com",
   },
+  //FIX
+
+  {
+    slug: "symphony-19-Symphonie-Lugubre",
+    title: 'Crawford Symphony XIX in ______ "Symphonie Lugubre"',
+    subtitle: "For Full Orchestra",
+    year: "2025",
+    duration: "14 secs",
+    scoring: "placeholder",
+    blurb: " ",
+    description: ["placeholder"],
+    image: images.s19,
+    youtube: {
+      //FIX
+      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
+      label: "Placeholder video",
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
 ];
 
 //suite entry
@@ -1584,27 +1605,6 @@ export const suites: CompositionEntry[] = [
   {
     slug: "suite-1-creation",
     title: 'Crawford Suite I "Creation"',
-    subtitle: "For Full Orchestra",
-    year: "2025",
-    duration: "14 secs",
-    scoring: "placeholder",
-    blurb: "placeholder",
-    description: [
-      "This piece was the original Crawford Symphony 3 before realizing he wanted to write a piece for his fellow seniors for graduation. This piece was made in his grandfather's studio. His grandfather was an ex-rockstar who played at gigs and could sing all the way from bass range to mezzo-soprano. He wanted to see Crawford write something which is how he came up with the Suite. When he had a story for the piece, that's when he decided to turn it into a Suite.",
-      "In the first movement, a local store finally opened after years of hard work with customers ready to buy everything in stock. In the second movement, an accident occurs, causing the store to collapse and fall apart. In the third movement, a customer who was great at creating and building shows off his works as he shows he's able to rebuild it and make it even better than before. The fourth movement is just a “Comic Relief” you would see in a Shakespeare writing. The fifth movement is the store owner gaining hope that he is able to rebuild the local store.",
-      "The finale is the store being rebuilt piece by piece and the store reopens again as customers line up for the grand reopening.",
-      "This piece has challengingly fun Flute, Violin, Piccolo, Low Strings, Snare drum, Viola, Clarinet, Contrabassoon, Low Brass, Timpani, Oboe, French horn, Harp, and Trumpet excerpts.",
-    ],
-    image: images.su1,
-    youtube: {
-      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
-      label: "Placeholder video",
-    },
-    // purchaseUrl: "https://www.google.com",
-  },
-  {
-    slug: "suite-2-ornaments",
-    title: 'Crawford Suite II "The Ornaments"',
     subtitle: "For Full Orchestra",
     year: "2022",
     duration: "39:29",
@@ -1680,7 +1680,109 @@ export const suites: CompositionEntry[] = [
       "Violoncello" +
       "\n" +
       "Contrabass",
-    blurb: "placeholder",
+    blurb: " ",
+    description: [
+      "This piece was the original Crawford Symphony 3 before realizing he wanted to write a piece for his fellow seniors for graduation. This piece was made in his grandfather's studio. His grandfather was an ex-rockstar who played at gigs and could sing all the way from bass range to mezzo-soprano. He wanted to see Crawford write something which is how he came up with the Suite. When he had a story for the piece, that's when he decided to turn it into a Suite.",
+      "In the first movement, a local store finally opened after years of hard work with customers ready to buy everything in stock. In the second movement, an accident occurs, causing the store to collapse and fall apart. In the third movement, a customer who was great at creating and building shows off his works as he shows he's able to rebuild it and make it even better than before. The fourth movement is just a “Comic Relief” you would see in a Shakespeare writing. The fifth movement is the store owner gaining hope that he is able to rebuild the local store.",
+      "The finale is the store being rebuilt piece by piece and the store reopens again as customers line up for the grand reopening.",
+      "This piece has challengingly fun Flute, Violin, Piccolo, Low Strings, Snare drum, Viola, Clarinet, Contrabassoon, Low Brass, Timpani, Oboe, French horn, Harp, and Trumpet excerpts.",
+    ],
+    image: images.su1,
+    youtube: {
+      src: "https://www.youtube.com/watch?v=18B4UHji7e4&list=PLexiae-Ds-J8",
+      label: ' Crawford Suite No. 1 in E Major "Creation" Full Score + Audio',
+    },
+    // purchaseUrl: "https://www.google.com",
+  },
+  {
+    slug: "suite-2-ornaments",
+    title: 'Crawford Suite II "The Ornaments"',
+    subtitle: "For Full Orchestra",
+    year: "2022-2025",
+    duration: "31:19",
+    scoring:
+      "Piccolo" +
+      "\n" +
+      "Flute I" +
+      "\n" +
+      "Flute II" +
+      "\n" +
+      "Clarinet in A/Bb I" +
+      "\n" +
+      "Clarinet in A/Bb II" +
+      "\n" +
+      "Oboe I" +
+      "\n" +
+      "Oboe II" +
+      "\n" +
+      "English Horn/Oboe III" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Bassoon III" +
+      "\n" +
+      "Horn in F I" +
+      "\n" +
+      "Horn in F III" +
+      "\n" +
+      "Horn in F II" +
+      "\n" +
+      "Horn in F IV" +
+      "\n" +
+      "Trumpet in C I" +
+      "\n" +
+      "Trumpet in C II" +
+      "\n" +
+      "Trumpet in C III" +
+      "\n" +
+      "Trumpet in C IV" +
+      "\n" +
+      "Trombone I" +
+      "\n" +
+      "Trombone II" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Chimes" +
+      "\n" +
+      "Triangle" +
+      "\n" +
+      "Sleigh Bells" +
+      "\n" +
+      "Glockenspiel" +
+      "\n" +
+      "Vibraslap" +
+      "\n" +
+      "Mark Tree" +
+      "\n" +
+      "Bass Drum" +
+      "\n" +
+      "Snare Drum" +
+      "\n" +
+      "Suspended Cymbal" +
+      "\n" +
+      "Woodblocks" +
+      "\n" +
+      "Handbells" +
+      "\n" +
+      "Celesta" +
+      "\n" +
+      "Violin I" +
+      "\n" +
+      "Violin II" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
+    blurb: " ",
     description: [
       "Crawford always does a daily at-home Christmas concert. He usually composes or arranges Christmas pieces and plays it on every instrument in an orchestra. In 2025, he wanted to change the tradition. He decided to not just play an arrangement of “We Wish You a Merry Christmas”, but he also decided to compose a Christmas suite. Since he knew his Christmas of 2025 would be the most hardworking, he decided to work on it early.",
       "He began working on it during the summer. He used instruments he never composed in his life so it was challenging. For the finale, he decided to make a tribute to himself by using the first One-Man band Christmas composition as the finale. That year of Christmas was his most favorite Christmas ever.",
@@ -1688,8 +1790,8 @@ export const suites: CompositionEntry[] = [
     ],
     image: images.su2,
     youtube: {
-      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
-      label: "Placeholder video",
+      src: "https://www.youtube.com/watch?v=_jrG5-LRLsI&list=PLexiae-Ds-J8&index=2E",
+      label: 'Crawford Suite No. 2 "The Ornaments" Full Score + Audio',
     },
     // purchaseUrl: "https://www.google.com",
   },
@@ -1701,18 +1803,58 @@ export const overtures: CompositionEntry[] = [
     slug: "overture-1-revolutionair",
     title: 'Crawford Overture I "A Revolutionair"',
     subtitle: "For Full Orchestra",
-    year: "2025",
-    duration: "14 secs",
-    scoring: "placeholder",
-    blurb: "placeholder",
+    year: "2022",
+    duration: "10:25",
+    scoring:
+      "Flute I" +
+      "\n" +
+      "Flute II" +
+      "\n" +
+      "Oboe I" +
+      "\n" +
+      "Oboe II" +
+      "\n" +
+      "Clarinet in A I" +
+      "\n" +
+      "Clarinet in A II" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Horn in A I" +
+      "\n" +
+      "Horn in A III" +
+      "\n" +
+      "Horn in A II" +
+      "\n" +
+      "Horn in A IV" +
+      "\n" +
+      "Trumpet I" +
+      "\n" +
+      "Trumpet II" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Violins I" +
+      "\n" +
+      "Violins II" +
+      "\n" +
+      "Violas" +
+      "\n" +
+      "Violoncellos" +
+      "\n" +
+      "Contrabass",
+    blurb: " ",
     description: [
       "This was Crawford's first overture. He was inspired by Beethoven's “Coriolan Overture”. He created one of the main melodies on his clarinet which he had less than a month of experience on and created the background using his trumpet. This piece is one of Crawford's favorite compositions to play.",
       "This Piece has challenging String, Flute, Oboe, and Bassoon Excerpts.",
     ],
     image: images.o1,
     youtube: {
-      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
-      label: "Placeholder video",
+      src: "https://www.youtube.com/watch?v=Zal9xmDj4a8&list=PL_vusz1cDYIUmWAD6tDPryxJRwmhxYDDC",
+      label:
+        'Overture "A Revolutionair" Composed by Zachary Crawford Full Score + Audio',
     },
     // purchaseUrl: "https://www.google.com",
   },
@@ -1720,18 +1862,58 @@ export const overtures: CompositionEntry[] = [
     slug: "overture-2-edison",
     title: 'Crawford Overture II "Edison Overture"',
     subtitle: "For Full Orchestra",
-    year: "2025",
-    duration: "14 secs",
-    scoring: "placeholder",
-    blurb: "placeholder",
+    year: "2023",
+    duration: "9:39",
+    scoring:
+      "Flute I" +
+      "\n" +
+      "Flute II" +
+      "\n" +
+      "Oboe I" +
+      "\n" +
+      "Oboe II" +
+      "\n" +
+      "Clarinet in Bb I" +
+      "\n" +
+      "Clarinet in Bb II" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Horn I" +
+      "\n" +
+      "Horn II" +
+      "\n" +
+      "Trumpet I" +
+      "\n" +
+      "Trumpet II" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Bass Drum" +
+      "\n" +
+      "Crash Cymbal" +
+      "\n" +
+      "Violins I" +
+      "\n" +
+      "Violins II" +
+      "\n" +
+      "Violas" +
+      "\n" +
+      "Violoncellos" +
+      "\n" +
+      "Contrabass",
+    blurb: " ",
     description: [
       "This Overture was the first official piece of Crawford's to be Premiered. He was 17 years old and conducted it with his High School Orchestra. The Fact his high school (Edison High School) was the orchestra to premiere was complete irony. This piece was written to cope with the anger and distress this town of Edison made for him growing up.",
       "This Piece has Nice Oboe, Clarinet, Violin, and Flute Excerpts.",
     ],
     image: images.o2,
     youtube: {
-      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
-      label: "Placeholder video",
+      src: "https://www.youtube.com/watch?v=jR1ykBnuUkY&list=PL_vusz1cDYIUmWAD6tDPryxJRwmhxYDDC&index=2E",
+      label:
+        " Edison Overture Full Score + Musescore Audio Composed by Zachary Crawford",
     },
     // purchaseUrl: "https://www.google.com",
   },
@@ -1740,9 +1922,60 @@ export const overtures: CompositionEntry[] = [
     title: 'Crawford Overture III "June"',
     subtitle: "For Full Orchestra",
     year: "2025",
-    duration: "14 secs",
-    scoring: "placeholder",
-    blurb: "placeholder",
+    duration: "17:38",
+    scoring:
+      "Flute 1" +
+      "\n" +
+      "Flute 2" +
+      "\n" +
+      "Oboe 1" +
+      "\n" +
+      "Oboe 2" +
+      "\n" +
+      "Clarinet 1" +
+      "\n" +
+      "Clarinet 2" +
+      "\n" +
+      "Bassoon 1" +
+      "\n" +
+      "Bassoon 2" +
+      "\n" +
+      "Horn 1" +
+      "\n" +
+      "Horn 2" +
+      "\n" +
+      "Horn 3" +
+      "\n" +
+      "Horn 4" +
+      "\n" +
+      "Trumpet 1" +
+      "\n" +
+      "Trumpet 2" +
+      "\n" +
+      "Trombone 1" +
+      "\n" +
+      "Trombone 2" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Bass Drum" +
+      "\n" +
+      "Crash Cymbals" +
+      "\n" +
+      "Violin 1" +
+      "\n" +
+      "Violin 2" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
+    blurb: " ",
     description: [
       "Crawford considers this piece to be his most depressing work of music he ever wrote. He unconsciously made this work's main melody his “Heartbroken Melody”. He wrote this in 2 days after he went through weeks full of heartbreak that occurred from late May through early June. This piece was about how he felt the entire month of June.",
       "This piece has outstanding Cello, Trumpet, French Horn, Viola, Violin, and Bassoon Excerpts.",
@@ -1750,8 +1983,9 @@ export const overtures: CompositionEntry[] = [
     ],
     image: images.o3,
     youtube: {
-      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
-      label: "Placeholder video",
+      src: "https://www.youtube.com/watch?v=RMDLOMuH4rs&list=PL_vusz1cDYIUmWAD6tDPryxJRwmhxYDDC&index=3",
+      label:
+        "June Overture Full Score Composed By Zachary Crawford Score + Audio",
     },
     // purchaseUrl: "https://www.google.com",
   },
@@ -1759,18 +1993,42 @@ export const overtures: CompositionEntry[] = [
     slug: "overture-4-macbeth",
     title: 'Crawford Overture IV "Macbeth"',
     subtitle: "For Full Orchestra",
-    year: "2025",
-    duration: "14 secs",
-    scoring: "placeholder",
-    blurb: "placeholder",
+    year: "2021-2025",
+    duration: "9:10",
+    scoring:
+      "Oboe 1" +
+      "\n" +
+      "Oboe 2" +
+      "\n" +
+      "Bassoon 1" +
+      "\n" +
+      "Bassoon 2" +
+      "\n" +
+      "Horn 1" +
+      "\n" +
+      "Horn 2" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Violin 1" +
+      "\n" +
+      "Violin 2" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
+    blurb: " ",
     description: [
       "Crawford wrote this piece because he wanted to write a smaller format of Orchestra music. He wanted to try making a piece with one of the instrumentations of Mozart. Despite the name, this overture has nothing to do with William Shakespeare's “Macbeth” Tragedy. Crawford still has desires to write suites based off of William Shakespeare's famous writings such as “Othello” and “Romeo and Juliet”.",
       "This Overture has great Oboe, Bassoon, French Horn, Violin, and Low String excerpts.",
     ],
     image: images.o4,
     youtube: {
-      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
-      label: "Placeholder video",
+      src: "https://www.youtube.com/watch?v=cQ9MJ4TOcfQ&list=PL_vusz1cDYIUmWAD6tDPryxJRwmhxYDDC&index=4",
+      label:
+        " Overture for Macbeth Full Score + Audio Composed By Zachary Crawford",
     },
     // purchaseUrl: "https://www.google.com",
   },
@@ -1779,17 +2037,57 @@ export const overtures: CompositionEntry[] = [
     title: "Crawford Overture V in G Minor",
     subtitle: "For Full Orchestra",
     year: "2025",
-    duration: "14 secs",
-    scoring: "placeholder",
-    blurb: "placeholder",
+    duration: "6:55",
+    scoring:
+      "Flute I" +
+      "\n" +
+      "Flute II" +
+      "\n" +
+      "Oboe I" +
+      "\n" +
+      "Oboe II" +
+      "\n" +
+      "Clarinet in Bb I" +
+      "\n" +
+      "Clarinet in Bb II" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Horn I" +
+      "\n" +
+      "Horn II" +
+      "\n" +
+      "Trumpet I" +
+      "\n" +
+      "Trumpet II" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Bass Drum" +
+      "\n" +
+      "Crash Cymbal" +
+      "\n" +
+      "Violins I" +
+      "\n" +
+      "Violins II" +
+      "\n" +
+      "Violas" +
+      "\n" +
+      "Violoncellos" +
+      "\n" +
+      "Contrabass",
+    blurb: " ",
     description: [
       "This Overture was written to premiere with his high school orchestra, although it was never premiered with them. He took one of his favorite melodies from one of his archived works and brought it onto this piece. He now regrets putting the melody in this piece and wished he put it on a more grand piece. Despite that, this overture's ending is one of his favorite endings of his.",
       "This piece has great Low Brass, Trumpet, Timpani, Contrabass, Flute, and oboe excerpts.",
     ],
     image: images.o5,
     youtube: {
-      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
-      label: "Placeholder video",
+      src: "https://www.youtube.com/watch?v=QXhBWx3RxyY&list=PL_vusz1cDYIUmWAD6tDPryxJRwmhxYDDC&index=5",
+      label:
+        "Overture in G Minor Composed by Zachary Crawford Full Score + Audio",
     },
     // purchaseUrl: "https://www.google.com",
   },
@@ -1797,18 +2095,71 @@ export const overtures: CompositionEntry[] = [
     slug: "overture-6-joyful",
     title: 'Crawford Overture VI "Joyful"',
     subtitle: "For Full Orchestra",
-    year: "2025",
-    duration: "14 secs",
-    scoring: "placeholder",
-    blurb: "placeholder",
+    year: "2025-2026",
+    duration: "11:53",
+    scoring:
+      "Piccolo" +
+      "\n" +
+      "Flute I" +
+      "\n" +
+      "Flute II" +
+      "\n" +
+      "Clarinet in A I" +
+      "\n" +
+      "Clarinet in A II" +
+      "\n" +
+      "Oboe I" +
+      "\n" +
+      "Oboe II" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Horn in F I" +
+      "\n" +
+      "Horn in F III" +
+      "\n" +
+      "Horn in F II" +
+      "\n" +
+      "Horn in F IV" +
+      "\n" +
+      "Trumpet in C I" +
+      "\n" +
+      "Trumpet in C II" +
+      "\n" +
+      "Trombone I" +
+      "\n" +
+      "Trombone II" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Bass Drum" +
+      "\n" +
+      "Crash Cymbal" +
+      "\n" +
+      "Violin I" +
+      "\n" +
+      "Violin II" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
+    blurb: " ",
     description: [
       "This piece is complete Irony for its name. It took Crawford over a full year to complete this overture. He was never happy enough to finish the piece, and when forced his way to finish it so he could publish it. This Piece along with his Tenth Symphony, which was also forcefully finished.",
       "This Piece has amazing Trumpet, Trombone, Violin, Flute, French Horn, Viola, Oboe, Low Strings, Bassoon, and Timpani Excerpts.",
     ],
     image: images.o6,
     youtube: {
-      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
-      label: "Placeholder video",
+      src: "https://www.youtube.com/watch?v=JW23-9hMebA&list=PL_vusz1cDYIUmWAD6tDPryxJRwmhxYDDC&index=6",
+      label: "Joyful Overture Composed by Zachary Crawford Full Score + Audio",
     },
     // purchaseUrl: "https://www.google.com",
   },
@@ -1816,21 +2167,60 @@ export const overtures: CompositionEntry[] = [
     slug: "overture-7-resentful",
     title: 'Crawford Overture VII "Resentful"',
     subtitle: "For Full Orchestra",
-    year: "2025",
-    duration: "14 secs",
-    scoring: "placeholder",
-    blurb: "placeholder",
+    year: "2026",
+    duration: "17:49",
+    scoring:
+      "Piccolo" +
+      "\n" +
+      "Flutes" +
+      "\n" +
+      "Oboes" +
+      "\n" +
+      "Clarinet in A I" +
+      "\n" +
+      "Clarinet in A II" +
+      "\n" +
+      "Bassoons I" +
+      "\n" +
+      "Bassoons II" +
+      "\n" +
+      "Horns in F" +
+      "\n" +
+      "Trumpet in F I" +
+      "\n" +
+      "Trumpet in F II" +
+      "\n" +
+      "Trombones I" +
+      "\n" +
+      "Trombones II" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Violins I" +
+      "\n" +
+      "Violins II" +
+      "\n" +
+      "Violas" +
+      "\n" +
+      "Violoncellos" +
+      "\n" +
+      "Contrabasses",
+    blurb: " ",
     description: [
       "This piece was written for his dislike of republicanship in American Society. When Donald J Trump became president of the United States, he began his “mass deportation” project. Family of his friends were included and they were indeed born in the USA. He was already furious enough with the president, but now completely enraged with the president and wrote this piece.",
       "This Piece has challenging French Horn, Piccolo, Trumpet, Low Strings, Clarinet, Violin, Viola, Timpani, Low Brass, and Bassoon Excerpts.",
     ],
     image: images.o7,
     youtube: {
-      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
-      label: "Placeholder video",
+      src: "https://www.youtube.com/watch?v=1WFgZTSqdF4&list=PL_vusz1cDYIUmWAD6tDPryxJRwmhxYDDC&index=7",
+      label:
+        "Resentful Overture Full Handwritten Score + Full Online Score + Audio",
     },
     // purchaseUrl: "https://www.google.com",
   },
+  //FIX
   {
     slug: "overture-8-glory",
     title: 'Crawford Overture VIII "Glory"',
@@ -1838,13 +2228,12 @@ export const overtures: CompositionEntry[] = [
     year: "2025",
     duration: "14 secs",
     scoring: "placeholder",
-    blurb: "placeholder",
+    blurb: " ",
     description: [
       "This overture was one of Crawford's lost works that were brought back to life. He wrote this piece in 2023 but after completing it, he forgot all about it as he went back to composing. He found this work of his in November of 2025 and decided to revive it as he loved listening to it again. Not even he believed that this was one of his earlier works.",
       "This piece has challengingly fun Clarinet, Trumpet, Violin, Timpani, Low Strings, Low Brass, and Crash Cymbal Excerpts.",
     ],
-    //image: images.o8,
-    image: null,
+    image: images.o8,
     youtube: {
       src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
       label: "Placeholder video",
@@ -1859,19 +2248,56 @@ export const concertos: CompositionEntry[] = [
     slug: "violin-concerto-1-worldwide",
     title: 'Crawford Violin Concerto I "Worldwide"',
     subtitle: "For Full Orchestra",
-    year: "2025",
-    duration: "14 secs",
-    scoring: "placeholder",
-    blurb: "placeholder",
+    year: "2024",
+    duration: "30:48",
+    scoring:
+      "Flute 1" +
+      "\n" +
+      "Flute 2 (Piccolo, Flute 2 mvt 1)" +
+      "\n" +
+      "Oboe 1" +
+      "\n" +
+      "Oboe 2" +
+      "\n" +
+      "Clarinet 1" +
+      "\n" +
+      "Clarinet 2" +
+      "\n" +
+      "Bassoon 1" +
+      "\n" +
+      "Bassoon 2" +
+      "\n" +
+      "Horn in F 1" +
+      "\n" +
+      "Horn in F 2" +
+      "\n" +
+      "Trumpet 1" +
+      "\n" +
+      "Trumpet 2" +
+      "\n" +
+      "Violin Soloist" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Violin 1" +
+      "\n" +
+      "Violin 2" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
+    blurb: " ",
     description: [
       "Style-wise, Crawford's First Violin Concerto was heavily inspired by Both Mendelssohn's and Sibelius's Violin Concerto. He developed the concerto when looking out his telescope one night looking at a clear sky. He saw Uranus, his favorite planet and thought of what it'd look like to be on that planet. How would it be to live on the planet?",
       "Thoughts on all around the planet. Worldwide thoughts. As he began writing the concerto, he imagined the Uranus spinning as time flies. By the time it was done, there weren't many thoughts on Uranus, but the dark view of earth as it rotated and all the city lights lit up.",
       "This work has fabulous violin, Low Strings, french horn, oboe, flute, piccolo, and even timpani excerpts.",
     ],
-    image: images.ch1,
+    image: images.c1,
     youtube: {
-      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
-      label: "Placeholder video",
+      src: "https://www.youtube.com/watch?v=sDP8pPvRkSM&list=PLFUPwKu4OiEw&index=3",
+      label: 'Crawford Violin Concerto No. 1 in G Minor "Worldwide" Full Score',
     },
     // purchaseUrl: "https://www.google.com",
   },
@@ -1879,19 +2305,62 @@ export const concertos: CompositionEntry[] = [
     slug: "violin-concerto-2",
     title: "Crawford Violin Concerto II",
     subtitle: "For Full Orchestra",
-    year: "2025",
-    duration: "14 secs",
-    scoring: "placeholder",
-    blurb: "placeholder",
+    year: "2026",
+    duration: "23:26",
+    scoring:
+      "Flute 1" +
+      "\n" +
+      "Flute 2" +
+      "\n" +
+      "Oboe 1" +
+      "\n" +
+      "Oboe 2" +
+      "\n" +
+      "Clarinet in A 1" +
+      "\n" +
+      "Clarinet in A 2" +
+      "\n" +
+      "Bassoon 1" +
+      "\n" +
+      "Bassoon 2" +
+      "\n" +
+      "Horn in E 1" +
+      "\n" +
+      "Horn in E 2" +
+      "\n" +
+      "Horn in E 3" +
+      "\n" +
+      "Horn in E 4" +
+      "\n" +
+      "Trumpets in E 1" +
+      "\n" +
+      "Trumpets in E 2" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Harp" +
+      "\n" +
+      "Violin Soloist" +
+      "\n" +
+      "Violin 1" +
+      "\n" +
+      "Violin 2" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
+    blurb: " ",
     description: [
       "Crawford Began writing this during winter break not long after the premiere of his “Edison Overture”. He showed his first violin concerto to his friend, but his friend said he didn't like the key of G Minor for many reasons. That triggered him to write another violin concerto. This time, it was in his favorite key E Minor, which was also a key he considered to be an easy key for strings.",
       "He also wanted to make this concerto speak out more, so he added more instruments like the harp. He made sure to make the violin sing so it could catch its listener's attention, specifically his friend's attention. He repeatedly used the element of suspense in the finale and decided to add more challenging things to make it sound more impressive. In the end, the spectacular concerto made his friend want to give it a try and Crawford's mission was a success.",
       "This piece has fabulous Violin, Trumpet, Bassoon, Clarinet, Oboe, Timpani, Low Strings, and French Horn excerpts.",
     ],
-    image: images.ch2,
+    image: images.c2,
     youtube: {
-      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
-      label: "Placeholder video",
+      src: "https://www.youtube.com/watch?v=ZwnBuklYXH0&list=PLFUPwKu4OiEw&index=2",
+      label: " Crawford Violin Concerto No. 2 in E Minor Full Score + Audio",
     },
     // purchaseUrl: "https://www.google.com",
   },
@@ -1899,18 +2368,80 @@ export const concertos: CompositionEntry[] = [
     slug: "violin-concerto-3-despair",
     title: 'Crawford Violin Concerto III "The Despair Violin Concerto"',
     subtitle: "For Full Orchestra",
-    year: "2025",
-    duration: "14 secs",
-    scoring: "placeholder",
-    blurb: "placeholder",
+    year: "2026",
+    duration: "28:56",
+    scoring:
+      "Piccolo" +
+      "\n" +
+      "Flutes I" +
+      "\n" +
+      "Flutes II" +
+      "\n" +
+      "Oboes I" +
+      "\n" +
+      "Oboes II" +
+      "\n" +
+      "English Horn" +
+      "\n" +
+      "Bb Clarinets I" +
+      "\n" +
+      "Bb Clarinets II" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Bassoon III" +
+      "\n" +
+      "Horns in F I" +
+      "\n" +
+      "Horns in F II" +
+      "\n" +
+      "Trumpets in C I" +
+      "\n" +
+      "Trumpets in C II" +
+      "\n" +
+      "Trombones I" +
+      "\n" +
+      "Trombones II" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Bass Drum" +
+      "\n" +
+      "Crash/Suspended Cymbal" +
+      "\n" +
+      "Xylophone" +
+      "\n" +
+      "Chimes" +
+      "\n" +
+      "Violin Solo" +
+      "\n" +
+      "Harp" +
+      "\n" +
+      "Violins I" +
+      "\n" +
+      "Violins II" +
+      "\n" +
+      "Violas" +
+      "\n" +
+      "Violoncellos" +
+      "\n" +
+      "Basses",
+    blurb: " ",
     description: [
       "This concerto was intended to be a concerto, but in the end, it's considered a Concertante, not a concerto. This has no cadenza nor more than 1 movement. Crawford wanted to make the violin sob and weep after he lost a close friend over the summer. He made sure this Concertante let out every emotion he felt as he lost more control.",
       "This Concertante has expressive Violin, Viola, Bassoon, French Horn, Low Strings, Piccolo, Trumpet, Low brass, Clarinet, Oboe, English horn, and even timpani excerpts.",
     ],
-    image: images.ch3,
+    image: images.c3,
     youtube: {
-      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
-      label: "Placeholder video",
+      src: "https://www.youtube.com/watch?v=N-O1pIxwoIs&list=PLFUPwKu4OiEw&index=1",
+      label:
+        'Crawford Violin Concerto No 3 in D Minor "The Despair Concerto" Full Score + Audio',
     },
     // purchaseUrl: "https://www.google.com",
   },
@@ -1918,19 +2449,67 @@ export const concertos: CompositionEntry[] = [
     slug: "cello-concerto-4-pools-of-sorrow",
     title: 'Crawford Violoncello Concerto "Pools of Sorrow"',
     subtitle: "For Full Orchestra",
-    year: "2025",
-    duration: "14 secs",
-    scoring: "placeholder",
-    blurb: "placeholder",
+    year: "2024",
+    duration: "21:16",
+    scoring:
+      "Flute 1" +
+      "\n" +
+      "Flute 2" +
+      "\n" +
+      "Oboe 1" +
+      "\n" +
+      "Oboe 2" +
+      "\n" +
+      "Clarinet 1" +
+      "\n" +
+      "Clarinet 2" +
+      "\n" +
+      "Bassoon 1" +
+      "\n" +
+      "Bassoon 2" +
+      "\n" +
+      "Horn 1" +
+      "\n" +
+      "Horn 2" +
+      "\n" +
+      "Trumpet 1" +
+      "\n" +
+      "Trumpet 2" +
+      "\n" +
+      "Trombone 1" +
+      "\n" +
+      "Trombone 2" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Piano" +
+      "\n" +
+      "Violoncello Soloist" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Violin 1" +
+      "\n" +
+      "Violin 2" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
+    blurb: " ",
     description: [
       "This Concerto marked a permanent change in Crawford's style of compositions. This was the first emotional piece Crawford wrote. He experienced a major heartbreak that caused him to make plenty of mistakes in his concerto the same night. He didn't go to school the next day, but instead wrote this piece in 24 hours. This was also the same day his music changed as he realized he could cope with his compositions.",
       "The melody of the cello in this piece sings to him and makes him cry even years later. As he discovered that he could cope with his compositions, almost every other piece he wrote was a story of pain and suffering he's endured for up to 8 years.",
       "This piece has expressive Cello, Oboe, Trumpet, Horn, Bass, Piano, Violin, Flute, Bassoon, and Viola Excerpts.",
     ],
-    image: images.ch4,
+    image: images.c4,
     youtube: {
-      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
-      label: "Placeholder video",
+      src: "https://www.youtube.com/watch?v=d6nZCrxtb8E&list=PLFUPwKu4OiEw&index=4",
+      label:
+        ' Crawford Violoncello Concerto in E Minore "Pools of Sorrow" Full Score and Audio',
     },
     // purchaseUrl: "https://www.google.com",
   },
@@ -1957,9 +2536,9 @@ export const chamberWorks: CompositionEntry[] = [
       "Cello" +
       "\n" +
       "Bass",
-    blurb: "placeholder",
+    blurb: " ",
     description: ["placeholder"],
-    image: null,
+    image: images.ch1,
     youtube: {
       src: "https://www.youtube.com/watch?v=lELjhYYBwdk&list=PLWmjwk0cLJGo",
       label:
@@ -1974,9 +2553,9 @@ export const chamberWorks: CompositionEntry[] = [
     year: "2026",
     duration: "9:21",
     scoring: "Oboe" + "\n" + "Piano",
-    blurb: "placeholder",
+    blurb: " ",
     description: ["placeholder"],
-    image: null,
+    image: images.ch2,
     youtube: {
       src: "https://www.youtube.com/watch?v=S7lJrWFMDTs&list=PLWmjwk0cLJGo&index=2",
       label: "Crawford Sonata for Oboe and Piano in B Minor Full Score + Audio",
@@ -1990,9 +2569,9 @@ export const chamberWorks: CompositionEntry[] = [
     year: "2025",
     duration: "13:49",
     scoring: "Violin" + "\n" + "Piano",
-    blurb: "placeholder",
+    blurb: " ",
     description: ["placeholder"],
-    image: null,
+    image: images.ch3,
     youtube: {
       src: "https://www.youtube.com/watch?v=HDmxqCTzFS4&list=PLWmjwk0cLJGo&index=3",
       label:
@@ -2016,9 +2595,9 @@ export const chamberWorks: CompositionEntry[] = [
       "Horn in F" +
       "\n" +
       "Bassoon",
-    blurb: "placeholder",
+    blurb: " ",
     description: ["placeholder"],
-    image: null,
+    image: images.ch4,
     youtube: {
       src: "https://www.youtube.com/watch?v=qxA2pdmSURY&list=PLWmjwk0cLJGo&index=4",
       label: "Crawford Woodwind Quintet in D Minor Full Score and Audio",
@@ -2032,9 +2611,9 @@ export const chamberWorks: CompositionEntry[] = [
     year: "2026",
     duration: "8:25",
     scoring: "Contrabass" + "\n" + "Piano",
-    blurb: "placeholder",
+    blurb: " ",
     description: ["placeholder"],
-    image: null,
+    image: images.ch5,
     youtube: {
       src: "https://www.youtube.com/watch?v=avyivImjfiw&list=PLWmjwk0cLJGo&index=5",
       label:
