@@ -47,7 +47,7 @@ export const site = {
 
   // default pic
   portrait: {
-    src: null as string | null,
+    src: "/images/about-me.jpg",
     alt: "Zachary Crawford conducting",
     credit: null as string | null,
   },
