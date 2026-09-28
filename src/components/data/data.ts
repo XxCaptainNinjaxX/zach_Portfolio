@@ -1604,7 +1604,7 @@ export const symphonies: CompositionEntry[] = [
 export const suites: CompositionEntry[] = [
   {
     slug: "suite-1-creation",
-    title: 'Crawford Suite I "Creation"',
+    title: 'Crawford Suite "Creation"',
     subtitle: "For Full Orchestra",
     year: "2022",
     duration: "39:29",
@@ -1696,7 +1696,7 @@ export const suites: CompositionEntry[] = [
   },
   {
     slug: "suite-2-ornaments",
-    title: 'Crawford Suite II "The Ornaments"',
+    title: 'Crawford Suite "The Ornaments"',
     subtitle: "For Full Orchestra",
     year: "2022-2025",
     duration: "31:19",
@@ -1801,7 +1801,7 @@ export const suites: CompositionEntry[] = [
 export const overtures: CompositionEntry[] = [
   {
     slug: "overture-1-revolutionair",
-    title: 'Crawford Overture I "A Revolutionair"',
+    title: 'Crawford Overture "A Revolutionair"',
     subtitle: "For Full Orchestra",
     year: "2022",
     duration: "10:25",
@@ -1860,7 +1860,7 @@ export const overtures: CompositionEntry[] = [
   },
   {
     slug: "overture-2-edison",
-    title: 'Crawford Overture II "Edison Overture"',
+    title: 'Crawford Overture "Edison Overture"',
     subtitle: "For Full Orchestra",
     year: "2023",
     duration: "9:39",
@@ -1919,7 +1919,7 @@ export const overtures: CompositionEntry[] = [
   },
   {
     slug: "overture-3-june",
-    title: 'Crawford Overture III "June"',
+    title: 'Crawford Overture "June"',
     subtitle: "For Full Orchestra",
     year: "2025",
     duration: "17:38",
@@ -1991,7 +1991,7 @@ export const overtures: CompositionEntry[] = [
   },
   {
     slug: "overture-4-macbeth",
-    title: 'Crawford Overture IV "Macbeth"',
+    title: 'Crawford Overture "Macbeth"',
     subtitle: "For Full Orchestra",
     year: "2021-2025",
     duration: "9:10",
@@ -2034,7 +2034,7 @@ export const overtures: CompositionEntry[] = [
   },
   {
     slug: "overture-5",
-    title: "Crawford Overture V in G Minor",
+    title: "Crawford Overture in G Minor",
     subtitle: "For Full Orchestra",
     year: "2025",
     duration: "6:55",
@@ -2093,7 +2093,7 @@ export const overtures: CompositionEntry[] = [
   },
   {
     slug: "overture-6-joyful",
-    title: 'Crawford Overture VI "Joyful"',
+    title: 'Crawford Overture "Joyful"',
     subtitle: "For Full Orchestra",
     year: "2025-2026",
     duration: "11:53",
@@ -2165,7 +2165,7 @@ export const overtures: CompositionEntry[] = [
   },
   {
     slug: "overture-7-resentful",
-    title: 'Crawford Overture VII "Resentful"',
+    title: 'Crawford Overture "Resentful"',
     subtitle: "For Full Orchestra",
     year: "2026",
     duration: "17:49",
@@ -2223,7 +2223,7 @@ export const overtures: CompositionEntry[] = [
   //FIX
   {
     slug: "overture-8-glory",
-    title: 'Crawford Overture VIII "Glory"',
+    title: 'Crawford Overture "Glory"',
     subtitle: "For Full Orchestra",
     year: "2025",
     duration: "14 secs",
@@ -2246,7 +2246,7 @@ export const overtures: CompositionEntry[] = [
 export const concertos: CompositionEntry[] = [
   {
     slug: "violin-concerto-1-worldwide",
-    title: 'Crawford Violin Concerto I "Worldwide"',
+    title: 'Crawford Violin Concerto "Worldwide"',
     subtitle: "For Full Orchestra",
     year: "2024",
     duration: "30:48",
@@ -2303,7 +2303,7 @@ export const concertos: CompositionEntry[] = [
   },
   {
     slug: "violin-concerto-2",
-    title: "Crawford Violin Concerto II",
+    title: "Crawford Violin Concerto",
     subtitle: "For Full Orchestra",
     year: "2026",
     duration: "23:26",
@@ -2366,7 +2366,7 @@ export const concertos: CompositionEntry[] = [
   },
   {
     slug: "violin-concerto-3-despair",
-    title: 'Crawford Violin Concerto III "The Despair Violin Concerto"',
+    title: 'Crawford Violin Concerto "The Despair Violin Concerto"',
     subtitle: "For Full Orchestra",
     year: "2026",
     duration: "28:56",
