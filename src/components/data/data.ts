@@ -2291,7 +2291,7 @@ export const concertos: CompositionEntry[] = [
     blurb: " ",
     description: [
       "Style-wise, Crawford's First Violin Concerto was heavily inspired by Both Mendelssohn's and Sibelius's Violin Concerto. He developed the concerto when looking out his telescope one night looking at a clear sky. He saw Uranus, his favorite planet and thought of what it'd look like to be on that planet. How would it be to live on the planet?",
-      "Thoughts on all around the planet. Worldwide thoughts. As he began writing the concerto, he imagined the Uranus spinning as time flies. By the time it was done, there weren't many thoughts on Uranus, but the dark view of earth as it rotated and all the city lights lit up.",
+      "Imaginations of images from all around the planet. As he began writing the concerto, he imagined the Uranus orbiting. By the time it was done, there weren't many thoughts on Uranus, but the night-time view of earth as it rotated and all the city lights lit up.",
       "This work has fabulous violin, Low Strings, french horn, oboe, flute, piccolo, and even timpani excerpts.",
     ],
     image: images.c1,
