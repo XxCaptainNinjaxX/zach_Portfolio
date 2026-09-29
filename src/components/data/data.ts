@@ -109,7 +109,7 @@ export type CompositionEntry = Omit<Composition, "type">;
     duration: "14 secs",
     scoring: "placeholder",
     blurb: " ",
-    description: ["placeholder"],
+    description: [" "],
     image: null,
     audio: [{ src: "/audio/tidewater.mp3", label: "Placeholder recording" }],
     score: { src: "https://www.google.com", label: "Placeholder score (PDF)" },
@@ -1579,22 +1579,96 @@ export const symphonies: CompositionEntry[] = [
     landingComp: true,
     // purchaseUrl: "https://www.google.com",
   },
-  //FIX
 
   {
     slug: "symphony-19-Symphonie-Lugubre",
-    title: 'Crawford Symphony XIX in ______ "Symphonie Lugubre"',
+    title: 'Crawford Symphony XIX in Bb minor "Symphonie Lugubre"',
     subtitle: "For Full Orchestra",
-    year: "2025",
-    duration: "14 secs",
-    scoring: "placeholder",
+    year: "2026",
+    duration: "57:27",
+    scoring:
+      "Piccolo" +
+      "\n" +
+      "Flute I" +
+      "\n" +
+      "Flute II" +
+      "\n" +
+      "Clarinet I" +
+      "\n" +
+      "Clarinet II" +
+      "\n" +
+      "Oboe I" +
+      "\n" +
+      "Oboe II" +
+      "\n" +
+      "English Horn" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Bassoon III" +
+      "\n" +
+      "Contrabassoon" +
+      "\n" +
+      "Horn in F I" +
+      "\n" +
+      "Horn in F III" +
+      "\n" +
+      "Horn in F II" +
+      "\n" +
+      "Horn in F IV" +
+      "\n" +
+      "Trumpet in Bb I" +
+      "\n" +
+      "Trumpet in Bb II" +
+      "\n" +
+      "Trombone I" +
+      "\n" +
+      "Trombone II" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani" +
+      "\n" +
+      "Chimes" +
+      "\n" +
+      "Mallets (Vibraphone/Xylophone)" +
+      "\n" +
+      "Bass Drum" +
+      "\n" +
+      "Field Drum" +
+      "\n" +
+      "Crash Cymbal" +
+      "\n" +
+      "Soprano Vocal" +
+      "\n" +
+      "Alto Vocal" +
+      "\n" +
+      "Tenor Vocal" +
+      "\n" +
+      "Tenor Vocal Solo (Movement III)" +
+      "\n" +
+      "Bass Vocal" +
+      "\n" +
+      "Violin I" +
+      "\n" +
+      "Violin II" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
     blurb: " ",
-    description: ["placeholder"],
+    description: [" "],
     image: images.s19,
     youtube: {
-      //FIX
-      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
-      label: "Placeholder video",
+      src: "https://www.youtube.com/watch?v=NINJrMLl2EE",
+      label:
+        ' Crawford Symphony 19 in Bb Minor "Symphonie Lugubre" Full Score + Audio',
     },
     // purchaseUrl: "https://www.google.com",
   },
@@ -2220,14 +2294,78 @@ export const overtures: CompositionEntry[] = [
     },
     // purchaseUrl: "https://www.google.com",
   },
-  //FIX
   {
     slug: "overture-8-glory",
     title: 'Crawford Overture "Glory"',
     subtitle: "For Full Orchestra",
     year: "2025",
     duration: "14 secs",
-    scoring: "placeholder",
+    scoring:
+      "Flute I" +
+      "\n" +
+      "Flute II" +
+      "\n" +
+      "Oboe I" +
+      "\n" +
+      "Oboe II" +
+      "\n" +
+      "English Horn III" +
+      "\n" +
+      "Clarinet in Eb" +
+      "\n" +
+      "Clarinet in Bb I" +
+      "\n" +
+      "Clarinet in Bb II" +
+      "\n" +
+      "Clarinet in A" +
+      "\n" +
+      "Bassoon I" +
+      "\n" +
+      "Bassoon II" +
+      "\n" +
+      "Bassoon III" +
+      "\n" +
+      "Bassoon IV" +
+      "\n" +
+      "Horn in F I" +
+      "\n" +
+      "Horn in F III" +
+      "\n" +
+      "Horn in F II" +
+      "\n" +
+      "Horn in F IV" +
+      "\n" +
+      "Trumpet in Eb" +
+      "\n" +
+      "Trumpet in C" +
+      "\n" +
+      "Trumpet in Bb" +
+      "\n" +
+      "Trombone I" +
+      "\n" +
+      "Trombone II" +
+      "\n" +
+      "Bass Trombone" +
+      "\n" +
+      "Tuba" +
+      "\n" +
+      "Timpani I" +
+      "\n" +
+      "Timpani II" +
+      "\n" +
+      "Crash Cymbal" +
+      "\n" +
+      "Tam-Tam" +
+      "\n" +
+      "Violin I" +
+      "\n" +
+      "Violin II" +
+      "\n" +
+      "Viola" +
+      "\n" +
+      "Violoncello" +
+      "\n" +
+      "Contrabass",
     blurb: " ",
     description: [
       "This overture was one of Crawford's lost works that were brought back to life. He wrote this piece in 2023 but after completing it, he forgot all about it as he went back to composing. He found this work of his in November of 2025 and decided to revive it as he loved listening to it again. Not even he believed that this was one of his earlier works.",
@@ -2235,8 +2373,9 @@ export const overtures: CompositionEntry[] = [
     ],
     image: images.o8,
     youtube: {
-      src: "https://www.youtube.com/watch?v=bM6pPmy84oE",
-      label: "Placeholder video",
+      src: "https://www.youtube.com/watch?v=XWoGvFoU-Pk",
+      label:
+        'Overture "For Glory" Composed by Zachary Crawford Full Score + Audio',
     },
     // purchaseUrl: "https://www.google.com",
   },
@@ -2537,7 +2676,7 @@ export const chamberWorks: CompositionEntry[] = [
       "\n" +
       "Bass",
     blurb: " ",
-    description: ["placeholder"],
+    description: [" "],
     image: images.ch1,
     youtube: {
       src: "https://www.youtube.com/watch?v=lELjhYYBwdk&list=PLWmjwk0cLJGo",
@@ -2554,7 +2693,7 @@ export const chamberWorks: CompositionEntry[] = [
     duration: "9:21",
     scoring: "Oboe" + "\n" + "Piano",
     blurb: " ",
-    description: ["placeholder"],
+    description: [" "],
     image: images.ch2,
     youtube: {
       src: "https://www.youtube.com/watch?v=S7lJrWFMDTs&list=PLWmjwk0cLJGo&index=2",
@@ -2570,7 +2709,7 @@ export const chamberWorks: CompositionEntry[] = [
     duration: "13:49",
     scoring: "Violin" + "\n" + "Piano",
     blurb: " ",
-    description: ["placeholder"],
+    description: [" "],
     image: images.ch3,
     youtube: {
       src: "https://www.youtube.com/watch?v=HDmxqCTzFS4&list=PLWmjwk0cLJGo&index=3",
@@ -2596,7 +2735,7 @@ export const chamberWorks: CompositionEntry[] = [
       "\n" +
       "Bassoon",
     blurb: " ",
-    description: ["placeholder"],
+    description: [" "],
     image: images.ch4,
     youtube: {
       src: "https://www.youtube.com/watch?v=qxA2pdmSURY&list=PLWmjwk0cLJGo&index=4",
@@ -2612,7 +2751,7 @@ export const chamberWorks: CompositionEntry[] = [
     duration: "8:25",
     scoring: "Contrabass" + "\n" + "Piano",
     blurb: " ",
-    description: ["placeholder"],
+    description: [" "],
     image: images.ch5,
     youtube: {
       src: "https://www.youtube.com/watch?v=avyivImjfiw&list=PLWmjwk0cLJGo&index=5",
