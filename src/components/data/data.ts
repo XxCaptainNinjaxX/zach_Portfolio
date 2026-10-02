@@ -2385,7 +2385,7 @@ export const overtures: CompositionEntry[] = [
 export const concertos: CompositionEntry[] = [
   {
     slug: "violin-concerto-1-worldwide",
-    title: 'Crawford Violin Concerto "Worldwide"',
+    title: 'Crawford Violin Concerto No.1 in G Minor "Worldwide"',
     subtitle: "For Full Orchestra",
     year: "2024",
     duration: "30:48",
@@ -2442,7 +2442,7 @@ export const concertos: CompositionEntry[] = [
   },
   {
     slug: "violin-concerto-2",
-    title: "Crawford Violin Concerto",
+    title: "Crawford Violin Concerto No.2 in E minor",
     subtitle: "For Full Orchestra",
     year: "2026",
     duration: "23:26",
@@ -2505,7 +2505,8 @@ export const concertos: CompositionEntry[] = [
   },
   {
     slug: "violin-concerto-3-despair",
-    title: 'Crawford Violin Concerto "The Despair Violin Concerto"',
+    title:
+      'Crawford Violin Concerto No.3 in D Minor "The Despair Violin Concerto"',
     subtitle: "For Full Orchestra",
     year: "2026",
     duration: "28:56",
